@@ -36,19 +36,9 @@ Connect users based on there long & short term romantic intentions, Inclusive of
 
         REPORTS : uid's (reporter & reportee) content type, content, reason
 
-
-
 #### Project Tracking
 
     https://github.com/users/Antony-Lester/projects/1
-
-
-
-
-
-
-
-
 
 #### Future Scope
 
@@ -105,3 +95,5 @@ Travel mode : add date range to change targeting location duration
 Travel mode : displays aproximatily when user is in your area, when travel mode is active
 
 add stats  numbers & % to connection preferences
+
+add icon change on status (example has mail has no mail)
