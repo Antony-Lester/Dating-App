@@ -1,14 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-
-import { KissHelper, MarryHelper, AvoidHelper } from './Pages/Elements/Icons';
+import * as SplashScreen from 'expo-splash-screen';
+import { StyleSheet, View } from 'react-native';
 
 export default function App() {
+  SplashScreen.preventAutoHideAsync();
+  //call when content is loaded to remove splash screen
+  setTimeout(SplashScreen.hideAsync, 2000); 
   return (
     <View style={styles.container}>
-      <KissHelper/>
-      <MarryHelper/>
-      <AvoidHelper/>
       <StatusBar style="auto" />
     </View>
   );
