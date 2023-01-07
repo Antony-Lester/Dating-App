@@ -1,26 +1,26 @@
-### Problem Statement
+#### Problem Statement
 
 Connect users based on there long & short term romantic intentions, Inclusive of everyone, excluding people located in russia or the peoples republic of china mainland.
 
 ### Proposed Solution
 
-##### User is presented with other user's based on the users location &     preferences.
+##### User is presented with other user's based on the users location & preferences
 
-    They Can only swipe if there's no new connections or messages awaiting replys and     can't see users that are 'avoid' or 'report'. swipe left to 'avoid', swipe up to 'marry',     swipe right to 'kiss', swipe down to 'report.'
+    They Can only swipe if there's no new connections or messages awaiting reply and     can't see users that are 'avoid' or 'report'. swipe left to 'avoid', swipe up to 'marry',     swipe right to 'kiss', swipe down to 'report.'
 
-###### Can message users that mutually match 'marry' and/or 'kiss'.
+###### Can message users that mutually match 'marry' and/or 'kiss'
 
-###### Can Invite users on a date after a number of messages with a suggestion of     locations based on mutual preferences.
+###### Can Invite users on a date after a number of messages with a suggestion of     locations based on mutual preferences
 
 ###### After date can review the date user & location
 
-### Core Mimimum Viable Product Features V1.0
+### Core Minimum Viable Product Features V1.0
 
-    The core features of App is to allow users to connect with other users that suit     their preferences. 
+    The core features of App is to allow users to connect with other users that suit     their preferences.
 
 ##### Can Swipe to connect based on location
 
-    Can filter by Gender/Orenataion & Age
+    Can filter by Gender/Orientation & Age
 
 ##### After connecting they can message each other
 
@@ -28,17 +28,17 @@ Connect users based on there long & short term romantic intentions, Inclusive of
 
 ###### MVP Data Collected
 
-        USER'S : uid, name, dateOfBirth, email, number, location, Gender/Orenataion,                         bio, 
+        USER'S : uid, name, dateOfBirth, email, number, location, Gender/Orientation,                         bio,
 
-        PICTURE : face, 
+        PICTURE : face,
 
         MESSAGES : message(uid, content, timestamp)
 
-        REPORTS : uid's (reporter & reportee) content type, content, reason
+        REPORTS : uid's (reporter & reported) content type, content, reason
 
 #### Project Tracking
 
-    https://github.com/users/Antony-Lester/projects/1
+    <https://github.com/users/Antony-Lester/projects/1>
 
 #### Future Scope
 
@@ -52,15 +52,15 @@ option: disable swipe buttons
 
 add smart tag line
 
-impliment dark mode
+implement dark mode
 
-progress ring on sigin up process
+progress ring on sign up process
 
 progress ring for swipes
 
 progress ring for messages
 
-Add addidional filterable preferences : 
+Add additional filterable preferences :
 
     Education
 
@@ -80,9 +80,9 @@ Add addidional filterable preferences :
 
 Multi language support
 
-reputation score metric :  calculated based on the way users treat other users, message reply time, message & profile content, reports received & made, 
+reputation score metric :  calculated based on the way users treat other users, message reply time, message & profile content, reports received & made,
 
-user star rating : based on 75% reputation score & 25% compatability.
+user star rating : based on 75% reputation score & 25% compatibility.
 
 Can Invite users on a date after a number of messages with a suggestion of     locations based on mutual preferences.
 
@@ -92,7 +92,7 @@ Travel mode : user can change location to target matching with others
 
 Travel mode : add date range to change targeting location duration
 
-Travel mode : displays aproximatily when user is in your area, when travel mode is active
+Travel mode : displays approximately when user is in your area, when travel mode is active
 
 add stats  numbers & % to connection preferences
 
