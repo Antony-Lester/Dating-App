@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import * as SplashScreen from 'expo-splash-screen';
 import { StyleSheet, View } from 'react-native';
+import { KissHelper } from './Pages/Elements/Icons';
 
 export default function App() {
   SplashScreen.preventAutoHideAsync();
@@ -9,6 +10,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
+      <KissHelper/>
     </View>
   );
 }
