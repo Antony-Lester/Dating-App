@@ -1,5 +1,7 @@
 import { Text, View } from 'react-native';
 
-export const Profile = () => <View>
+import { page } from '../styles/pages';
+
+export const Profile = () => <View style={page}>
     <Text>profile</Text>
 </View>

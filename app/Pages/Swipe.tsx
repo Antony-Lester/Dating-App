@@ -1,5 +1,7 @@
 import { Text, View } from 'react-native';
 
-export const Swipe = () => <View>
+import { page } from '../styles/pages';
+
+export const Swipe = () => <View style={page}>
     <Text>Swipe</Text>
 </View>
