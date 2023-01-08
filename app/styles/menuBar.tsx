@@ -13,14 +13,16 @@ export const menuBar: ViewStyle = {
 }
 export const menuItem: ViewStyle = {
     position: 'relative',
-    minWidth: '30%',
-    height: '90%',
+    minWidth: '25%',
+    marginLeft: '2.5%',
+    marginRight: '2.5%',
+    height: '75%',
     alignItems: 'center',
     alignSelf: 'flex-end',
     justifyContent: 'space-around',
     backgroundColor: setTheme.sub,
-    borderTopEndRadius: 70,
-    borderTopStartRadius: 70,
+    borderTopEndRadius: 80,
+    borderTopStartRadius: 80,
 }
 export const menuItemFocused: ViewStyle = {
     position: 'relative',
@@ -29,6 +31,19 @@ export const menuItemFocused: ViewStyle = {
     alignItems: 'center',
     justifyContent: 'space-around',
     backgroundColor: setTheme.subDark,
+    borderTopEndRadius: 80,
+    borderTopStartRadius: 80,
+}
+export const menuItemDisabled: ViewStyle = {
+    position: 'relative',
+    minWidth: '20%',
+    marginLeft: '5%',
+    marginRight: '5%',
+    height: '60%',
+    alignItems: 'center',
+    alignSelf: 'flex-end',
+    justifyContent: 'space-around',
+    backgroundColor: setTheme.subLight,
     borderTopEndRadius: 80,
     borderTopStartRadius: 80,
 }
@@ -42,3 +57,4 @@ export const menuTextFocused: TextStyle = {
     fontWeight: 'normal',
     fontSize: 20
 }
+export const menuTextDisabled: TextStyle = {opacity: 0, height: 0}
