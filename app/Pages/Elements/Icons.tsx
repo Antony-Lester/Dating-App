@@ -1,15 +1,16 @@
 import { Text } from "react-native";
 import {
     menu,
+    menuFocused,
     main,
     small,
     helper,
 } from "../../styles/icons";
 
 //--menu--
-export const Profile = () => <Text style={menu}>👤</Text>
-export const Swipe = () => <Text style={menu}>👀</Text>
-export const Chat = () => <Text style={menu}>💬</Text>
+export const Profile = ({focus}: any) => <Text style={focus == 'profile' ? menuFocused : menu}>👤</Text> 
+export const Swipe = ({focus}: any) => <Text style={focus == 'swipe' ? menuFocused : menu}>👀</Text>
+export const Chat = ({focus}: any) => <Text style={focus == 'messages' ? menuFocused : menu}>💬</Text>
 
 //--main--
 export const Kiss = () => <Text style={main}>💋</Text>
