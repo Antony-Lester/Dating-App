@@ -9,6 +9,7 @@ interface Theme {
     subDark: string;
     subText: string;
 }
+//might need to add: background, surface & error
 
 export const light : Theme = {
     mainLight: '#eeffff',
@@ -33,4 +34,4 @@ export const dark : Theme = {
     subText: '#ffffff',
 }
 
-//might need to add: background, surface & error
+export let setTheme : Theme = light

@@ -1,5 +1,5 @@
 import { TextStyle, ViewStyle } from 'react-native';
-import { light } from './theme';
+import { setTheme } from './theme';
 
 export const menuBar: ViewStyle = {
     position:'absolute',
@@ -9,7 +9,7 @@ export const menuBar: ViewStyle = {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-evenly',
-    backgroundColor: light.main,
+    backgroundColor: setTheme.main,
 }
 export const menuItem: ViewStyle = {
     position: 'relative',
@@ -18,7 +18,7 @@ export const menuItem: ViewStyle = {
     alignItems: 'center',
     alignSelf: 'flex-end',
     justifyContent: 'space-around',
-    backgroundColor: light.sub,
+    backgroundColor: setTheme.sub,
     borderTopEndRadius: 70,
     borderTopStartRadius: 70,
 }
@@ -28,17 +28,17 @@ export const menuItemFocused: ViewStyle = {
     height: '100%',
     alignItems: 'center',
     justifyContent: 'space-around',
-    backgroundColor: light.subDark,
+    backgroundColor: setTheme.subDark,
     borderTopEndRadius: 80,
     borderTopStartRadius: 80,
 }
 export const menuText: TextStyle = {
-    color: light.subText,
+    color: setTheme.subText,
     fontWeight: 'normal',
     fontSize: 16,
 }
 export const menuTextFocused: TextStyle = {
-    color: light.subText,
+    color: setTheme.subText,
     fontWeight: 'normal',
     fontSize: 20
 }
