@@ -12,7 +12,7 @@ import { navigationRef } from './Pages/Components/MenuBar';
 
 export default function App() {
   SplashScreen.preventAutoHideAsync();
-  //call when content is loaded to remove splash screen
+  //call when api call is finished to remove splash screen
   setTimeout(SplashScreen.hideAsync, 2000); 
   const Page = createNativeStackNavigator();
   return (

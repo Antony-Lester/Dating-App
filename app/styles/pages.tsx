@@ -3,7 +3,8 @@ import { ViewStyle } from "react-native";
 import { setTheme } from "./theme";
 
 export const page: ViewStyle = {
-    height: '90%',
+    position: "absolute",
+    height: '100%',
     width: '100%',
-    backgroundColor:setTheme.main
+    backgroundColor: setTheme.sub,
 }

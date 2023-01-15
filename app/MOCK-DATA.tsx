@@ -38,9 +38,15 @@ export interface CandidatesInterface {
     bio: string
 }
 
+export interface ResultsInterface { 
+    kiss: Array<Object>,
+    marry: Array<Object>,
+    avoid: Array<Object>
+}
+
 export interface SwipeInterface {
     candidates: Array<CandidatesInterface>,
-    results: Object
+    results: ResultsInterface
 }
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 function getRandomDate() {
@@ -57,12 +63,12 @@ const timeLineExample : Array<TimeLineInterface> = [
     {
         time: getRandomDate(),
         sender:false,
-        message:'Real away proceed. Danger high danger another may real period six waiting provided sight sometimes. Around merits gentleman vanity estate too to instantly regret shy stanhill distance may not lose led elderly. Mistress asked determine time inquiry help betrayed shy drawn uncommonly formed certainty. Strangers indulgence astonished what plate declared money cultivated scale put on resolve improved made distant reasonable objection. ',
+        message:'Real away proceed. Danger high danger another may real period six waiting provided sight sometimes. Around merits gentleman vanity estate too to instantly regret shy stanwell distance may not lose led elderly. Mistress asked determine time inquiry help betrayed shy drawn uncommonly formed certainty. Strangers indulgence astonished what plate declared money cultivated scale put on resolve improved made distant reasonable objection. ',
     },
     {
         time: getRandomDate(),
         sender:true,
-        message:'Made waited pleasant taste. Screened woody marriage. Cease differed blushes were arise towards simple interested shortly. Ourselves tolerably placing gone. Exeter sixteen subject worth party quick just middletons ever advice understood. ',
+        message:'Made waited pleasant taste. Screened woody marriage. Cease differed blushes were arise towards simple interested shortly. Ourselves tolerably placing gone. Exeter sixteen subject worth party quick just middleton ever advice understood. ',
     },
     {
         time: getRandomDate(),
@@ -78,7 +84,7 @@ const timeLineExample : Array<TimeLineInterface> = [
 export let message1: MessageInterface = {
     image: '?????',
     imageUrl: 'http://cdn.akc.org/content/article-body-image/samoyed_puppy_dog_pictures.jpg',
-    imageBlurHash: 'eCF6B#-:0JInxr?@s;nmIoWUIko1%NocRk.8xbIUaxR*^+s;RiWAWU',
+    imageBlurHash: 'eCF6B#-:0JIncr?@s;nmIoWUIko1%NocRk.8xbIUaxR*^+s;RiWAWS',
     name: 'fanny',
     status: 'kiss',
     timeline: timeLineExample
@@ -86,7 +92,7 @@ export let message1: MessageInterface = {
 export let message2: MessageInterface = {
     image: '?????',
     imageUrl: 'https://thumbs.dreamstime.com/b/camel-6645000.jpg',
-    imageBlurHash: 'LlMF%n00%#MwS|WCWEM{R*bbWBbH',
+    imageBlurHash: 'LlMF%n00%#MwS|WAWEN{R*bbWBbH',
     name: 'anne',
     status: 'marry',
     timeline: timeLineExample
@@ -94,7 +100,7 @@ export let message2: MessageInterface = {
 export let message3: MessageInterface = {
     image: '?????',
     imageUrl: 'https://media.istockphoto.com/id/497537400/photo/rhinoceros-on-white-background.jpg?s=612x612&w=0&k=20&c=QQ8kHjUIcGmvkFo4hoFcYw2hc2hB5g9fvt0Myu6PvpU=',
-    imageBlurHash: 'LlMF%n00%#MwS|WCWEM{R*bbWBbH',
+    imageBlurHash: 'LlMF%n00%#MwS|WAWEN{R*bbWBbH',
     name: 'gertrude',
     status: 'kiss',
     timeline: timeLineExample
@@ -102,7 +108,7 @@ export let message3: MessageInterface = {
 export let message4: MessageInterface = {
     image: '?????',
     imageUrl: 'https://images.pexels.com/photos/133394/pexels-photo-133394.jpeg?cs=srgb&dl=pexels-anthony-%29-133394.jpg&fm=jpg',
-    imageBlurHash: 'LlMF%n00%#MwS|WCWEM{R*bbWBbH',
+    imageBlurHash: 'LlMF%n00%#MwS|WAWEN{R*bbWBbH',
     name: 'betty',
     status: 'marry',
     timeline: []
@@ -112,7 +118,7 @@ const candidate1: CandidatesInterface = {
     name: 'apple',
     image: '?????',
     imageURI: 'https://usapple.org/wp-content/uploads/2019/10/apple-pink-lady.png',
-    imageBlurHash: 'LEHLh[WB2yk8pyoJadR*.7kCMdnj',
+    imageBlurHash: 'LEHLh[WB2yk8pyoJadR*.7kCMdn',
     bio: `Amateur Lego builder. Terrible cook. Aspiring snowboarder.
     Family orientated. Red Sox fan. Dog owner.
     Surfer. Book lover. Craft beer enthusiast.
@@ -123,8 +129,8 @@ const candidate2: CandidatesInterface = {
     name: 'pear',
     image: '?????',
     imageURI: 'https://freshpointlocal.co.uk/wp-content/uploads/2018/08/PackhamPear.jpg',
-    imageBlurHash: 'LEHLh[WB2yk8pyoJadR*.7kCMdnj',
-    bio: `I am a triathlete. I once won a regional hot dog eating competition. Chrissy Teigen used my banana bread recipe on her secret food blog.
+    imageBlurHash: 'LEHLh[WB2yk8pyoJadR*.7kCMdn',
+    bio: `I am a triathlete. I once won a regional hot dog eating competition. Christy Teigh used my banana bread recipe on her secret food blog.
     I am a professional swimmer. I asked Conan O’Brien out to prom. I don’t have a tv.
     I have been arrested in Amsterdam. I played guitar on stage with Foo Fighters. I woke up in a stranger’s house after a big night out.`
 }
@@ -133,17 +139,17 @@ const candidate3: CandidatesInterface = {
     name: 'grape',
     image: '?????',
     imageURI: 'https://www.collinsdictionary.com/images/full/grape_229112122.jpg',
-    imageBlurHash: 'LEHLh[WB2yk8pyoJadR*.7kCMdnj',
+    imageBlurHash: 'LEHLh[WB2yk8pyoJadR*.7kCMdn',
     bio: `I’ve always known the secret to happiness is gratitude. I’m still surprised and humbled by how much I have in my life to be grateful for!
     I’ve always known I wanted to be a dad. I’m still surprised by how incredible being a father is and how much I love my son.
     I’ve always known I was going to be a writer. I’m still surprised to see my words in print.`
 }
 const candidate4: CandidatesInterface = {
     uid: '40',
-    name: 'bannana',
+    name: 'bandana',
     image: '?????',
     imageURI: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Banana-Single.jpg/800px-Banana-Single.jpg',
-    imageBlurHash: 'LEHLh[WB2yk8pyoJadR*.7kCMdnj',
+    imageBlurHash: 'LEHLh[WB2yk8pyoJadR*.7kCMdn',
     bio: `I’d gather up all the supplies I can carry, visit the marina, steal a luxury yacht, and spend the next six months living out at sea. Then when things have died down I would return to shore and help rebuild civilization.
     Head to my nearest Costco or Walmart and barricade myself inside. Either would have all the supplies I need to survive for months
     Take car. Go to Mum’s. Kill Phil. Grab Liz, go to the Winchester, have a nice cold pint, and wait for all of this to blow over.`
@@ -161,8 +167,8 @@ export let userFull: UserInterface = {
     category: 'ms',
     image: '?????',
     imageURI: 'https://t4.ftcdn.net/jpg/00/97/58/97/360_F_97589769_t45CqXyzjz0KXwoBZT9PRaWGHRk5hQqQ.jpg',
-    imageBlurHash: 'LEHLh[WB2yk8pyoJadR*.7kCMdnj',
-    bio: `I love cheese, especially airedale stilton. Pecorino monterey jack say cheese melted cheese dolcelatte halloumi swiss cottage cheese. Brie cheese and biscuits cheesy feet melted cheese cheese strings bocconcini croque monsieur goat. Lancashire when the cheese comes out everybody's happy say cheese.`
+    imageBlurHash: 'LEHLh[WB2yk8pyoJadR*.7kCMdn',
+    bio: `I love cheese, especially airedale stilton. Pecorino monterey jack say cheese melted cheese doucette hallowmas swiss cottage cheese. Brie cheese and biscuits cheesy feet melted cheese cheese strings boccherini croquet monsieur goat. Lancashire when the cheese comes out everybody's happy say cheese.`
 }
 export let messagesEmpty: MessagesInterface = { 
     connections: [], 

@@ -9,8 +9,8 @@ import { available as messagesAvailable } from "../../utils/messages";
 import { available as swipeAvailable } from "../../utils/swipe";
 
 //MOCK-DATA
-import { messages } from "../../MOCK-DATA";
-//import { messagesEmpty as messages } from "../../MOCK-DATA";
+//import { messages } from "../../MOCK-DATA";
+import { messagesEmpty as messages } from "../../MOCK-DATA";
 
 export const navigationRef = createNavigationContainerRef()
 
