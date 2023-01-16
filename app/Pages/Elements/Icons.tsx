@@ -29,6 +29,6 @@ export const MarryHelper = () => <Text style={helper}>💎</Text>
 export const AvoidHelper = () => <Text style={helper}>⛔</Text>
 
 //arrows
-export const ArrowLeft = () => <Image style={hint} source={require('../../assets/arrows/dark/arrow_left.png')}/> 
-export const ArrowUp = () => <Image style={hint} source={require('../../assets/arrows/dark/arrow_up.png')}/> 
-export const ArrowRight = () => <Image style={hint} source={require('../../assets/arrows/dark/arrow_right.png')}/> 
+export const ArrowLeft = () => <Image style={hint} source={require('../../assets/arrows/arrow_left.png')}/> 
+export const ArrowUp = () => <Image style={hint} source={require('../../assets/arrows/arrow_up.png')}/> 
+export const ArrowRight = () => <Image style={hint} source={require('../../assets/arrows/arrow_right.png')}/> 
