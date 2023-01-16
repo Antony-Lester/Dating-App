@@ -9,9 +9,9 @@ export const card: ViewStyle = {
     height: '70%',
     width: '90%',
     backgroundColor: setTheme.main,
-    flex: 1,
     alignSelf: 'center',
     borderRadius: 33,
+    borderWidth: 3,
 };
 
 export const buttonBar: ViewStyle = {
@@ -39,7 +39,7 @@ export const buttonBackground: ViewStyle = {
 };
 
 export const buttonReport: ViewStyle = {
-    width: '20%',
+    width: '25%',
     height: '5%',
     backgroundColor: setTheme.mainLight,
     alignItems: 'center',
@@ -47,6 +47,19 @@ export const buttonReport: ViewStyle = {
     justifyContent: 'space-evenly',
     borderTopLeftRadius: 90,
     borderBottomRightRadius: 30,
+    flexDirection: 'row-reverse',
+};
+
+export const buttonInfo: ViewStyle = {
+    top: '144.5%',
+    width: '25%',
+    height: '5%',
+    backgroundColor: setTheme.mainLight,
+    alignItems: 'center',
+    alignSelf: 'flex-end',
+    justifyContent: 'space-evenly',
+    borderTopLeftRadius: 30,
+    borderBottomRightRadius: 90,
     flexDirection: 'row',
 };
 

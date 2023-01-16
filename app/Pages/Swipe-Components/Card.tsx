@@ -6,7 +6,7 @@ import { Animated, Dimensions, View, PanResponder, Text } from 'react-native';
 import { CandidatesInterface } from '../../utils/interfaces';
 import { handleKiss, handleMarry, handleAvoid, animateReset, animateKiss, animateMarry, animateAvoid } from '../../utils/swipe';
 import { card } from '../../styles/swipe';
-import { ReportButton } from './Button';
+import { InfoButton, ReportButton } from './Button';
 
 export const Card = ({ candidate }: { candidate: CandidatesInterface }) => {
 	const screenWidth = Dimensions.get('window').width;
@@ -50,6 +50,7 @@ export const Card = ({ candidate }: { candidate: CandidatesInterface }) => {
 				]
 			}]}>
 		<ReportButton/>
+		<InfoButton toggle={false} />
 	</Animated.View>
 	);
 };
