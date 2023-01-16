@@ -101,3 +101,5 @@ add icon change on status (example has mail has no mail)
 impliment blur hash to pictures
 
 consider a swipe down for pass/decide later
+
+add setting's>Swipe>Text Hints Toggle
