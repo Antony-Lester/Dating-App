@@ -97,3 +97,7 @@ Travel mode : displays approximately when user is in your area, when travel mode
 add stats  numbers & % to connection preferences
 
 add icon change on status (example has mail has no mail)
+
+impliment blur hash to pictures
+
+consider a swipe down for pass/decide later
