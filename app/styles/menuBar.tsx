@@ -19,7 +19,7 @@ export const menuItem: ViewStyle = {
     alignItems: 'center',
     alignSelf: 'flex-end',
     justifyContent: 'space-around',
-    backgroundColor: setTheme.main,
+    backgroundColor: setTheme.subDark,
     borderTopEndRadius: 80,
     borderTopStartRadius: 80,
 }
@@ -29,7 +29,7 @@ export const menuItemFocused: ViewStyle = {
     height: '100%',
     alignItems: 'center',
     justifyContent: 'space-around',
-    backgroundColor: setTheme.mainLight,
+    backgroundColor: setTheme.subLight,
     borderTopEndRadius: 80,
     borderTopStartRadius: 80,
 }
@@ -42,7 +42,7 @@ export const menuItemDisabled: ViewStyle = {
     alignItems: 'center',
     alignSelf: 'flex-end',
     justifyContent: 'space-around',
-    backgroundColor: setTheme.mainDark,
+    backgroundColor: setTheme.subDark,
     borderTopEndRadius: 80,
     borderTopStartRadius: 80,
 }
@@ -52,7 +52,7 @@ export const menuText: TextStyle = {
     fontSize: 16,
 }
 export const menuTextFocused: TextStyle = {
-    color: setTheme.mainText,
+    color: setTheme.subText,
     fontWeight: 'normal',
     fontSize: 20
 }

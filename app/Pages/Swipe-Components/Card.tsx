@@ -1,11 +1,10 @@
-/** @format */
 
 import { useState } from 'react';
-import { Animated, Dimensions, View, PanResponder, Text } from 'react-native';
+import { Animated, Dimensions, PanResponder, Image} from 'react-native';
 
 import { CandidatesInterface } from '../../utils/interfaces';
 import { handleKiss, handleMarry, handleAvoid, animateReset, animateKiss, animateMarry, animateAvoid } from '../../utils/swipe';
-import { card } from '../../styles/swipe';
+import { card, picture } from '../../styles/swipe';
 import { InfoButton, ReportButton } from './Button';
 
 export const Card = ({ candidate }: { candidate: CandidatesInterface }) => {
@@ -49,8 +48,9 @@ export const Card = ({ candidate }: { candidate: CandidatesInterface }) => {
 						{ rotate: rotateCard },
 				]
 			}]}>
+		<Image source={{ uri: candidate.imageURI }} style={picture}/>
 		<ReportButton/>
-		<InfoButton toggle={false} />
+		<InfoButton toggle={true} />
 	</Animated.View>
 	);
 };

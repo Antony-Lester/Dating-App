@@ -1,5 +1,5 @@
 
-import { TextStyle, ViewStyle } from "react-native";
+import { ImageStyle, TextStyle, ViewStyle } from "react-native";
 
 import { setTheme } from "./theme";
 
@@ -8,12 +8,17 @@ export const card: ViewStyle = {
     top: '5%',
     height: '70%',
     width: '90%',
-    backgroundColor: setTheme.main,
     alignSelf: 'center',
     borderRadius: 33,
-    borderWidth: 3,
+    borderWidth: 4,
+    borderColor: setTheme.mainDark
 };
-
+export const picture: ImageStyle = {
+    height: '100%',
+    width: '100%',
+    borderRadius: 30,
+}
+//buttons
 export const buttonBar: ViewStyle = {
     position: 'absolute',
     top: '75%',
@@ -28,7 +33,7 @@ export const buttonBar: ViewStyle = {
 export const buttonBackground: ViewStyle = {
     width: '20%',
     height: '90%',
-    backgroundColor: setTheme.mainLight,
+    backgroundColor: setTheme.main,
     alignItems: 'center',
     alignContent: 'center',
     justifyContent: 'space-evenly',
@@ -38,26 +43,29 @@ export const buttonBackground: ViewStyle = {
     borderBottomRightRadius: 30,
 };
 
-export const buttonReport: ViewStyle = {
+
+const buttonCard: ViewStyle = {
+    position: 'absolute',
     width: '25%',
     height: '5%',
-    backgroundColor: setTheme.mainLight,
     alignItems: 'center',
-    alignSelf: 'flex-start',
     justifyContent: 'space-evenly',
+    backgroundColor: setTheme.mainDark,
+}
+
+export const buttonReport: ViewStyle = {
+    ...buttonCard,
+    top: 0,
+    alignSelf: 'flex-start',
     borderTopLeftRadius: 90,
     borderBottomRightRadius: 30,
     flexDirection: 'row-reverse',
 };
 
 export const buttonInfo: ViewStyle = {
-    top: '144.5%',
-    width: '25%',
-    height: '5%',
-    backgroundColor: setTheme.mainLight,
-    alignItems: 'center',
+    ...buttonCard,
+    bottom: 0,
     alignSelf: 'flex-end',
-    justifyContent: 'space-evenly',
     borderTopLeftRadius: 30,
     borderBottomRightRadius: 90,
     flexDirection: 'row',
