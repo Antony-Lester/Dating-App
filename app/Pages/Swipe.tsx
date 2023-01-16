@@ -16,6 +16,6 @@ export const Swipe = () => {
         <View style={page}>
         {candidates.map((candidate) => (<Card key={candidate.uid} candidate={candidate}/>))}
         </View>
-        <ButtonBar />
+        <ButtonBar/>
     </>)
 }

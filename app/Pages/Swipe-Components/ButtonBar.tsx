@@ -8,4 +8,4 @@ export const ButtonBar = () => {
         <KissButton/>
         <MarryButton/>
         <AvoidButton/>
-</View>)}
+        </View>)}

@@ -10,10 +10,9 @@ export const card: ViewStyle = {
     width: '90%',
     backgroundColor: setTheme.main,
     flex: 1,
-    justifyContent: 'space-around',
-	alignSelf: 'center',
-    borderRadius: 33, 
-}
+    alignSelf: 'center',
+    borderRadius: 33,
+};
 
 export const buttonBar: ViewStyle = {
     position: 'absolute',
@@ -24,7 +23,7 @@ export const buttonBar: ViewStyle = {
     alignItems: 'center',
     alignContent: 'center',
     justifyContent: 'space-around',
-}
+};
 
 export const buttonBackground: ViewStyle = {
     width: '20%',
@@ -37,12 +36,28 @@ export const buttonBackground: ViewStyle = {
     borderTopRightRadius: 90,
     borderBottomLeftRadius: 30,
     borderBottomRightRadius: 30,
+};
 
-    
-}
+export const buttonReport: ViewStyle = {
+    width: '20%',
+    height: '5%',
+    backgroundColor: setTheme.mainLight,
+    alignItems: 'center',
+    alignSelf: 'flex-start',
+    justifyContent: 'space-evenly',
+    borderTopLeftRadius: 90,
+    borderBottomRightRadius: 30,
+    flexDirection: 'row',
+};
 
 export const buttonText: TextStyle = {
     color: setTheme.mainText,
     fontWeight: 'normal',
     fontSize: 20,
-}
+};
+
+export const buttonTextSmall: TextStyle = {
+    color: setTheme.mainText,
+    fontWeight: '300',
+    fontSize: 12,
+};
