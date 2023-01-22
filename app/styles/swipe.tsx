@@ -18,6 +18,7 @@ export const picture: ImageStyle = {
     width: '100%',
     borderRadius: 30,
 }
+
 //buttons
 export const buttonBar: ViewStyle = {
     position: 'absolute',
@@ -81,4 +82,17 @@ export const buttonTextSmall: TextStyle = {
     color: setTheme.mainText,
     fontWeight: '300',
     fontSize: 12,
+};
+
+export const name: TextStyle = {
+    position: 'absolute',
+    left: '25%',
+    height: '5%',
+    width: '75%',
+    paddingLeft: '2%',
+    paddingRight: '5%',
+    fontSize: 22,
+    textAlign: 'center',
+    fontWeight: 'bold',
+    overflow: 'hidden',
 };

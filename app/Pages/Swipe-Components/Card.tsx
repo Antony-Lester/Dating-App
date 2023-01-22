@@ -1,11 +1,12 @@
 
 import { useState } from 'react';
-import { Animated, Dimensions, PanResponder, Image} from 'react-native';
+import { Animated, Dimensions, PanResponder, Image, Text} from 'react-native';
 
 import { CandidatesInterface } from '../../utils/interfaces';
 import { handleKiss, handleMarry, handleAvoid, animateReset, animateKiss, animateMarry, animateAvoid } from '../../utils/swipe';
-import { card, picture } from '../../styles/swipe';
+import { card, picture, name } from '../../styles/swipe';
 import { InfoButton, ReportButton } from './Button';
+import { capitalizeFirstLetter } from '../../utils/general';
 
 export const Card = ({ candidate }: { candidate: CandidatesInterface }) => {
 	const screenWidth = Dimensions.get('window').width;
@@ -51,6 +52,7 @@ export const Card = ({ candidate }: { candidate: CandidatesInterface }) => {
 		<Image source={{ uri: candidate.imageURI }} style={picture}/>
 		<ReportButton/>
 		<InfoButton toggle={true} />
+		<Text style={name}>{capitalizeFirstLetter(candidate.name)}</Text>
 	</Animated.View>
 	);
 };
