@@ -4,9 +4,10 @@ import {
     menuFocused,
     main,
     small,
-    helper,
     hint,
 } from "../../styles/icons";
+
+import { helper, helperKiss, helperMarry, helperAvoid } from "../../styles/swipe";
 
 //--menu--
 export const Profile = ({focus}: any) => <Text style={focus == 'profile' ? menuFocused : menu}>👤</Text> 
@@ -24,9 +25,10 @@ export const Report = () => <Text style={small}>⚠️</Text>
 export const Info = () => <Text style={small}>💡</Text>
 export const Picture = () => <Text style={small}>👤</Text> 
 //helper
-export const KissHelper = () => <Text style={helper}>💋</Text>
-export const MarryHelper = () => <Text style={helper}>💎</Text>
-export const AvoidHelper = () => <Text style={helper}>⛔</Text>
+export const HelperKiss = () => <Text style={{ ...helper, ...helperKiss
+}}>💋</Text>
+export const HelperMarry = () => <Text style={{ ...helper, ...helperMarry }}>💎</Text>
+export const HelperAvoid = () => <Text style={{ ...helper, ...helperAvoid }}>⛔</Text>
 
 //arrows
 export const ArrowLeft = () => <Image style={hint} source={require('../../assets/arrows/arrow_left.png')}/> 

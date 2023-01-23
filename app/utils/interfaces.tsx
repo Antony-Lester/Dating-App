@@ -1,3 +1,5 @@
+import { Animated } from "react-native"
+
 export interface UserInterface {
     uid?: string
     name?: string
@@ -36,8 +38,16 @@ export interface CandidatesInterface {
     imageURI: string
     imageBlurHash: string
     bio: string
+    index?: number
 }
 export interface SwipeInterface {
     candidates: Array<CandidatesInterface>,
     results: Object
+}
+
+export interface HelperInterface { 
+    rotate?: any,
+    opacity?: number,
+    x?: number,
+    y?: number
 }

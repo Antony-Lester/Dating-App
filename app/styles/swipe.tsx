@@ -96,3 +96,16 @@ export const name: TextStyle = {
     fontWeight: 'bold',
     overflow: 'hidden',
 };
+
+export const helper: TextStyle = {
+    position: 'absolute', 
+    top: '70%',
+    alignSelf: 'center',
+    textAlign: 'center',
+    fontSize: 80, 
+    flex: 1,
+};
+
+export const helperKiss: TextStyle = {...helper };
+export const helperMarry: TextStyle = {...helper };
+export const helperAvoid: TextStyle = {...helper };

@@ -20,8 +20,8 @@ export const handleAvoid = (candidate: CandidatesInterface) => {
 
 export const animateReset = (x: Animated.Value, y: Animated.Value) => {
     Animated.parallel([
-        Animated.spring(x, { toValue: 0, speed: 0.5, bounciness: 30, useNativeDriver: true, }),
-        Animated.spring(y, { toValue: 0, speed: 0.5, bounciness: 30, useNativeDriver: true, })
+        Animated.spring(x, { toValue: 0, speed: 0.5, bounciness: 10, useNativeDriver: true, }),
+        Animated.spring(y, { toValue: 0, speed: 0.5, bounciness: 10, useNativeDriver: true, })
     ]).start()
 };
 

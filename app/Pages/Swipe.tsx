@@ -14,7 +14,7 @@ export const Swipe = () => {
     //add a loading.. when empty anf fetching more..
     return (<>
         <View style={page}>
-        {candidates.map((candidate) => (<Card key={candidate.uid} candidate={candidate}/>))}
+            {candidates.map((candidate, index) => (<Card key={candidate.uid} candidate={{ ...candidate, index }}/>))}
         </View>
         <ButtonBar/>
     </>)

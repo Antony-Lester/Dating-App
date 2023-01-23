@@ -7,6 +7,7 @@ import { handleKiss, handleMarry, handleAvoid, animateReset, animateKiss, animat
 import { card, picture, name } from '../../styles/swipe';
 import { InfoButton, ReportButton } from './Button';
 import { capitalizeFirstLetter } from '../../utils/general';
+import { AvoidHelper, KissHelper, MarryHelper } from './Helpers';
 
 export const Card = ({ candidate }: { candidate: CandidatesInterface }) => {
 	const screenWidth = Dimensions.get('window').width;
@@ -15,14 +16,28 @@ export const Card = ({ candidate }: { candidate: CandidatesInterface }) => {
 	const [x, _x] = useState(new Animated.Value(0));
 	const [y, _y] = useState(new Animated.Value(0));
 	let opacity = new Animated.Value(1);
-
+	//card
 	let rotateCard = x.interpolate({
 		inputRange: [-200, 0, 200],outputRange: ['90deg', '0deg', '-90deg'],
 	});
 	let moveCard = y.interpolate({
 		inputRange: [-1, 0, 1],outputRange: [-4, 0, 4],
 	});
-
+	//helper opacity
+	let opacityHelperKiss = x.interpolate({
+		inputRange: [-50, -25, -20],outputRange: [1, 0.65, 0],extrapolate: "clamp",
+	});
+	let opacityHelperMarry = y.interpolate({
+		inputRange: [-45, -30],outputRange: [1, 0],extrapolate: "clamp",
+	});
+	let opacityHelperAvoid = x.interpolate({
+		inputRange: [20, 25, 50],outputRange: [0, 0.65, 1],extrapolate: "clamp",
+	});
+	//helper position
+	let rotateHelper = x.interpolate({
+		inputRange: [-80, 0, 80],outputRange: ['-35deg', '0deg', '35deg'],
+	});
+	
 	let animation = PanResponder.create({
 		onStartShouldSetPanResponder: () => false,
 		onMoveShouldSetPanResponder: () => true,
@@ -53,6 +68,14 @@ export const Card = ({ candidate }: { candidate: CandidatesInterface }) => {
 		<ReportButton/>
 		<InfoButton toggle={true} />
 		<Text style={name}>{capitalizeFirstLetter(candidate.name)}</Text>
+
+		<KissHelper rotate={rotateHelper}
+		opacity={opacityHelperKiss} />
+		<MarryHelper rotate={rotateHelper}
+		opacity={opacityHelperMarry} />
+		<AvoidHelper rotate={rotateHelper}
+		opacity={opacityHelperAvoid} />
+		
 	</Animated.View>
 	);
 };
