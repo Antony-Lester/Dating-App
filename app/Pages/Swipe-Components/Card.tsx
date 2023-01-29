@@ -1,7 +1,6 @@
-
+//@ts-nocheck
 import { useState } from 'react';
 import { Animated, Dimensions, PanResponder, Image, Text} from 'react-native';
-
 import { CandidatesInterface } from '../../utils/interfaces';
 import { handleKiss, handleMarry, handleAvoid, animateReset, animateKiss, animateMarry, animateAvoid } from '../../utils/swipe';
 import { card, picture, name } from '../../styles/swipe';
@@ -35,7 +34,7 @@ export const Card = ({ candidate }: { candidate: CandidatesInterface }) => {
 	});
 	//helper position
 	let rotateHelper = x.interpolate({
-		inputRange: [-80, 0, 80],outputRange: ['-35deg', '0deg', '35deg'],
+		inputRange: [-80, 0, 80],outputRange: ['-20deg', '0deg', '35deg'],
 	});
 	
 	let animation = PanResponder.create({
@@ -68,14 +67,9 @@ export const Card = ({ candidate }: { candidate: CandidatesInterface }) => {
 		<ReportButton/>
 		<InfoButton toggle={true} />
 		<Text style={name}>{capitalizeFirstLetter(candidate.name)}</Text>
-
-		<KissHelper rotate={rotateHelper}
-		opacity={opacityHelperKiss} />
-		<MarryHelper rotate={rotateHelper}
-		opacity={opacityHelperMarry} />
-		<AvoidHelper rotate={rotateHelper}
-		opacity={opacityHelperAvoid} />
-		
+		<KissHelper rotate={rotateHelper} opacity={opacityHelperKiss} /> 
+		<MarryHelper rotate={rotateHelper} opacity={opacityHelperMarry} />
+		<AvoidHelper rotate={rotateHelper} opacity={opacityHelperAvoid} />
 	</Animated.View>
 	);
 };

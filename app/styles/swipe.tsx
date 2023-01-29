@@ -106,6 +106,6 @@ export const helper: TextStyle = {
     flex: 1,
 };
 
-export const helperKiss: TextStyle = {...helper };
+export const helperKiss: TextStyle = {...helper , top: '25%', left: '10%'};
 export const helperMarry: TextStyle = {...helper };
-export const helperAvoid: TextStyle = {...helper };
+export const helperAvoid: TextStyle = {...helper , top: '25%', right: '10%'};

@@ -3,8 +3,6 @@ import { HelperAvoid, HelperKiss, HelperMarry } from "../Elements/Icons";
 import { helperAvoid, helperKiss, helperMarry } from "../../styles/swipe";
 import { HelperInterface } from "../../utils/interfaces";
 
-
-
 export const KissHelper = ({ opacity = 0, rotate = '0deg' }: HelperInterface) => {
     return (<Animated.View
         
@@ -34,7 +32,7 @@ export const AvoidHelper = ({ opacity = 0, rotate = '0deg' }: HelperInterface) =
         
         style={[
         helperAvoid, { opacity, transform: [
-            { rotate }, 
+            { rotate },
          ]}]}>
         <HelperAvoid />
     </Animated.View>)

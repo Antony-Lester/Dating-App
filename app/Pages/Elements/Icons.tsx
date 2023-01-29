@@ -1,4 +1,4 @@
-import { Text, Image } from "react-native";
+import { Text, Image, View } from "react-native";
 import {
     menu,
     menuFocused,
