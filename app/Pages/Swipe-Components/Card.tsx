@@ -2,11 +2,13 @@
 import { useState } from 'react';
 import { Animated, Dimensions, PanResponder, Image, Text} from 'react-native';
 import { CandidatesInterface } from '../../utils/interfaces';
-import { handleKiss, handleMarry, handleAvoid, animateReset, animateKiss, animateMarry, animateAvoid } from '../../utils/swipe';
+import { animateReset, animateKiss, animateMarry, animateAvoid } from '../../utils/swipe';
 import { card, picture, name } from '../../styles/swipe';
 import { InfoButton, ReportButton } from './Button';
 import { capitalizeFirstLetter } from '../../utils/general';
 import { AvoidHelper, KissHelper, MarryHelper } from './Helpers';
+import store from '../../store/store';
+import { LOG_KISS, LOG_MARRY, LOG_AVOID } from '../../store/taskTypes';
 
 export const Card = ({ candidate }: { candidate: CandidatesInterface }) => {
 	const screenWidth = Dimensions.get('window').width;
@@ -48,11 +50,24 @@ export const Card = ({ candidate }: { candidate: CandidatesInterface }) => {
 			if (gestureState.dx > -swipeTrigger && gestureState.dx < swipeTrigger &&
 				gestureState.dy > -swipeTrigger) { animateReset(x, y) }
 			else if (gestureState.dx < swipeTrigger && gestureState.dy > -swipeTrigger)
-			{ animateKiss(x, screenWidth, opacity); handleKiss(candidate)}
+			{
+				//ERROR is here because of store dispatch being added
+				animateKiss(x, screenWidth, opacity)
+				store.dispatch({ type: LOG_KISS, payload: candidate.uid })
+			}
 			else if (gestureState.dy < -swipeTrigger)
-			{ animateMarry(y, screenHeight, opacity); handleMarry(candidate)}
+			{
+				//ERROR is here because of store dispatch being added
+				animateMarry(y, screenHeight, opacity);
+				store.dispatch({ type: LOG_MARRY, payload: candidate.uid })
+			}
 			else if (gestureState.dx > swipeTrigger)
-			{ animateAvoid(x, screenWidth, opacity); handleAvoid(candidate)}}
+			{
+				//ERROR is here because of store dispatch being added
+				animateAvoid(x, screenWidth, opacity);
+				store.dispatch({ type: LOG_AVOID, payload: candidate.uid })
+			}
+		}
 	});
 	return (<Animated.View{...animation.panHandlers}
 			style={[card,
