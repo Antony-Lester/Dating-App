@@ -1,4 +1,4 @@
-import * as SplashScreen from 'expo-splash-screen';
+//import * as SplashScreen from 'expo/expo-splash-screen';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Provider } from 'react-redux'
@@ -14,8 +14,8 @@ import { navigationRef } from './Pages/Components/MenuBar';
 
 
 export default function App() {
-  SplashScreen.preventAutoHideAsync();
-  setTimeout(SplashScreen.hideAsync, 1000); 
+  //SplashScreen.preventAutoHideAsync();
+  //setTimeout(SplashScreen.hideAsync, 1000); 
   //TODO also call when api call is finished to remove splash screen
 
   //..redux testing...
