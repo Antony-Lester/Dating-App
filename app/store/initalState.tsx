@@ -35,7 +35,7 @@ initialState.swipe = swipe
 //with Messages
 //initialState.messages = messages
 //without Messages
-//initialState.messages = messagesEmpty
+initialState.messages = messagesEmpty
 
 //------------------------------------------------
 export default initialState;

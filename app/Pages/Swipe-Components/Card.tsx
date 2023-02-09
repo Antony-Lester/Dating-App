@@ -47,28 +47,13 @@ export const Card = ({ candidate }: { candidate: CandidatesInterface }) => {
 		onPanResponderMove: (_evt, gestureState) => {
 			x.setValue(gestureState.dx); y.setValue(gestureState.dy);},
 		onPanResponderRelease: (_evt, gestureState) => {
-			if (gestureState.dx > -swipeTrigger && gestureState.dx < swipeTrigger &&
-				gestureState.dy > -swipeTrigger) { animateReset(x, y) }
-			else if (gestureState.dx < swipeTrigger && gestureState.dy > -swipeTrigger)
-			{
-				//ERROR is here because of store dispatch being added
-				animateKiss(x, screenWidth, opacity)
-				store.dispatch({ type: LOG_KISS, payload: candidate.uid })
-			}
+			if (gestureState.dx < swipeTrigger && gestureState.dy > -swipeTrigger)
+			{animateKiss(x, screenWidth, opacity, candidate.uid)}
 			else if (gestureState.dy < -swipeTrigger)
-			{
-				//ERROR is here because of store dispatch being added
-				animateMarry(y, screenHeight, opacity);
-				store.dispatch({ type: LOG_MARRY, payload: candidate.uid })
-			}
+			{animateMarry(y, screenHeight, opacity, candidate.uid)}
 			else if (gestureState.dx > swipeTrigger)
-			{
-				//ERROR is here because of store dispatch being added
-				animateAvoid(x, screenWidth, opacity);
-				store.dispatch({ type: LOG_AVOID, payload: candidate.uid })
-			}
-		}
-	});
+			{animateAvoid(x, screenWidth, opacity)}
+			else {animateReset(x, y)}}});
 	return (<Animated.View{...animation.panHandlers}
 			style={[card,
 				{opacity: opacity,
