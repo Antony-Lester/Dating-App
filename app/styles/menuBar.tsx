@@ -49,11 +49,11 @@ export const menuItemDisabled: ViewStyle = {
 export const menuText: TextStyle = {
     color: setTheme.subText,
     fontWeight: 'normal',
-    fontSize: 16,
+    fontSize: 10,
 }
 export const menuTextFocused: TextStyle = {
     color: setTheme.subText,
     fontWeight: 'normal',
-    fontSize: 20
+    fontSize: 16
 }
 export const menuTextDisabled: TextStyle = {opacity: 0, height: 0}

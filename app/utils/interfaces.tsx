@@ -51,3 +51,24 @@ export interface HelperInterface {
     x?: number,
     y?: number
 }
+
+export interface SwipeButtonBarInterface {
+    x: Animated.Value,
+    y: Animated.Value,
+    screenWidth: number,
+    screenHeight: number,
+    opacity: Animated.Value,
+    uid: number|string
+}
+export interface SwipeButtonInterfaceX {
+    x: Animated.Value,
+    screenWidth: number,
+    opacity: Animated.Value,
+    uid: number|string
+}
+export interface SwipeButtonInterfaceY {
+    y: Animated.Value,
+    screenHeight: number,
+    opacity: Animated.Value,
+    uid: number|string
+}

@@ -4,16 +4,16 @@ import { Animated, Dimensions, PanResponder, Image, Text} from 'react-native';
 import { CandidatesInterface } from '../../utils/interfaces';
 import { animateReset, animateKiss, animateMarry, animateAvoid } from '../../utils/swipe';
 import { card, picture, name } from '../../styles/swipe';
-import { InfoButton, ReportButton } from './Button';
+import { ReportButton } from './Button';
 import { capitalizeFirstLetter } from '../../utils/general';
 import { AvoidHelper, KissHelper, MarryHelper } from './Helpers';
-import store from '../../store/store';
-import { LOG_KISS, LOG_MARRY, LOG_AVOID } from '../../store/taskTypes';
+import { ButtonBar } from './ButtonBar';
+import { useSelector } from 'react-redux';
 
 export const Card = ({ candidate }: { candidate: CandidatesInterface }) => {
 	const screenWidth = Dimensions.get('window').width;
 	const screenHeight = Dimensions.get('window').height;
-	const swipeTrigger: number = Math.round(screenWidth * 0.15);
+	const swipeTrigger: number = Math.round(screenWidth * 0.10);
 	const [x, _x] = useState(new Animated.Value(0));
 	const [y, _y] = useState(new Animated.Value(0));
 	let opacity = new Animated.Value(1);
@@ -38,7 +38,7 @@ export const Card = ({ candidate }: { candidate: CandidatesInterface }) => {
 	let rotateHelper = x.interpolate({
 		inputRange: [-80, 0, 80],outputRange: ['-20deg', '0deg', '35deg'],
 	});
-	
+	let image = useSelector(state => state.app.subPage === 'image')
 	let animation = PanResponder.create({
 		onStartShouldSetPanResponder: () => false,
 		onMoveShouldSetPanResponder: () => true,
@@ -47,13 +47,16 @@ export const Card = ({ candidate }: { candidate: CandidatesInterface }) => {
 		onPanResponderMove: (_evt, gestureState) => {
 			x.setValue(gestureState.dx); y.setValue(gestureState.dy);},
 		onPanResponderRelease: (_evt, gestureState) => {
-			if (gestureState.dx < swipeTrigger && gestureState.dy > -swipeTrigger)
+			if (gestureState.dx < swipeTrigger && 
+				gestureState.dx > -swipeTrigger && 
+				gestureState.dy > -swipeTrigger) {animateReset(x, y)}
+			else if (gestureState.dx < -swipeTrigger)
 			{animateKiss(x, screenWidth, opacity, candidate.uid)}
-			else if (gestureState.dy < -swipeTrigger)
+			else if (gestureState.dy < -(swipeTrigger*0.5))
 			{animateMarry(y, screenHeight, opacity, candidate.uid)}
 			else if (gestureState.dx > swipeTrigger)
-			{animateAvoid(x, screenWidth, opacity)}
-			else {animateReset(x, y)}}});
+			{animateAvoid(x, screenWidth, opacity, candidate.uid)}
+			}});
 	return (<Animated.View{...animation.panHandlers}
 			style={[card,
 				{opacity: opacity,
@@ -63,13 +66,13 @@ export const Card = ({ candidate }: { candidate: CandidatesInterface }) => {
 						{ rotate: rotateCard },
 				]
 			}]}>
-		<Image source={{ uri: candidate.imageURI }} style={picture}/>
+		{image ? <><Image source={{ uri: candidate.imageURI }} style={picture}/>
+		<Text style={name}>{capitalizeFirstLetter(candidate.name)}</Text></> : <></>}
 		<ReportButton/>
-		<InfoButton toggle={true} />
-		<Text style={name}>{capitalizeFirstLetter(candidate.name)}</Text>
-		<KissHelper rotate={rotateHelper} opacity={opacityHelperKiss} /> 
-		<MarryHelper rotate={rotateHelper} opacity={opacityHelperMarry} />
-		<AvoidHelper rotate={rotateHelper} opacity={opacityHelperAvoid} />
+		<KissHelper rotate={rotateHelper} opacity={opacityHelperKiss}/> 
+		<MarryHelper rotate={rotateHelper} opacity={opacityHelperMarry}/>
+		<AvoidHelper rotate={rotateHelper} opacity={opacityHelperAvoid}/>
+		<ButtonBar x={x} y={y} screenWidth={screenWidth} screenHeight={screenHeight} opacity={opacity} uid={candidate.uid}/>
 	</Animated.View>
 	);
 };

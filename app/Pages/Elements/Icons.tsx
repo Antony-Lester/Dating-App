@@ -22,15 +22,11 @@ export const Send = () => <Text style={main}>💌</Text>
 
 //--small--
 export const Report = () => <Text style={small}>⚠️</Text>
-export const Info = () => <Text style={small}>💡</Text>
-export const Picture = () => <Text style={small}>👤</Text> 
+export const Info = () => <Text style={main}>💡</Text>
+export const Picture = () => <Text style={main}>👤</Text> 
 //helper
 export const HelperKiss = () => <Text style={{ ...helper, ...helperKiss
 }}>💋</Text>
 export const HelperMarry = () => <Text style={{ ...helper, ...helperMarry }}>💎</Text>
 export const HelperAvoid = () => <Text style={{ ...helper, ...helperAvoid }}>⛔</Text>
 
-//arrows
-export const ArrowLeft = () => <Image style={hint} source={require('../../assets/arrows/arrow_left.png')}/> 
-export const ArrowUp = () => <Image style={hint} source={require('../../assets/arrows/arrow_up.png')}/> 
-export const ArrowRight = () => <Image style={hint} source={require('../../assets/arrows/arrow_right.png')}/> 
