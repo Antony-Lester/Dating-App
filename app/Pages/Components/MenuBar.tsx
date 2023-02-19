@@ -10,7 +10,7 @@ import store from "../../store/store";
 import { CHANGE_PAGE_MESSAGES, CHANGE_PAGE_PROFILE, CHANGE_PAGE_SWIPE } from "../../store/taskTypes";
 import { capitalizeFirstLetter } from '../../utils/general'
 
-
+import { Blurhash } from 'react-native-blurhash';
 export const navigationRef = createNavigationContainerRef()
 
 export const MenuBar = () => { 
@@ -19,6 +19,12 @@ export const MenuBar = () => {
     let subPage = useSelector(state => state.app.subPage)
     return(
         <View style={menuBar}>
+
+<Blurhash
+      blurhash="LGFFaXYk^6#M@-5c,1J5@[or[Q6."
+      style={{flex: 1}}
+    />
+
             <TouchableOpacity style={page === 'profile' ? menuItemFocused : menuItem}
                 onPress={() => store.dispatch({ type: CHANGE_PAGE_PROFILE, payload: { page: 'profile' } })}>
                 {subPage !== 'profile' ? <Settings focus={page}/> : <Profile focus={page}/> }
