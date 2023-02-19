@@ -12,14 +12,14 @@ export const menuBar: ViewStyle = {
 }
 export const menuItem: ViewStyle = {
     position: 'relative',
-    minWidth: '25%',
-    marginLeft: '2.5%',
-    marginRight: '2.5%',
-    height: '75%',
+    minWidth: '20%',
+    marginLeft: '5%',
+    marginRight: '5%',
+    height: '60%',
     alignItems: 'center',
     alignSelf: 'flex-end',
     justifyContent: 'space-around',
-    backgroundColor: setTheme.subDark,
+    backgroundColor: setTheme.subLight,
     borderTopEndRadius: 80,
     borderTopStartRadius: 80,
 }
@@ -42,9 +42,10 @@ export const menuItemDisabled: ViewStyle = {
     alignItems: 'center',
     alignSelf: 'flex-end',
     justifyContent: 'space-around',
-    backgroundColor: setTheme.subDark,
+    backgroundColor: setTheme.sub,
     borderTopEndRadius: 80,
     borderTopStartRadius: 80,
+    opacity: 0
 }
 export const menuText: TextStyle = {
     color: setTheme.subText,

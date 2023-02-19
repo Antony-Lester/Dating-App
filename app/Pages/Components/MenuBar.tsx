@@ -4,7 +4,7 @@ import { createNavigationContainerRef } from '@react-navigation/native';
 import { useSelector } from 'react-redux';
 
 import { menuBar, menuItem, menuItemDisabled, menuItemFocused, menuText, menuTextDisabled, menuTextFocused } from "../../styles/menuBar"
-import { Chat, Info, Profile, Swipe } from "../Elements/Icons"
+import { Chat, Info, Profile, Picture, Swipe } from "../Elements/Icons"
 
 import store from "../../store/store";
 import { CHANGE_PAGE_MESSAGES, CHANGE_PAGE_PROFILE, CHANGE_PAGE_SWIPE } from "../../store/taskTypes";
@@ -25,7 +25,7 @@ export const MenuBar = () => {
 
             <TouchableOpacity style={page == 'swipe' ? menuItemFocused : permissions.swipe ? menuItem : menuItemDisabled}
                 onPress={() => store.dispatch({type: CHANGE_PAGE_SWIPE})}>
-                {page !== 'swipe' ? <Swipe focus={page}/> :subPage === 'image'? <Info focus={page}/> : <Profile focus={page}/>}
+                {page !== 'swipe' ? <Swipe focus={page}/> :subPage === 'image'? <Info focus={page}/> : <Picture focus={page}/>}
                 {page == 'swipe' ? <Text style={menuTextFocused}>{page !== 'swipe' ? 'swipe':subPage === 'image'? 'Info' : 'Face'}</Text> : <></>}
             </TouchableOpacity>
 

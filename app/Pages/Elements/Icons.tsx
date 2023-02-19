@@ -19,11 +19,12 @@ export const Kiss = () => <Text style={[main, { transform: [{ rotate: '45deg' }]
 export const Marry = () => <Text style={main}>💎</Text>
 export const Avoid = () => <Text style={main}>⛔</Text>
 export const Send = () => <Text style={main}>💌</Text>
+export const Info = () => <Text style={main}>🧠</Text>
+export const Picture = () => <Text style={main}>😐</Text> 
 
 //--small--
 export const Report = () => <Text style={small}>⚠️</Text>
-export const Info = () => <Text style={main}>💡</Text>
-export const Picture = () => <Text style={main}>👤</Text> 
+
 //helper
 export const HelperKiss = () => <Text style={{ ...helper, ...helperKiss
 }}>💋</Text>
