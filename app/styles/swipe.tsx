@@ -110,7 +110,7 @@ export const helper: TextStyle = {
   top: "30%",
   alignSelf: "center",
   textAlign: "center",
-  fontSize: 80,
+  fontSize: 140,
   flex: 1,
 };
 

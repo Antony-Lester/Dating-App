@@ -34,4 +34,4 @@ export const dark : Theme = {
     subText: '#ffffff',
 }
 
-export let setTheme : Theme = dark
+export let setTheme : Theme = light

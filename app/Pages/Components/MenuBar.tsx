@@ -26,7 +26,7 @@ export const MenuBar = () => {
             <TouchableOpacity style={page == 'swipe' ? menuItemFocused : permissions.swipe ? menuItem : menuItemDisabled}
                 onPress={() => store.dispatch({type: CHANGE_PAGE_SWIPE})}>
                 {page !== 'swipe' ? <Swipe focus={page}/> :subPage === 'image'? <Info focus={page}/> : <Profile focus={page}/>}
-                {page == 'swipe' ? <Text style={menuTextFocused}>{page !== 'swipe' ? 'swipe':subPage === 'image'? 'Bio' : 'Picture'}</Text> : <></>}
+                {page == 'swipe' ? <Text style={menuTextFocused}>{page !== 'swipe' ? 'swipe':subPage === 'image'? 'Info' : 'Face'}</Text> : <></>}
             </TouchableOpacity>
 
             <TouchableOpacity style={page == 'messages' ? menuItemFocused : permissions.message ? menuItem : menuItemDisabled}
