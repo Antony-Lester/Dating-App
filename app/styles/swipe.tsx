@@ -66,7 +66,7 @@ export const buttonReport: ViewStyle = {
   ...buttonCard,
   top: 0,
   alignSelf: "flex-start",
-  borderTopLeftRadius: 90,
+  borderTopLeftRadius: 30,
   borderBottomRightRadius: 30,
   flexDirection: "row-reverse",
 };

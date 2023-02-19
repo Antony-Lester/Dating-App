@@ -20,7 +20,7 @@ export const light : Theme = {
     subLight: '#819ca9',
     sub: '#546e7a',
     subDark: '#29434e',
-    subText: '#000000',
+    subText: '#ffffff',
 }
 export const dark : Theme = {
     mainDark: '#484848',
@@ -34,4 +34,4 @@ export const dark : Theme = {
     subText: '#ffffff',
 }
 
-export let setTheme : Theme = light
+export let setTheme : Theme = dark

@@ -20,20 +20,19 @@ export const MenuBar = () => {
             <TouchableOpacity style={page === 'profile' ? menuItemFocused : menuItem}
                 onPress={() => store.dispatch({type: CHANGE_PAGE_PROFILE, payload: {page: 'profile'}})}>
                 <Profile focus={page} />
-                <Text style={page == 'profile' ? menuTextFocused : menuText}>Profile</Text>
+                {page == 'profile' ? <Text style={menuTextFocused}>Profile</Text> : <></>}
             </TouchableOpacity>
 
             <TouchableOpacity style={page == 'swipe' ? menuItemFocused : permissions.swipe ? menuItem : menuItemDisabled}
                 onPress={() => store.dispatch({type: CHANGE_PAGE_SWIPE})}>
                 {page !== 'swipe' ? <Swipe focus={page}/> :subPage === 'image'? <Info focus={page}/> : <Profile focus={page}/>}
-                
-                <Text style={page == 'swipe' ? menuTextFocused : permissions.swipe ? menuText : menuTextDisabled}>{page !== 'swipe' ? 'swipe':subPage === 'image'? 'Bio' : 'Picture'}</Text>
+                {page == 'swipe' ? <Text style={menuTextFocused}>{page !== 'swipe' ? 'swipe':subPage === 'image'? 'Bio' : 'Picture'}</Text> : <></>}
             </TouchableOpacity>
 
             <TouchableOpacity style={page == 'messages' ? menuItemFocused : permissions.message ? menuItem : menuItemDisabled}
                 onPress={() => store.dispatch({type: CHANGE_PAGE_MESSAGES})}>
-                <Chat focus={page}/>
-                <Text style={page == 'messages' ? menuTextFocused : permissions.message ? menuText : menuTextDisabled}>Chat</Text>
+                <Chat focus={page} />
+                {page == 'messages' ? <Text style={menuItemFocused}>Chat</Text> : <></> }
             </TouchableOpacity>
         </View>)
 }
