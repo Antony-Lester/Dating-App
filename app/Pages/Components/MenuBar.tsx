@@ -1,13 +1,15 @@
 //@ts-nocheck
-import { View, Text, TouchableOpacity } from "react-native"
+import { View, Text, TouchableOpacity} from "react-native"
 import { createNavigationContainerRef } from '@react-navigation/native';
 import { useSelector } from 'react-redux';
 
 import { menuBar, menuItem, menuItemDisabled, menuItemFocused, menuText, menuTextDisabled, menuTextFocused } from "../../styles/menuBar"
-import { Chat, Info, Profile, Picture, Swipe } from "../Elements/Icons"
+import { Chat, Info, Profile, Picture, Swipe, Settings} from "../Elements/Icons"
 
 import store from "../../store/store";
 import { CHANGE_PAGE_MESSAGES, CHANGE_PAGE_PROFILE, CHANGE_PAGE_SWIPE } from "../../store/taskTypes";
+import { capitalizeFirstLetter } from '../../utils/general'
+
 
 export const navigationRef = createNavigationContainerRef()
 
@@ -18,9 +20,11 @@ export const MenuBar = () => {
     return(
         <View style={menuBar}>
             <TouchableOpacity style={page === 'profile' ? menuItemFocused : menuItem}
-                onPress={() => store.dispatch({type: CHANGE_PAGE_PROFILE, payload: {page: 'profile'}})}>
-                <Profile focus={page} />
-                {page == 'profile' ? <Text style={menuTextFocused}>Profile</Text> : <></>}
+                onPress={() => store.dispatch({ type: CHANGE_PAGE_PROFILE, payload: { page: 'profile' } })}>
+                {subPage !== 'profile' ? <Settings focus={page}/> : <Profile focus={page}/> }
+                
+                
+                {page === 'profile' ? <Text style={menuTextFocused}>{capitalizeFirstLetter(subPage)}</Text> : <></>}
             </TouchableOpacity>
 
             <TouchableOpacity style={page == 'swipe' ? menuItemFocused : permissions.swipe ? menuItem : menuItemDisabled}
