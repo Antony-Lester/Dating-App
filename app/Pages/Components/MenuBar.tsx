@@ -20,11 +20,6 @@ export const MenuBar = () => {
     return(
         <View style={menuBar}>
 
-<Blurhash
-      blurhash="LGFFaXYk^6#M@-5c,1J5@[or[Q6."
-      style={{flex: 1}}
-    />
-
             <TouchableOpacity style={page === 'profile' ? menuItemFocused : menuItem}
                 onPress={() => store.dispatch({ type: CHANGE_PAGE_PROFILE, payload: { page: 'profile' } })}>
                 {subPage !== 'profile' ? <Settings focus={page}/> : <Profile focus={page}/> }

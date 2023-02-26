@@ -1,4 +1,4 @@
-import {Text, Animated } from "react-native";
+import { Animated } from "react-native";
 import { HelperAvoid, HelperKiss, HelperMarry } from "../Elements/Icons";
 import { helperAvoid, helperKiss, helperMarry } from "../../styles/swipe";
 import { HelperInterface } from "../../utils/interfaces";

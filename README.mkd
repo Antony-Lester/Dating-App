@@ -1,3 +1,7 @@
+#### #### Project Progress Preview
+
+[expo react native swipe animation - YouTube](https://youtu.be/yK0X_rYv0Jo)
+
 #### Problem Statement
 
 Connect users based on there long & short term romantic intentions, Inclusive of everyone, excluding people located in russia or the peoples republic of china mainland.
