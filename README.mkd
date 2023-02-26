@@ -40,19 +40,11 @@ Connect users based on there long & short term romantic intentions, Inclusive of
 
     <https://github.com/users/Antony-Lester/projects/1>
 
-#### Future Scope
+#### Future Scope V2.0
 
-Me icon to User face picture
+Multi language support
 
-web app
-
-option: of black & white pictures
-
-option: disable swipe buttons
-
-add smart tag line
-
-implement dark mode
+replace profile icon  with User face picture
 
 progress ring on sign up process
 
@@ -60,31 +52,21 @@ progress ring for swipes
 
 progress ring for messages
 
-Add additional filterable preferences :
+impliment blur hash to pictures
 
-    Education
+option: of black & white pictures
 
-    Work
+option: disable swipe buttons
 
-    Height
+#### Under Consideration
 
-    Size
+web app
 
-    Income
-
-    Religion
-
-    Food Preferences
-
-    Spoken Languages
-
-Multi language support
-
-reputation score metric :  calculated based on the way users treat other users, message reply time, message & profile content, reports received & made,
+reputation score metric : calculated based on the way users treat other users, message reply time, message & profile content, reports received & made,
 
 user star rating : based on 75% reputation score & 25% compatibility.
 
-Can Invite users on a date after a number of messages with a suggestion of     locations based on mutual preferences.
+Can Invite users on a date after a number of messages with a suggestion of  locations based on mutual preferences.
 
 After date can review the date user & location
 
@@ -93,13 +75,3 @@ Travel mode : user can change location to target matching with others
 Travel mode : add date range to change targeting location duration
 
 Travel mode : displays approximately when user is in your area, when travel mode is active
-
-add stats  numbers & % to connection preferences
-
-add icon change on status (example has mail has no mail)
-
-impliment blur hash to pictures
-
-consider a swipe down for pass/decide later
-
-add setting's>Swipe>Text Hints Toggle
