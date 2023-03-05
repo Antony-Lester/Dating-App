@@ -18,6 +18,8 @@ Connect users based on there long & short term romantic intentions, Inclusive of
 
 ###### After date can review the date user & location
 
+![base plan](mvp-base-front.png)
+
 ### Core Minimum Viable Product Features V1.0
 
     The core features of App is to allow users to connect with other users that suit     their preferences.
