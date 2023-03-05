@@ -10,6 +10,9 @@ import { AvoidHelper, KissHelper, MarryHelper } from './Helpers';
 import { ButtonBar } from './ButtonBar';
 import { useSelector } from 'react-redux';
 
+import { Bio } from './Bio';
+import { Picture } from './Picture';
+
 export const Card = ({ candidate }: { candidate: CandidatesInterface }) => {
 	const screenWidth = Dimensions.get('window').width;
 	const screenHeight = Dimensions.get('window').height;
@@ -66,8 +69,8 @@ export const Card = ({ candidate }: { candidate: CandidatesInterface }) => {
 						{ rotate: rotateCard },
 				]
 			}]}>
-		{image ? <><Image source={{ uri: candidate.imageURI }} style={picture}/>
-		<Text style={name}>{capitalizeFirstLetter(candidate.name)}</Text></> : <></>}
+		{image ? <Picture key={candidate.uid} candidate={{ ...candidate}}/>
+		: <Bio key={candidate.uid} candidate={{ ...candidate}} />}
 		<ReportButton/>
 		<KissHelper rotate={rotateHelper} opacity={opacityHelperKiss}/> 
 		<MarryHelper rotate={rotateHelper} opacity={opacityHelperMarry}/>
