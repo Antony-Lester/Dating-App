@@ -1,10 +1,10 @@
 function CHANGE_PAGE_PROFILE_ACTION(state: any, action: any) {
     
     if (state.app.page === 'profile') {
-        if (state.app.subPage !== 'settings') {
-            return { ...state, app: { ...state.app, subPage: 'settings' } }
+        if (state.app.subPage1 !== 'settings') {
+            return { ...state, app: { ...state.app, subPage1: 'settings' } }
         }
-        else {return { ...state, app: { ...state.app, subPage: 'profile'}}}
+        else {return { ...state, app: { ...state.app, subPage1: 'profile'}}}
     }
     
     

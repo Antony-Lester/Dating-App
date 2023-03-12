@@ -1,7 +1,8 @@
 let initialState : any = {
     app: {
         page: 'profile',
-        subPage: 'profile',
+        subPage1: 'settings',
+        subPage2: 'image',
         permissions: {
             swipe: false,
             message: false,

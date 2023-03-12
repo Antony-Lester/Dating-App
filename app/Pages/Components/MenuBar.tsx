@@ -10,28 +10,28 @@ import store from "../../store/store";
 import { CHANGE_PAGE_MESSAGES, CHANGE_PAGE_PROFILE, CHANGE_PAGE_SWIPE } from "../../store/taskTypes";
 import { capitalizeFirstLetter } from '../../utils/general'
 
-import { Blurhash } from 'react-native-blurhash';
 export const navigationRef = createNavigationContainerRef()
 
 export const MenuBar = () => { 
     let page = useSelector(state => state.app.page)
     let permissions = useSelector(state => state.app.permissions)
-    let subPage = useSelector(state => state.app.subPage)
+    let subPage1 = useSelector(state => state.app.subPage1)
+    let subPage2 = useSelector(state => state.app.subPage2)
     return(
         <View style={menuBar}>
 
             <TouchableOpacity style={page === 'profile' ? menuItemFocused : menuItem}
                 onPress={() => store.dispatch({ type: CHANGE_PAGE_PROFILE, payload: { page: 'profile' } })}>
-                {subPage !== 'profile' ? <Settings focus={page}/> : <Profile focus={page}/> }
+                {subPage1 !== 'profile' ? <Settings focus={page}/> : <Profile focus={page}/> }
                 
                 
-                {page === 'profile' ? <Text style={menuTextFocused}>{capitalizeFirstLetter(subPage)}</Text> : <></>}
+                {page === 'profile' ? <Text style={menuTextFocused}>{capitalizeFirstLetter(subPage1)}</Text> : <></>}
             </TouchableOpacity>
 
             <TouchableOpacity style={page == 'swipe' ? menuItemFocused : permissions.swipe ? menuItem : menuItemDisabled}
                 onPress={() => store.dispatch({type: CHANGE_PAGE_SWIPE})}>
-                {page !== 'swipe' ? <Swipe focus={page}/> :subPage === 'image'? <Info focus={page}/> : <Picture focus={page}/>}
-                {page == 'swipe' ? <Text style={menuTextFocused}>{page !== 'swipe' ? 'swipe':subPage === 'image'? 'Info' : 'Face'}</Text> : <></>}
+                {page !== 'swipe' ? <Swipe focus={page}/> :subPage2 === 'image'? <Info focus={page}/> : <Picture focus={page}/>}
+                {page == 'swipe' ? <Text style={menuTextFocused}>{page !== 'swipe' ? 'swipe':subPage2 === 'image'? 'Info' : 'Face'}</Text> : <></>}
             </TouchableOpacity>
 
             <TouchableOpacity style={page == 'messages' ? menuItemFocused : permissions.message ? menuItem : menuItemDisabled}

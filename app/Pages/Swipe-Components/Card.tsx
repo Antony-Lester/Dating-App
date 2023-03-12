@@ -41,7 +41,7 @@ export const Card = ({ candidate }: { candidate: CandidatesInterface }) => {
 	let rotateHelper = x.interpolate({
 		inputRange: [-80, 0, 80],outputRange: ['-20deg', '0deg', '35deg'],
 	});
-	let image = useSelector(state => state.app.subPage === 'image')
+	let image = useSelector(state => state.app.subPage2 === 'image')
 	let animation = PanResponder.create({
 		onStartShouldSetPanResponder: () => false,
 		onMoveShouldSetPanResponder: () => true,
