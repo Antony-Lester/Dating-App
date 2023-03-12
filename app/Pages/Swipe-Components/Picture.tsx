@@ -6,6 +6,8 @@ import { capitalizeFirstLetter } from '../../utils/general';
 const isExpoGo = Constants.executionEnvironment === ExecutionEnvironment.StoreClient;
 const Image = isExpoGo ? require('react-native').Image : require('expo-image').Image;
 
+const defaultBlurhash : String = '|IIX%9t7uPoe-pj[ROayRj0KWBt7ofxua#aefjRjtRf+wIjZM{WBozWBofEMoL%NWVD%oLWBf6tR%Nayn~WVRPj[bHf6j[s.oLayWBR+ofj[j[aeo}ayRjWCoKofkCj[t7-:fkIUjts:ayoea#WDxafkM|f6kCa}xaayR*'
+
 export const Picture = ({ candidate }: { candidate: CandidatesInterface }) => {
     if (isExpoGo) {
         return (<>
@@ -16,7 +18,7 @@ export const Picture = ({ candidate }: { candidate: CandidatesInterface }) => {
         return (<>
             <Image style={picture}
                 source={candidate.imageURI}
-                placeholder={candidate.imageBlurHash}
+                placeholder={candidate.imageBlurHash?candidate.imageBlurHash:defaultBlurhash}
                 contentFit="cover" transition={3000} />
             <Text style={name}>{capitalizeFirstLetter(candidate.name)}</Text>
         </>)
