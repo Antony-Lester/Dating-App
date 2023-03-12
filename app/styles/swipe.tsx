@@ -97,9 +97,10 @@ export const buttonTextSmall: TextStyle = {
 
 export const name: TextStyle = {
   position: "absolute",
-  left: "25%",
+  left: "5%",
+  top: "91%",
   height: "5%",
-  width: "75%",
+  width: "90%",
   paddingLeft: "2%",
   paddingRight: "5%",
   fontSize: 22,

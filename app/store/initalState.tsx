@@ -1,10 +1,10 @@
 let initialState : any = {
     app: {
         page: 'profile',
-        subPage1: 'settings',
-        subPage2: 'image',
+        subPage1: 'profile',//settings
+        subPage2: 'image',//info
         permissions: {
-            swipe: false,
+            swipe: true, //should be set to false for deploy
             message: false,
         }
     },

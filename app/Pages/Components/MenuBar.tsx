@@ -29,12 +29,14 @@ export const MenuBar = () => {
             </TouchableOpacity>
 
             <TouchableOpacity style={page == 'swipe' ? menuItemFocused : permissions.swipe ? menuItem : menuItemDisabled}
+                disabled={!permissions.swipe}
                 onPress={() => store.dispatch({type: CHANGE_PAGE_SWIPE})}>
                 {page !== 'swipe' ? <Swipe focus={page}/> :subPage2 === 'image'? <Info focus={page}/> : <Picture focus={page}/>}
                 {page == 'swipe' ? <Text style={menuTextFocused}>{page !== 'swipe' ? 'swipe':subPage2 === 'image'? 'Info' : 'Face'}</Text> : <></>}
             </TouchableOpacity>
 
             <TouchableOpacity style={page == 'messages' ? menuItemFocused : permissions.message ? menuItem : menuItemDisabled}
+                disabled={!permissions.message}
                 onPress={() => store.dispatch({type: CHANGE_PAGE_MESSAGES})}>
                 <Chat focus={page} />
                 {page == 'messages' ? <Text style={menuItemFocused}>Chat</Text> : <></> }
