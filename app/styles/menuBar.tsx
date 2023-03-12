@@ -22,6 +22,9 @@ export const menuItem: ViewStyle = {
     backgroundColor: setTheme.subLight,
     borderTopEndRadius: 80,
     borderTopStartRadius: 80,
+    borderColor: setTheme.subDark,
+    borderWidth: 1,
+    borderBottomWidth: 0
 }
 export const menuItemFocused: ViewStyle = {
     position: 'relative',
@@ -32,6 +35,10 @@ export const menuItemFocused: ViewStyle = {
     backgroundColor: setTheme.subLight,
     borderTopEndRadius: 80,
     borderTopStartRadius: 80,
+    borderColor: setTheme.subDark,
+    borderWidth: 3,
+    borderBottomWidth: 0
+    
 }
 export const menuItemDisabled: ViewStyle = {
     position: 'relative',
@@ -45,7 +52,7 @@ export const menuItemDisabled: ViewStyle = {
     backgroundColor: setTheme.sub,
     borderTopEndRadius: 80,
     borderTopStartRadius: 80,
-    opacity: 0
+    opacity: 0.5,
 }
 export const menuText: TextStyle = {
     color: setTheme.subText,
