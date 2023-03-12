@@ -7,9 +7,12 @@ import { CandidatesInterface } from '../utils/interfaces';
 export const Swipe = () => {
     
     let candidates = useSelector((state : any) => state.swipe.candidates)
+    
     return (<>
         <SafeAreaView style={page}>
             {candidates.map((candidate: CandidatesInterface, index: any) => (<Card key={candidate.uid} candidate={{ ...candidate, index }}/>))}
         </SafeAreaView>
     </>)
+    
+    
 }

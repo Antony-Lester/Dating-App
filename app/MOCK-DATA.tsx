@@ -118,7 +118,7 @@ const candidate1: CandidatesInterface = {
     name: 'apple',
     image: '?????',
     imageURI: 'https://usapple.org/wp-content/uploads/2019/10/apple-pink-lady.png',
-    imageBlurHash: 'LEHLh[WB2yk8pyoJadR*.7kCMdn',
+    imageBlurHash: 'eEO,o?}@3rVa3CQ6bE#BjIr=4RIpNfKM#+S*RQw|b]kR3VS2+bso+c',
     bio: `Amateur Lego builder. Terrible cook. Aspiring snowboarder.
     Family orientated. Red Sox fan. Dog owner.
     Surfer. Book lover. Craft beer enthusiast.
@@ -129,7 +129,7 @@ const candidate2: CandidatesInterface = {
     name: 'pear',
     image: '?????',
     imageURI: 'https://freshpointlocal.co.uk/wp-content/uploads/2018/08/PackhamPear.jpg',
-    imageBlurHash: 'LEHLh[WB2yk8pyoJadR*.7kCMdn',
+    imageBlurHash: 'e;Q,X7WA?KogWA%OoMNFayWAn:f8fyj?WCawayWUaxs=ogj[axfRaf',
     bio: `I am a triathlete. I once won a regional hot dog eating competition. Christy Teigh used my banana bread recipe on her secret food blog.
     I am a professional swimmer. I asked Conan O’Brien out to prom. I don’t have a tv.
     I have been arrested in Amsterdam. I played guitar on stage with Foo Fighters. I woke up in a stranger’s house after a big night out.`
@@ -139,7 +139,7 @@ const candidate3: CandidatesInterface = {
     name: 'grape',
     image: '?????',
     imageURI: 'https://www.collinsdictionary.com/images/full/grape_229112122.jpg',
-    imageBlurHash: 'LEHLh[WB2yk8pyoJadR*.7kCMdn',
+    imageBlurHash: 'eqOM:8R6_NxutR.7t7V]ogRj?wS0MyoMM{M{WBWBV[oyxut8RiWBt7',
     bio: `I’ve always known the secret to happiness is gratitude. I’m still surprised and humbled by how much I have in my life to be grateful for!
     I’ve always known I wanted to be a dad. I’m still surprised by how incredible being a father is and how much I love my son.
     I’ve always known I was going to be a writer. I’m still surprised to see my words in print.`
@@ -149,7 +149,7 @@ const candidate4: CandidatesInterface = {
     name: 'bandana',
     image: '?????',
     imageURI: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Banana-Single.jpg/800px-Banana-Single.jpg',
-    imageBlurHash: 'LEHLh[WB2yk8pyoJadR*.7kCMdn',
+    imageBlurHash: 'egS$DRtTbcoJp0yZo$RNkCadbdVro~kEaJZ|jYWYV?o#pKkXaJofWA',
     bio: `I’d gather up all the supplies I can carry, visit the marina, steal a luxury yacht, and spend the next six months living out at sea. Then when things have died down I would return to shore and help rebuild civilization.
     Head to my nearest Costco or Walmart and barricade myself inside. Either would have all the supplies I need to survive for months
     Take car. Go to Mum’s. Kill Phil. Grab Liz, go to the Winchester, have a nice cold pint, and wait for all of this to blow over.`

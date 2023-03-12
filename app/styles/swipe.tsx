@@ -4,8 +4,8 @@ import { setTheme } from "./theme";
 
 export const card: ViewStyle = {
   position: "absolute",
-  top: "4%",
-  height: "92.2%",
+  top: "2.5%",
+  height: "90.0%",
   width: "95%",
   alignSelf: "center",
   borderRadius: 33,
@@ -16,12 +16,13 @@ export const picture: ImageStyle = {
   height: "100%",
   width: "100%",
   borderRadius: 30,
+  backgroundColor: setTheme.mainDark
 };
 
 //buttons
 export const buttonBar: ViewStyle = {
   position: "absolute",
-  top: "84%",
+  top: "74%",
   height: "15%",
   width: "100%",
   flexDirection: "row",
