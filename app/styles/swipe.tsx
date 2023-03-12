@@ -4,7 +4,7 @@ import { setTheme } from "./theme";
 
 export const card: ViewStyle = {
   position: "absolute",
-  top: "2.5%",
+  top: "5%",
   height: "90.0%",
   width: "95%",
   alignSelf: "center",
@@ -42,6 +42,8 @@ export const buttonBackgroundHelper: ViewStyle = {
   borderTopRightRadius: 90,
   borderBottomLeftRadius: 30,
   borderBottomRightRadius: 30,
+  borderWidth: 1,
+  borderColor: setTheme.mainDark,
 };
 
 export const buttonBackground: ViewStyle = {

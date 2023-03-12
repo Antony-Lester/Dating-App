@@ -3,12 +3,10 @@
   "version": "1.0.0",
   "scripts": {
     "start": "expo start --dev-client",
-    "android": "expo run:android",
-    "ios": "expo run:ios",
-    "web": "expo start --web",
+    "start2": "expo start",
     "apk": "eas build --platform android --profile preview",
     "apkrun": "eas build:run --platform android",
-    "build-local": "eas build --platform android --local --profile preview",
+    "build-local": "npx expo run:android",
     "build-remote": "eas build -p android --profile preview"
   },
   "dependencies": {
