@@ -19,11 +19,11 @@ export const menuItem: ViewStyle = {
     alignItems: 'center',
     alignSelf: 'flex-end',
     justifyContent: 'space-around',
-    backgroundColor: setTheme.subLight,
+    backgroundColor: setTheme.surface,
     borderTopEndRadius: 80,
     borderTopStartRadius: 80,
-    borderColor: setTheme.subDark,
-    borderWidth: 1,
+    borderColor: setTheme.outline,
+    borderWidth: 5,
     borderBottomWidth: 0
 }
 export const menuItemFocused: ViewStyle = {
@@ -32,11 +32,11 @@ export const menuItemFocused: ViewStyle = {
     height: '100%',
     alignItems: 'center',
     justifyContent: 'space-around',
-    backgroundColor: setTheme.subLight,
+    backgroundColor: setTheme.surfaceVariant,
     borderTopEndRadius: 80,
     borderTopStartRadius: 80,
-    borderColor: setTheme.subDark,
-    borderWidth: 3,
+    borderColor: setTheme.onSurfaceVariant,
+    borderWidth: 9,
     borderBottomWidth: 0
     
 }
@@ -49,18 +49,21 @@ export const menuItemDisabled: ViewStyle = {
     alignItems: 'center',
     alignSelf: 'flex-end',
     justifyContent: 'space-around',
-    backgroundColor: setTheme.sub,
+    backgroundColor: setTheme.surface,
     borderTopEndRadius: 80,
     borderTopStartRadius: 80,
-    opacity: 0.5,
+    borderColor: setTheme.surfaceVariant,
+    borderWidth:3,
+    opacity: 0.3,
+    borderBottomWidth: 0
 }
 export const menuText: TextStyle = {
-    color: setTheme.subText,
+    color: setTheme.onPrimaryContainer,
     fontWeight: 'normal',
     fontSize: 10,
 }
 export const menuTextFocused: TextStyle = {
-    color: setTheme.subText,
+    color: setTheme.onSurfaceVariant,
     fontWeight: 'normal',
     fontSize: 16
 }

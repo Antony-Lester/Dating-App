@@ -6,5 +6,5 @@ export const page: ViewStyle = {
     position: "absolute",
     height: '100%',
     width: '100%',
-    backgroundColor: setTheme.sub,
+    backgroundColor: setTheme.background
 }

@@ -10,13 +10,20 @@ export const card: ViewStyle = {
   alignSelf: "center",
   borderRadius: 33,
   borderWidth: 4,
-  borderColor: setTheme.mainDark,
+  borderColor: setTheme.SecondaryContainer,
 };
 export const picture: ImageStyle = {
   height: "100%",
   width: "100%",
   borderRadius: 30,
-  backgroundColor: setTheme.mainDark
+  backgroundColor: setTheme.secondary
+};
+
+export const info: ImageStyle = {
+  height: "100%",
+  width: "100%",
+  borderRadius: 30,
+  backgroundColor: setTheme.secondary
 };
 
 //buttons
@@ -34,7 +41,7 @@ export const buttonBar: ViewStyle = {
 export const buttonBackgroundHelper: ViewStyle = {
   width: "20%",
   height: "80%",
-  backgroundColor: setTheme.main,
+  backgroundColor: setTheme.tertiary,
   alignItems: "center",
   alignContent: "center",
   justifyContent: "space-evenly",
@@ -42,18 +49,20 @@ export const buttonBackgroundHelper: ViewStyle = {
   borderTopRightRadius: 90,
   borderBottomLeftRadius: 30,
   borderBottomRightRadius: 30,
-  borderWidth: 1,
-  borderColor: setTheme.mainDark,
+  borderWidth: 2,
+  borderColor: setTheme.tertiaryContainer,
 };
 
 export const buttonBackground: ViewStyle = {
     width: "20%",
     height: "70%",
-    backgroundColor: setTheme.main,
+    backgroundColor: setTheme.tertiary,
     alignItems: "center",
     alignContent: "center",
     justifyContent: "space-evenly",
     borderRadius: 90,
+    borderWidth: 2,
+    borderColor: setTheme.tertiaryContainer,
   };
 
 const buttonCard: ViewStyle = {
@@ -62,7 +71,9 @@ const buttonCard: ViewStyle = {
   height: "5%",
   alignItems: "center",
   justifyContent: "space-evenly",
-  backgroundColor: setTheme.mainDark,
+  backgroundColor: setTheme.errorContainer,
+  borderWidth: 1,
+  borderColor: setTheme.onErrorContainer
 };
 
 export const buttonReport: ViewStyle = {
@@ -74,23 +85,14 @@ export const buttonReport: ViewStyle = {
   flexDirection: "row-reverse",
 };
 
-export const buttonInfo: ViewStyle = {
-  ...buttonCard,
-  bottom: 0,
-  alignSelf: "flex-end",
-  borderTopLeftRadius: 30,
-  borderBottomRightRadius: 90,
-  flexDirection: "row",
-};
-
 export const buttonText: TextStyle = {
-  color: setTheme.mainText,
+  color: setTheme.onTertiary,
   fontWeight: "normal",
   fontSize: 15,
 };
 
 export const buttonTextSmall: TextStyle = {
-  color: setTheme.mainText,
+  color: setTheme.onErrorContainer,
   fontWeight: "500",
   fontSize: 12,
 };
@@ -107,6 +109,7 @@ export const name: TextStyle = {
   textAlign: "center",
   fontWeight: "bold",
   overflow: "hidden",
+  color: setTheme.onSecondary
 };
 
 export const helper: TextStyle = {
@@ -116,6 +119,7 @@ export const helper: TextStyle = {
   textAlign: "center",
   fontSize: 140,
   flex: 1,
+
 };
 
 export const helperKiss: TextStyle = { ...helper, left: "25%" };

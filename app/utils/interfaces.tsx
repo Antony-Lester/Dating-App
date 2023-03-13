@@ -72,3 +72,39 @@ export interface SwipeButtonInterfaceY {
     opacity: Animated.Value,
     uid: number|string
 }
+
+export interface Colours {
+
+    primary: string,
+    onPrimary: string,
+    primaryContainer: string,
+    onPrimaryContainer: string,
+
+    secondary: string,
+    onSecondary: string,
+    SecondaryContainer: string,
+    onSecondaryContainer: string,
+
+    tertiary: string,
+    onTertiary: string,
+    tertiaryContainer: string,
+    onTertiaryContainer: string,
+
+    error: string,
+    onError: string,
+    errorContainer: string,
+    onErrorContainer: string,
+
+    background: string,
+    onBackground: string,
+    surface: string,
+    onSurface: string,
+
+    outline: string,
+    surfaceVariant: string,
+    onSurfaceVariant: string
+}
+export interface Theme {
+    light: Colours,
+    dark: Colours
+}

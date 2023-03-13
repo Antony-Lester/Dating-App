@@ -1,13 +1,13 @@
-import { Text } from 'react-native'
+import { View, Text } from 'react-native'
 
 import { CandidatesInterface } from "../../utils/interfaces"
 import { capitalizeFirstLetter } from '../../utils/general'
-import { name } from '../../styles/swipe'
+import { name, info } from '../../styles/swipe'
 
 export const Bio = ({ candidate }: { candidate: CandidatesInterface }) => {
-    return (<>
+    return (<View style={info}>
     <Text style={name}>{capitalizeFirstLetter(candidate.name)}</Text>
-    </>)
+    </View>)
 }
 
 
