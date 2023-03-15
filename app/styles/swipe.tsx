@@ -98,19 +98,44 @@ export const buttonTextSmall: TextStyle = {
 };
 
 export const name: TextStyle = {
-  position: "absolute",
-  left: "5%",
-  top: "91%",
-  height: "5%",
-  width: "90%",
-  paddingLeft: "2%",
-  paddingRight: "5%",
   fontSize: 22,
   textAlign: "center",
   fontWeight: "bold",
   overflow: "hidden",
-  color: setTheme.onSecondary
+  color: setTheme.onSecondary,
 };
+
+export const nameBackground: ViewStyle = {
+  position: "absolute",
+  top: "91%",
+  height: "7%",
+  padding: "5%",
+  paddingBottom: "6%",
+
+  alignSelf: 'center',
+  backgroundColor: setTheme.secondary,
+  borderColor: setTheme.SecondaryContainer,
+  borderRadius: 20,
+  borderWidth: 3,
+}
+
+export const bio: ViewStyle = {
+  position: "absolute",
+  top: "7%",
+  left: "5%",
+  height: "65%",
+  width: "90%",
+  backgroundColor: setTheme.secondary,
+  borderColor: setTheme.SecondaryContainer,
+  borderRadius: 20,
+  borderWidth: 3,
+}
+
+export const bioText: TextStyle = {
+  fontSize: 13,
+  padding: "2%"
+}
+
 
 export const helper: TextStyle = {
   position: "absolute",
