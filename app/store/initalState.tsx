@@ -1,11 +1,12 @@
 let initialState : any = {
     app: {
+        fontScale: 1,
         page: 'profile',
         subPage1: 'profile',//settings
         subPage2: 'image',//info
         permissions: {
             swipe: true, //should be set to false for deploy
-            message: false,
+            message: true, //should be set to false for deploy
         }
     },
     messages: {
@@ -30,14 +31,16 @@ import { userEmpty, userUid, userFull, messagesEmpty, messages, swipe, swipeDone
 //initialState.user = userEmpty
 //EXisting user
 initialState.user = userFull
+
 //with Swipes
 initialState.swipe = swipe
 //without Swipes
 //initialState.swipe = swipeDone
+
 //with Messages
-//initialState.messages = messages
+initialState.messages = messages
 //without Messages
-initialState.messages = messagesEmpty
+//initialState.messages = messagesEmpty
 
 //------------------------------------------------
 export default initialState;

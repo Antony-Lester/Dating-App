@@ -19,6 +19,7 @@ export interface TimeLineInterface {
     message: string,
 }
 export interface MessageInterface {
+    uid: string,
     image: string,
     imageUrl: string,
     imageBlurHash: string,

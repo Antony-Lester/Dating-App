@@ -11,7 +11,6 @@ export const animateReset = (x: Animated.Value, y: Animated.Value) => {
 };
 
 export const animateKiss = (x: Animated.Value, screenWidth: number, opacity: Animated.Value, uid : String | Number) => {
-    console.log(uid)
     Animated.parallel([
         Animated.timing(x, {toValue: -screenWidth,duration: 1500,useNativeDriver: true,}),
         Animated.timing(opacity, {toValue: 0,duration: 1500,useNativeDriver: true,}),
