@@ -115,44 +115,35 @@ export let message4: MessageInterface = {
 }
 const candidate1: CandidatesInterface = {
     uid: '10',
-    name: 'apple',
+    name: 'Saddam',
     image: '?????',
-    imageURI: 'https://usapple.org/wp-content/uploads/2019/10/apple-pink-lady.png',
-    imageBlurHash: 'eEO,o?}@3rVa3CQ6bE#BjIr=4RIpNfKM#+S*RQw|b]kR3VS2+bso+c',
-    bio: `Amateur Lego builder. Terrible cook. Aspiring snowboarder.
-    Family orientated. Red Sox fan. Dog owner.
-    Surfer. Book lover. Craft beer enthusiast.
-    Great cook. Filmgoer. Runner.`
+    imageURI: 'https://upload.wikimedia.org/wikipedia/commons/9/9a/Saddam_Hussein_in_1998.png',
+    imageBlurHash: 'eIE_?bx]0fNx^*}=tRyDNaVs5SRj?GRjNHPCM{rWs.t7R*R*-ps.M{',
+    bio: `Measured fer yer chains barkadeer Plate Fleet pink holystone lugger take a caulk quarterdeck Sink me fathom. Killick interloper wherry flogging run a rig plunder black spot furl jib nipper. Ballast plunder deadlights overhaul Blimey gunwalls hempen halter carouser gun bucko.`
 }
 const candidate2: CandidatesInterface = {
     uid: '20',
-    name: 'pear',
+    name: 'andrew',
     image: '?????',
-    imageURI: 'https://freshpointlocal.co.uk/wp-content/uploads/2018/08/PackhamPear.jpg',
-    imageBlurHash: 'e;Q,X7WA?KogWA%OoMNFayWAn:f8fyj?WCawayWUaxs=ogj[axfRaf',
-    bio: `I am a triathlete. I once won a regional hot dog eating competition. Christy Teigh used my banana bread recipe on her secret food blog.
-    I am a professional swimmer. I asked Conan O’Brien out to prom. I don’t have a tv.
-    I have been arrested in Amsterdam. I played guitar on stage with Foo Fighters. I woke up in a stranger’s house after a big night out.`
+    imageURI: 'https://media.vanityfair.com/photos/624f199078feebfc24e831d9/master/pass/prince-andrew-04-07-2022.jpg',
+    imageBlurHash: 'eXGIy6fk5SE1~V-:M{kqWBr=E1RP%2RjS$o}ofoejZWWM{j[j@s:M{',
+    bio: `Sheet Sea Legs scuttle Shiver me timbers ballast shrouds Buccaneer starboard execution dock brigantine. Gun wherry scourge of the seven seas topmast hornswaggle gangplank parley ye hail-shot booty. Privateer gabion squiffy Pieces of Eight gibbet dance the hempen jig barque chandler yard scuppers.`
 }
 const candidate3: CandidatesInterface = {
     uid: '30',
-    name: 'grape',
+    name: 'adolf',
     image: '?????',
-    imageURI: 'https://www.collinsdictionary.com/images/full/grape_229112122.jpg',
-    imageBlurHash: 'eqOM:8R6_NxutR.7t7V]ogRj?wS0MyoMM{M{WBWBV[oyxut8RiWBt7',
-    bio: `I’ve always known the secret to happiness is gratitude. I’m still surprised and humbled by how much I have in my life to be grateful for!
-    I’ve always known I wanted to be a dad. I’m still surprised by how incredible being a father is and how much I love my son.
-    I’ve always known I was going to be a writer. I’m still surprised to see my words in print.`
+    imageURI: 'https://www.themoviedb.org/t/p/original/n6f81IUSes1a8jTzUIF7rJ5zZnP.jpg',
+    imageBlurHash: 'eFB|KZ9F00~qofofayxuofRj00xu-;D%xuD%xuxuM{ayWBWBxuofM{',
+    bio: `Capstan rutters barque line lugsail swing the lead nipperkin grog blossom scourge of the seven seas Chain Shot. Haul wind plunder long clothes rope's end Corsair fore chandler no prey, no pay draught tackle. Jack Tar belay lugger squiffy booty jib mutiny cackle fruit hardtack loaded to the gunwalls.`
 }
 const candidate4: CandidatesInterface = {
     uid: '40',
-    name: 'bandana',
+    name: 'Osama',
     image: '?????',
-    imageURI: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Banana-Single.jpg/800px-Banana-Single.jpg',
-    imageBlurHash: 'egS$DRtTbcoJp0yZo$RNkCadbdVro~kEaJZ|jYWYV?o#pKkXaJofWA',
-    bio: `I’d gather up all the supplies I can carry, visit the marina, steal a luxury yacht, and spend the next six months living out at sea. Then when things have died down I would return to shore and help rebuild civilization.
-    Head to my nearest Costco or Walmart and barricade myself inside. Either would have all the supplies I need to survive for months
-    Take car. Go to Mum’s. Kill Phil. Grab Liz, go to the Winchester, have a nice cold pint, and wait for all of this to blow over.`
+    imageURI: 'https://cdn.britannica.com/93/153593-050-15D2B42F/Osama-bin-Laden.jpg',
+    imageBlurHash: 'ePMG*F%M?XM{D%miWr${Iot8%LM}9FWBxu_NWEIWV@j[E1fis;oJRj',
+    bio: `Fluke hulk Davy Jones' Locker aft quarter grog blossom starboard league wherry shrouds. Topsail Yellow Jack driver crimp wench main sheet fire in the hole fire ship spanker broadside. Nipper gunwalls bilge rat red ensign yawl line prow to go on account tackle hornswaggle.`
 }
 //==============================================================================
 export let userEmpty: UserInterface = {}
@@ -168,7 +159,7 @@ export let userFull: UserInterface = {
     image: '?????',
     imageURI: 'https://t4.ftcdn.net/jpg/00/97/58/97/360_F_97589769_t45CqXyzjz0KXwoBZT9PRaWGHRk5hQqQ.jpg',
     imageBlurHash: 'LEHLh[WB2yk8pyoJadR*.7kCMdn',
-    bio: `I love cheese, especially airedale stilton. Pecorino monterey jack say cheese melted cheese doucette hallowmas swiss cottage cheese. Brie cheese and biscuits cheesy feet melted cheese cheese strings boccherini croquet monsieur goat. Lancashire when the cheese comes out everybody's happy say cheese.`
+    bio: `Booty port Corsair fore Barbary Coast parley matey rigging six pounders Pirate Round. Ho bilge bilged on her anchor transom case shot hempen halter carouser gangplank squiffy Yellow Jack. Jib pirate Nelsons folly schooner skysail Corsair code of conduct list mutiny heave down.`
 }
 export let messagesEmpty: MessagesInterface = { 
     connections: [], 

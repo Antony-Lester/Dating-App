@@ -10,23 +10,22 @@ export const card: ViewStyle = {
   alignSelf: "center",
   borderRadius: 33,
   borderWidth: 4,
-  borderColor: setTheme.SecondaryContainer,
+  borderColor: setTheme.primary,
 };
 export const picture: ImageStyle = {
   height: "100%",
   width: "100%",
   borderRadius: 30,
-  backgroundColor: setTheme.secondary
+  backgroundColor: setTheme.SecondaryContainer
 };
 
 export const info: ImageStyle = {
   height: "100%",
   width: "100%",
   borderRadius: 30,
-  backgroundColor: setTheme.secondary
+  backgroundColor: setTheme.SecondaryContainer
 };
 
-//buttons
 export const buttonBar: ViewStyle = {
   position: "absolute",
   top: "74%",
@@ -97,45 +96,29 @@ export const buttonTextSmall: TextStyle = {
   fontSize: 12,
 };
 
-export const name: TextStyle = {
-  fontSize: 22,
-  textAlign: "center",
-  fontWeight: "bold",
-  overflow: "hidden",
-  color: setTheme.onSecondary,
-};
-
-export const nameBackground: ViewStyle = {
-  position: "absolute",
-  top: "91%",
-  height: "7%",
-  padding: "5%",
-  paddingBottom: "6%",
-
-  alignSelf: 'center',
-  backgroundColor: setTheme.secondary,
-  borderColor: setTheme.SecondaryContainer,
-  borderRadius: 20,
-  borderWidth: 3,
-}
-
-export const bio: ViewStyle = {
+export const bioHolder: ViewStyle = {
   position: "absolute",
   top: "7%",
   left: "5%",
   height: "65%",
   width: "90%",
-  backgroundColor: setTheme.secondary,
-  borderColor: setTheme.SecondaryContainer,
+  justifyContent: 'center',
+}
+
+export const bio: ViewStyle = {
+  backgroundColor: setTheme.primary,
   borderRadius: 20,
-  borderWidth: 3,
+  flexGrow: 0,
 }
 
 export const bioText: TextStyle = {
-  fontSize: 13,
-  padding: "2%"
+  width: "100%",
+  fontSize: 15,
+  fontStyle: 'italic',
+  textAlign: 'center',
+  padding: "3%",
+  color: setTheme.onPrimary,
 }
-
 
 export const helper: TextStyle = {
   position: "absolute",
@@ -144,7 +127,6 @@ export const helper: TextStyle = {
   textAlign: "center",
   fontSize: 140,
   flex: 1,
-
 };
 
 export const helperKiss: TextStyle = { ...helper, left: "25%" };

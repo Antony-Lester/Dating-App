@@ -53,18 +53,18 @@ export const menuItemDisabled: ViewStyle = {
     borderTopEndRadius: 80,
     borderTopStartRadius: 80,
     borderColor: setTheme.surfaceVariant,
-    borderWidth:3,
+    borderWidth: 3,
     opacity: 0.3,
     borderBottomWidth: 0
 }
-export const menuText: TextStyle = {
+export const menuText = (fontScale: number) => ({
     color: setTheme.onPrimaryContainer,
     fontWeight: 'normal',
-    fontSize: 10,
-}
-export const menuTextFocused: TextStyle = {
+    fontSize: 10 / fontScale
+})
+export const menuTextFocused = (fontScale: number) => ({
     color: setTheme.onSurfaceVariant,
     fontWeight: 'normal',
-    fontSize: 16
-}
+    fontSize: 16 / fontScale
+})
 export const menuTextDisabled: TextStyle = {opacity: 0, height: 0}

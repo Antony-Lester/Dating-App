@@ -1,5 +1,5 @@
 //@ts-nocheck
-import { View, Text, TouchableOpacity} from "react-native"
+import { View, Text, TouchableOpacity, useWindowDimensions} from "react-native"
 import { createNavigationContainerRef } from '@react-navigation/native';
 import { useSelector } from 'react-redux';
 
@@ -17,6 +17,9 @@ export const MenuBar = () => {
     let permissions = useSelector(state => state.app.permissions)
     let subPage1 = useSelector(state => state.app.subPage1)
     let subPage2 = useSelector(state => state.app.subPage2)
+
+    const { fontScale } = useWindowDimensions()
+    
     return(
         <View style={menuBar}>
 
@@ -25,21 +28,21 @@ export const MenuBar = () => {
                 {subPage1 !== 'profile' ? <Settings focus={page}/> : <Profile focus={page}/> }
                 
                 
-                {page === 'profile' ? <Text style={menuTextFocused}>{capitalizeFirstLetter(subPage1)}</Text> : <></>}
+                {page === 'profile' ? <Text style={menuTextFocused(fontScale)}>{capitalizeFirstLetter(subPage1)}</Text> : <></>}
             </TouchableOpacity>
 
             <TouchableOpacity style={page == 'swipe' ? menuItemFocused : permissions.swipe ? menuItem : menuItemDisabled}
                 disabled={!permissions.swipe}
                 onPress={() => store.dispatch({type: CHANGE_PAGE_SWIPE})}>
                 {page !== 'swipe' ? <Swipe focus={page}/> :subPage2 === 'image'? <Info focus={page}/> : <Picture focus={page}/>}
-                {page == 'swipe' ? <Text style={menuTextFocused}>{page !== 'swipe' ? 'swipe':subPage2 === 'image'? 'Info' : 'Face'}</Text> : <></>}
+                {page == 'swipe' ? <Text style={menuTextFocused(fontScale)}>{page !== 'swipe' ? 'swipe':subPage2 === 'image'? 'Info' : 'Face'}</Text> : <></>}
             </TouchableOpacity>
 
             <TouchableOpacity style={page == 'messages' ? menuItemFocused : permissions.message ? menuItem : menuItemDisabled}
                 disabled={!permissions.message}
                 onPress={() => store.dispatch({type: CHANGE_PAGE_MESSAGES})}>
                 <Chat focus={page} />
-                {page == 'messages' ? <Text style={menuItemFocused}>Chat</Text> : <></> }
+                {page == 'messages' ? <Text style={menuTextFocused(fontScale)}>Chat</Text> : <></> }
             </TouchableOpacity>
         </View>)
 }
