@@ -1,21 +1,25 @@
+import { View } from "react-native"
+import { newConnectionsContainer } from "../../styles/messages"
 import Constants, { ExecutionEnvironment } from 'expo-constants';
-import { CandidatesInterface } from '../../utils/interfaces';
 import { picture } from '../../styles/swipe';
-import { defaultBlurhash } from "../../utils/general";
 const isExpoGo = Constants.executionEnvironment === ExecutionEnvironment.StoreClient;
 const Image = isExpoGo ? require('react-native').Image : require('expo-image').Image;
 
-export const Picture = ({ candidate }: { candidate: CandidatesInterface }) => {
+import { defaultBlurhash } from "../../utils/general";
+
+export const NewConnectionsComponent = ({ candidate } : any ) => {
+    console.log(candidate.item)
+
     if (isExpoGo) {
-        return (<>
+        return (<View style={newConnectionsContainer}>
             <Image source={{ uri: candidate.imageURI }} style={picture} />
-        </>)}
+            </View>)}
     else {
-        return (<>
+        return (<View style={newConnectionsContainer}>
             <Image style={picture}
                 source={candidate.imageURI}
                 placeholder={candidate.imageBlurHash?candidate.imageBlurHash:defaultBlurhash}
                 contentFit="cover" transition={3000} />
-        </>)
+        </View>)
     }
 }

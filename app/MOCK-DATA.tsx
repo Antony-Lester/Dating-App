@@ -17,6 +17,7 @@ export interface TimeLineInterface {
     message: string,
 }
 export interface MessageInterface {
+    uid: number,
     image: string,
     imageUrl: string,
     imageBlurHash: string,
@@ -82,6 +83,7 @@ const timeLineExample : Array<TimeLineInterface> = [
     }
 ]
 export let message1: MessageInterface = {
+    uid: 1,
     image: '?????',
     imageUrl: 'http://cdn.akc.org/content/article-body-image/samoyed_puppy_dog_pictures.jpg',
     imageBlurHash: 'eCF6B#-:0JIncr?@s;nmIoWUIko1%NocRk.8xbIUaxR*^+s;RiWAWS',
@@ -90,6 +92,7 @@ export let message1: MessageInterface = {
     timeline: timeLineExample
 }
 export let message2: MessageInterface = {
+    uid: 2,
     image: '?????',
     imageUrl: 'https://thumbs.dreamstime.com/b/camel-6645000.jpg',
     imageBlurHash: 'LlMF%n00%#MwS|WAWEN{R*bbWBbH',
@@ -98,6 +101,7 @@ export let message2: MessageInterface = {
     timeline: timeLineExample
 }
 export let message3: MessageInterface = {
+    uid: 3,
     image: '?????',
     imageUrl: 'https://media.istockphoto.com/id/497537400/photo/rhinoceros-on-white-background.jpg?s=612x612&w=0&k=20&c=QQ8kHjUIcGmvkFo4hoFcYw2hc2hB5g9fvt0Myu6PvpU=',
     imageBlurHash: 'LlMF%n00%#MwS|WAWEN{R*bbWBbH',
@@ -106,6 +110,7 @@ export let message3: MessageInterface = {
     timeline: timeLineExample
 }
 export let message4: MessageInterface = {
+    uid: 4,
     image: '?????',
     imageUrl: 'https://images.pexels.com/photos/133394/pexels-photo-133394.jpeg?cs=srgb&dl=pexels-anthony-%29-133394.jpg&fm=jpg',
     imageBlurHash: 'LlMF%n00%#MwS|WAWEN{R*bbWBbH',
