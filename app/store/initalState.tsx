@@ -1,6 +1,5 @@
 let initialState : any = {
     app: {
-        fontScale: 1,
         page: 'profile',
         subPage1: 'profile',//settings
         subPage2: 'image',//info
@@ -10,8 +9,8 @@ let initialState : any = {
         }
     },
     messages: {
-        connections: [], 
-        new: [],
+        newConnections: [], 
+        newMessages: [],
         messages: []
     },
     swipe: { 

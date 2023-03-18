@@ -4,6 +4,7 @@
   "scripts": {
     "start-apk": "expo start --dev-client",
     "start-go": "expo start",
+    "start-local": "expo start --localhost --android",
     "apk": "eas build --platform android --profile preview",
     "apkrun": "eas build:run --platform android",
     "build-local": "npx expo run:android",

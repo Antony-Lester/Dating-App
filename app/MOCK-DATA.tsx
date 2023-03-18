@@ -25,8 +25,8 @@ export interface MessageInterface {
     timeline: Array<TimeLineInterface>,
 }
 export interface MessagesInterface {
-    connections: Array<MessageInterface>, 
-    new: Array<MessageInterface>,
+    newConnections: Array<MessageInterface>, 
+    newMessages: Array<MessageInterface>,
     messages: Array<MessageInterface>
 }
 export interface CandidatesInterface { 
@@ -162,13 +162,13 @@ export let userFull: UserInterface = {
     bio: `Booty port Corsair fore Barbary Coast parley matey rigging six pounders Pirate Round. Ho bilge bilged on her anchor transom case shot hempen halter carouser gangplank squiffy Yellow Jack. Jib pirate Nelsons folly schooner skysail Corsair code of conduct list mutiny heave down.`
 }
 export let messagesEmpty: MessagesInterface = { 
-    connections: [], 
-    new: [],
+    newConnections: [], 
+    newMessages: [],
     messages: []
 }
 export let messages: MessagesInterface = { 
-    connections: [message1], 
-    new: [message4],
+    newConnections: [message1], 
+    newMessages: [message4],
     messages: [message2, message3]
 }
 export let swipeDone: SwipeInterface = { 
