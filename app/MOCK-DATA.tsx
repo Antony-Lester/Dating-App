@@ -23,6 +23,7 @@ export interface MessageInterface {
     imageBlurHash: string,
     name: string,
     status: string,
+    force: boolean,
     timeline: Array<TimeLineInterface>,
 }
 export interface MessagesInterface {
@@ -89,6 +90,7 @@ export let message1: MessageInterface = {
     imageBlurHash: 'eCF6B#-:0JIncr?@s;nmIoWUIko1%NocRk.8xbIUaxR*^+s;RiWAWS',
     name: 'fanny',
     status: 'kiss',
+    force: true,
     timeline: timeLineExample
 }
 export let message2: MessageInterface = {
@@ -98,6 +100,7 @@ export let message2: MessageInterface = {
     imageBlurHash: 'LlMF%n00%#MwS|WAWEN{R*bbWBbH',
     name: 'anne',
     status: 'marry',
+    force: true,
     timeline: timeLineExample
 }
 export let message3: MessageInterface = {
@@ -107,6 +110,7 @@ export let message3: MessageInterface = {
     imageBlurHash: 'LlMF%n00%#MwS|WAWEN{R*bbWBbH',
     name: 'gertrude',
     status: 'kiss',
+    force: false,
     timeline: timeLineExample
 }
 export let message4: MessageInterface = {
@@ -116,6 +120,7 @@ export let message4: MessageInterface = {
     imageBlurHash: 'LlMF%n00%#MwS|WAWEN{R*bbWBbH',
     name: 'betty',
     status: 'marry',
+    force: false,
     timeline: []
 }
 const candidate1: CandidatesInterface = {
@@ -172,7 +177,7 @@ export let messagesEmpty: MessagesInterface = {
     messages: []
 }
 export let messages: MessagesInterface = { 
-    newConnections: [message1], 
+    newConnections: [message1,message2, message3, message4], 
     newMessages: [message4],
     messages: [message2, message3]
 }

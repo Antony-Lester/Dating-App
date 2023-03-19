@@ -1,17 +1,27 @@
 import { FlatList, View, Text} from "react-native"
-import { newConnectionsContainer } from "../../styles/messages"
+import { newConnectionsContainer, newConnectionsTitle } from "../../styles/messages"
 import { MessageInterface } from "../../utils/interfaces"
 import { NewConnectionsComponent } from "./NewConnectionsComponent"
+import { NewConnectionsSeparatorComponent } from "./NewConnectionsSeparatorComponent"
+import { NewConnectionsEndsComponent } from "./NewConnectionsEndsComponent"
 
 export const NewConnections = ({ newConnections }
     : { newConnections: Array<MessageInterface> }) => {
-    return (<View style={newConnectionsContainer}>
-        <Text>New Connections</Text>
+    const length = newConnections.length
+    return (<><Text style={newConnectionsTitle}>{length} New Connections</Text>
         <FlatList
+            style={newConnectionsContainer}
             data={newConnections}
             renderItem={candidate => <NewConnectionsComponent candidate={candidate} />}
+            keyExtractor={item => item.uid.toString()}
+            horizontal={true}
+            showsHorizontalScrollIndicator={true}
+            initialNumToRender={5}
+            ListHeaderComponent={<NewConnectionsEndsComponent/>}
+            ItemSeparatorComponent={() => <NewConnectionsSeparatorComponent/>}
+            ListFooterComponent={<NewConnectionsEndsComponent/>}
         />
-        </View>)
+    </>)
 }
 
 //key={(candidate : MessageInterface) => candidate.uid}

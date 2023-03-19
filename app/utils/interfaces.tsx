@@ -25,6 +25,7 @@ export interface MessageInterface {
     imageBlurHash: string,
     name: string,
     status: string,
+    force: boolean,
     timeline: Array<TimeLineInterface>,
 }
 export interface MessagesInterface {
