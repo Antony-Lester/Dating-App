@@ -2,37 +2,22 @@ import { newConnectionsContainer, newConnectionsItem } from "../../styles/messag
 import Constants, { ExecutionEnvironment } from 'expo-constants';
 const isExpoGo = Constants.executionEnvironment === ExecutionEnvironment.StoreClient;
 const Image = isExpoGo ? require('react-native').Image : require('expo-image').Image;
-import { Text, View } from "react-native";
+import { View } from "react-native";
 import { defaultBlurhash } from "../../utils/general";
+import { ConnectionKiss, ConnectionMarry } from "../Elements/Icons";
 
 export const NewConnectionsComponent = ({ candidate }: any) => {
     if (isExpoGo) {
         return (<View style={newConnectionsItem}>
             <Image source={{ uri: candidate.item.imageUrl }} style={newConnectionsContainer} />
+            {candidate.item.status === 'kiss' ? <ConnectionKiss/> : <ConnectionMarry/>}
             </View>)}
     else {
         return (<View>
             <Image style={newConnectionsItem}
-                source={candidate.imageURI}
-                placeholder={candidate.imageBlurHash?candidate.imageBlurHash:defaultBlurhash}
-                contentFit="cover" transition={3000} />
+                source={candidate.item.imageURI}
+                placeholder={candidate.item.imageBlurHash?candidate.item.imageBlurHash:defaultBlurhash}
+                contentFit="cover" transition={2000} />
         </View>)
     }
 }
-
-
-/*
-if (isExpoGo) {
-        return (
-            <Image source={{ uri: candidate.item.imageUrl }} style={newConnectionsContainer} />
-            )}
-    else {
-        return (
-            <Image style={newConnectionsContainer}
-                source={candidate.imageURI}
-                placeholder={candidate.imageBlurHash?candidate.imageBlurHash:defaultBlurhash}
-                contentFit="cover" transition={3000} />
-        )
-    }
-
-*/

@@ -14,7 +14,6 @@ export const newConnectionsTitle: TextStyle = {
 export const newConnectionsContainer: ViewStyle = {
     flex: 1,
     borderRadius: 50,
-
     flexGrow: 0,
     minHeight: windowWidth*0.66,
        
@@ -29,6 +28,19 @@ export const newConnectionsSeparatorComponent: ViewStyle = {
 export const newConnectionsEndsComponent: ViewStyle = {
     padding: separator/2
 }
+export const newConnectionsIcon: TextStyle = {
+    position: "absolute",
+    
+    alignSelf: "center",
+    textAlign: "center",
+    bottom: 0,
+    fontSize: windowWidth*0.15,
+    flex: 1,
+};
+
+export const iconKiss: TextStyle = {top: 0, right: 0, fontSize: windowWidth*0.11,}
+export const iconMarry: TextStyle = {bottom: 0, fontSize: windowWidth*0.15,}
+  
 export const newMessagesTitle: TextStyle = {
     width: '50%',
     textAlign: 'left',
@@ -38,3 +50,4 @@ export const newMessagesTitle: TextStyle = {
 	fontSize: 18,
 	color: setTheme.onBackground,
 }
+
