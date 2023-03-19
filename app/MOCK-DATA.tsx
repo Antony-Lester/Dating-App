@@ -178,8 +178,8 @@ export let messagesEmpty: MessagesInterface = {
 }
 export let messages: MessagesInterface = { 
     newConnections: [message1,message2, message3, message4], 
-    newMessages: [message4],
-    messages: [message2, message3]
+    newMessages: [message1, message2],
+    messages: [ message3, message4]
 }
 export let swipeDone: SwipeInterface = { 
     candidates: [],

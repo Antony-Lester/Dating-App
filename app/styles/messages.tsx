@@ -1,8 +1,5 @@
-/** @format */
-
-import { Dimensions, TextStyle, ViewStyle, ImageStyle, StatusBar } from 'react-native';
+import { Dimensions, TextStyle, ViewStyle, StatusBar } from 'react-native';
 import { setTheme } from './theme';
-
 const windowWidth = Dimensions.get('window').width;
 const separator = windowWidth/25
 export const newConnectionsTitle: TextStyle = {
@@ -17,16 +14,27 @@ export const newConnectionsTitle: TextStyle = {
 export const newConnectionsContainer: ViewStyle = {
     flex: 1,
     borderRadius: 50,
+
+    flexGrow: 0,
+    minHeight: windowWidth*0.66,
+       
 };
 export const newConnectionsItem: ViewStyle = {
 	width: windowWidth/2.4,
     aspectRatio: 0.66,
 };
-
 export const newConnectionsSeparatorComponent: ViewStyle = {
     padding: separator
 }
-
 export const newConnectionsEndsComponent: ViewStyle = {
     padding: separator/2
+}
+export const newMessagesTitle: TextStyle = {
+    width: '50%',
+    textAlign: 'left',
+    marginTop: separator,
+    marginLeft: separator,
+    marginBottom: separator,
+	fontSize: 18,
+	color: setTheme.onBackground,
 }
