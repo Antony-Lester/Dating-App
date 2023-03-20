@@ -3,8 +3,9 @@ import { FlatList, Text } from "react-native"
 import { newConnectionsContainer, newConnectionsTitle } from "../../styles/messages"
 import { MessageInterface } from "../../utils/interfaces"
 import { NewConnectionsComponent } from "./NewConnectionsComponent"
-import { NewConnectionsSeparatorComponent } from "./NewConnectionsSeparatorComponent"
-import { NewConnectionsEndsComponent } from "./NewConnectionsEndsComponent"
+import { SeparatorComponent } from "./SeparatorComponent"
+import { EndsComponent } from "./EndsComponent"
+import { StartComponent } from "./StartComponent"
 
 export const NewConnections = ({ newConnections }
     : { newConnections: Array<MessageInterface> }) => {
@@ -18,9 +19,9 @@ export const NewConnections = ({ newConnections }
             horizontal={true}
             showsHorizontalScrollIndicator={true}
             initialNumToRender={5}
-            ListHeaderComponent={<NewConnectionsEndsComponent/>}
-            ItemSeparatorComponent={() => <NewConnectionsSeparatorComponent/>}
-            ListFooterComponent={<NewConnectionsEndsComponent/>}
+            ListHeaderComponent={<StartComponent/>}
+            ItemSeparatorComponent={() => <SeparatorComponent/>}
+            ListFooterComponent={<EndsComponent/>}
         />
     </>)
 }

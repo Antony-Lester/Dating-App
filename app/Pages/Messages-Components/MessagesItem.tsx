@@ -2,7 +2,7 @@
 import Constants, { ExecutionEnvironment } from 'expo-constants';
 const isExpoGo = Constants.executionEnvironment === ExecutionEnvironment.StoreClient;
 const Image = isExpoGo ? require('react-native').Image : require('expo-image').Image;
-import { View, Text } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import { capitalizeFirstLetter, defaultBlurhash, timeWaiting } from "../../utils/general";
 import { MessageKiss, MessageMarry } from "../Elements/Icons";
 import { messageItem, messagePicture, messageForcedName, messageForcedText, messageForcedWait, messageName, messageForcedPicture } from '../../styles/messages';
@@ -13,7 +13,7 @@ export const MessagesItem = ({ message }: any) => {
     
     if (isExpoGo) {
         if (message.item.force) {
-            return (<View style={messageItem}>
+            return (<TouchableOpacity style={messageItem} onPress={() => {console.log('message',message.item.name, 'clicked') }}>
                 <Image source={{ uri: message.item.imageUrl }}
                     resizeMode="contain"
                     style={messageForcedPicture} />
@@ -21,16 +21,16 @@ export const MessagesItem = ({ message }: any) => {
                 {message.item.status === 'kiss' ? <MessageKiss /> : <MessageMarry />}
                 <Text style={messageForcedWait}>{timeWaiting(new Date(message.item.timeline[0]?.time))}</Text>
                 <Text style={messageForcedText} numberOfLines={2} ellipsizeMode='tail'>{lastMessage}</Text>
-            </View>)
+            </TouchableOpacity>)
         }
         else {
-            return (<View style={messageItem}>
+            return (<TouchableOpacity style={messageItem} onPress={() => {console.log('message',message.item.name, 'clicked') }}>
             <Image source={{ uri: message.item.imageUrl }}
                 resizeMode="contain"
                 style={messagePicture} />
             <Text style={messageName}>{capitalizeFirstLetter(message.item.name)}</Text>
             {message.item.status === 'kiss' ? <MessageKiss /> : <MessageMarry />}
-        </View>) }
+        </TouchableOpacity>) }
     }
     else {
         if (message.item.force) {

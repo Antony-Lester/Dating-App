@@ -16,7 +16,6 @@ export const newConnectionsTitle: TextStyle = {
 };
 export const newConnectionsContainer: ViewStyle = {
 	flex: 1,
-
 	flexGrow: 0,
 	minHeight: windowWidth * 0.66,
 };
@@ -27,11 +26,14 @@ export const newConnectionsItem: ViewStyle = {
 	borderColor: setTheme.primary,
 	borderRadius: 50,
 };
-export const newConnectionsSeparatorComponent: ViewStyle = {
+export const startComponent: ViewStyle = {
+	padding: separator/2,
+};
+export const separatorComponent: ViewStyle = {
 	padding: separator,
 };
-export const newConnectionsEndsComponent: ViewStyle = {
-	padding: separator / 2,
+export const endsComponent: ViewStyle = {
+	padding: separator*2,
 };
 export const newConnectionsIcon: TextStyle = {
 	position: 'absolute',
@@ -56,8 +58,8 @@ export const newMessagesTitle: TextStyle = {
 };
 
 export const messageContainer: ViewStyle = {
-	flex: 1,
-	alignContent: 'flex-start',
+    flex: 1,
+	flexGrow: 1,
 };
 
 export const messageItem: ViewStyle = {
