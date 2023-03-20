@@ -1,6 +1,7 @@
 import { Dimensions, TextStyle, ViewStyle, StatusBar } from 'react-native';
 import { setTheme } from './theme';
 const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 const separator = windowWidth/25
 export const newConnectionsTitle: TextStyle = {
 	width: '50%',
@@ -13,14 +14,17 @@ export const newConnectionsTitle: TextStyle = {
 };
 export const newConnectionsContainer: ViewStyle = {
     flex: 1,
-    borderRadius: 50,
+    
     flexGrow: 0,
-    minHeight: windowWidth*0.66,
-       
+    minHeight: windowWidth * 0.66,
+    
 };
 export const newConnectionsItem: ViewStyle = {
 	width: windowWidth/2.4,
     aspectRatio: 0.66,
+    borderWidth: 5,
+    borderColor: setTheme.primary,
+    borderRadius: 50,
 };
 export const newConnectionsSeparatorComponent: ViewStyle = {
     padding: separator
@@ -30,7 +34,6 @@ export const newConnectionsEndsComponent: ViewStyle = {
 }
 export const newConnectionsIcon: TextStyle = {
     position: "absolute",
-    
     alignSelf: "center",
     textAlign: "center",
     bottom: 0,
@@ -38,9 +41,10 @@ export const newConnectionsIcon: TextStyle = {
     flex: 1,
 };
 
-export const iconKiss: TextStyle = {top: 0, right: 0, fontSize: windowWidth*0.11,}
-export const iconMarry: TextStyle = {bottom: 0, fontSize: windowWidth*0.15,}
-  
+export const connectionIconKiss: TextStyle = {top: 0, right: 0, fontSize: windowWidth*0.11,}
+export const connectionIconMarry: TextStyle = {bottom: 0, fontSize: windowWidth*0.15,}
+
+
 export const newMessagesTitle: TextStyle = {
     width: '50%',
     textAlign: 'left',
@@ -50,4 +54,97 @@ export const newMessagesTitle: TextStyle = {
 	fontSize: 18,
 	color: setTheme.onBackground,
 }
+
+export const messageContainer: ViewStyle = {
+    flex: 1,
+    alignContent: 'flex-start'
+}
+
+export const messageItem: ViewStyle = {
+    height: windowHeight*0.1,
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    flexDirection: 'row',
+    flexWrap: 'nowrap',
+    flexGrow: 0,
+}
+export const messageIcon: TextStyle = {
+    position: "absolute",
+    alignSelf: "center",
+    textAlign: "left",
+    fontSize: windowWidth*0.06,
+    left: windowWidth*0.175,
+    bottom: windowWidth*0.065,
+}
+
+//forced
+export const messageForcedPicture: ViewStyle = {
+    height: "100%",
+    aspectRatio: 1,
+    borderRadius: 50,
+    borderWidth: 5,
+    borderColor: setTheme.primary,
+    left: windowWidth*0.015
+}
+export const messageForcedName: TextStyle = {
+    position: 'absolute',
+	fontSize: 24,
+    fontStyle: 'italic',
+    left: windowWidth * 0.26,
+    top: windowHeight*0.003,
+    color: setTheme.primary
+};
+export const messageForcedText: TextStyle = {
+    position: 'absolute',
+    left: windowWidth*0.24,
+    right: windowWidth*0.024,
+    bottom: 0,
+    overflow: 'hidden',
+    textAlign: 'left',
+    fontSize: 14,
+    margin:1,
+    color: setTheme.secondary
+}
+export const messageForcedWait: TextStyle = {
+    position: "absolute",
+    fontSize: 18,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    alignContent: 'center',
+    right: windowWidth * 0.015,
+    paddingTop: separator/4,
+    paddingBottom: separator / 4,
+    paddingLeft: separator/1.5,
+    paddingRight: separator / 1.5,
+    marginTop: separator/8,
+    borderRadius: 30,
+    borderWidth: 0,
+    borderColor: setTheme.primary,
+    backgroundColor: setTheme.primary,
+    color: setTheme.background
+}
+//not-forced
+export const messagePicture: ViewStyle = {
+    height: "100%",
+    aspectRatio: 1,
+    borderRadius: 50,
+    borderWidth: 5,
+    borderColor: setTheme.tertiary,
+    left: windowWidth*0.015
+}
+export const messageName: TextStyle = {
+    position: 'absolute',
+	fontSize: 24,
+    fontStyle: 'italic',
+    left: windowWidth * 0.26,
+    alignSelf: 'center',
+    textAlign: 'center',
+    color: setTheme.tertiary
+};
+
+
+
+
+
+
 

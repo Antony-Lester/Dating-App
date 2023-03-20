@@ -7,7 +7,7 @@ import {
 } from "../../styles/icons";
 
 import { helper, helperKiss, helperMarry, helperAvoid } from "../../styles/swipe";
-import { newConnectionsIcon, iconMarry, iconKiss } from "../../styles/messages";
+import { newConnectionsIcon, messageIcon, connectionIconKiss, connectionIconMarry } from "../../styles/messages";
 
 //--menu--
 //-1
@@ -71,5 +71,8 @@ export const HelperMarry = () => <Text style={{ ...helper, ...helperMarry }}>�
 export const HelperAvoid = () => <Text style={{ ...helper, ...helperAvoid }}>⛔</Text>
 
 //messages connections
-export const ConnectionKiss = () => <Text style={{ ...newConnectionsIcon, ...iconKiss }}>💋</Text>
-export const ConnectionMarry = () => <Text style={{ ...newConnectionsIcon, ...iconMarry }}>💎</Text>  
+export const ConnectionKiss = () => <Text style={{ ...newConnectionsIcon, ...connectionIconKiss }}>💋</Text>
+export const ConnectionMarry = () => <Text style={{ ...newConnectionsIcon, ...connectionIconMarry }}>💎</Text>  
+
+export const MessageKiss = () => <Text style={{ ...messageIcon, ...{ transform: [{ rotate: '65deg' }] }}}>💋</Text>
+export const MessageMarry = () => <Text style={{ ...messageIcon }}>💎</Text>

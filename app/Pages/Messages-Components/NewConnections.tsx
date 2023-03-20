@@ -1,4 +1,4 @@
-import { FlatList, View, Text} from "react-native"
+import { FlatList, Text} from "react-native"
 import { newConnectionsContainer, newConnectionsTitle } from "../../styles/messages"
 import { MessageInterface } from "../../utils/interfaces"
 import { NewConnectionsComponent } from "./NewConnectionsComponent"

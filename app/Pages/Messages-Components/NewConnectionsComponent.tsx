@@ -8,8 +8,8 @@ import { ConnectionKiss, ConnectionMarry } from "../Elements/Icons";
 
 export const NewConnectionsComponent = ({ candidate }: any) => {
     if (isExpoGo) {
-        return (<View style={newConnectionsItem}>
-            <Image source={{ uri: candidate.item.imageUrl }} style={newConnectionsContainer} />
+        return (<View>
+            <Image source={{ uri: candidate.item.imageUrl }} style={newConnectionsItem} />
             {candidate.item.status === 'kiss' ? <ConnectionKiss/> : <ConnectionMarry/>}
             </View>)}
     else {
