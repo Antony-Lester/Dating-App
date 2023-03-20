@@ -1,3 +1,4 @@
+/** @format */
 // @ts-nocheck
 import { createStore } from "redux";
 import taskReducer from "./taskReducer";

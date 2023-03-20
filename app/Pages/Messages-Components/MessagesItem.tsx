@@ -1,3 +1,4 @@
+/** @format */
 import Constants, { ExecutionEnvironment } from 'expo-constants';
 const isExpoGo = Constants.executionEnvironment === ExecutionEnvironment.StoreClient;
 const Image = isExpoGo ? require('react-native').Image : require('expo-image').Image;
@@ -32,8 +33,26 @@ export const MessagesItem = ({ message }: any) => {
         </View>) }
     }
     else {
-        return (<></>)
+        if (message.item.force) {
+            return (<View style={messageItem}>
+                <Image style={messageForcedPicture}
+                source={message.item.imageUrl}
+                placeholder={message.item.imageBlurHash?message.item.imageBlurHash:defaultBlurhash}
+                contentFit="contain" transition={3000} />
+                <Text style={messageForcedName}>{capitalizeFirstLetter(message.item.name)}</Text>
+                {message.item.status === 'kiss' ? <MessageKiss /> : <MessageMarry />}
+                <Text style={messageForcedWait}>{timeWaiting(new Date(message.item.timeline[0]?.time))}</Text>
+                <Text style={messageForcedText} numberOfLines={2} ellipsizeMode='tail'>{lastMessage}</Text>
+            </View>)
+        }
+        else {
+            return (<View style={messageItem}>
+            <Image style={messagePicture}
+                source={message.item.imageUrl}
+                placeholder={message.item.imageBlurHash?message.item.imageBlurHash:defaultBlurhash}
+                contentFit="contain" transition={3000} />
+            <Text style={messageName}>{capitalizeFirstLetter(message.item.name)}</Text>
+            {message.item.status === 'kiss' ? <MessageKiss /> : <MessageMarry />}
+        </View>) }
     }
 }
-
-//

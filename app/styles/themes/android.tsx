@@ -1,3 +1,4 @@
+/** @format */
 import { Theme } from "../../utils/interfaces";
 export const android: Theme = {
     light: {

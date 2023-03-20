@@ -1,3 +1,4 @@
+/** @format */
 import { Text, useWindowDimensions } from "react-native";
 import {
     menu,

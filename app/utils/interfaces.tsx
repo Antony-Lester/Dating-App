@@ -1,3 +1,4 @@
+/** @format */
 import { Animated } from "react-native"
 
 export interface UserInterface {

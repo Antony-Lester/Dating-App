@@ -1,3 +1,4 @@
+/** @format */
 import { View, Text } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
 import { CandidatesInterface } from "../../utils/interfaces"

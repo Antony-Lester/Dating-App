@@ -1,4 +1,4 @@
-
+/** @format */
 //pages
 export const CHANGE_PAGE_PROFILE = 'CHANGE_PAGE_PROFILE'
 export const CHANGE_PAGE_SWIPE = 'CHANGE_PAGE_SWIPE'

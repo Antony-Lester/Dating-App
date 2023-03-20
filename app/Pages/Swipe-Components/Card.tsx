@@ -1,3 +1,4 @@
+/** @format */
 //@ts-nocheck
 import { useState } from 'react';
 import { Animated, Dimensions, PanResponder, Image, Text} from 'react-native';

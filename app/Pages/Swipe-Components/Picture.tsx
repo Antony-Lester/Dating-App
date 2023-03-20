@@ -1,3 +1,4 @@
+/** @format */
 import Constants, { ExecutionEnvironment } from 'expo-constants';
 import { CandidatesInterface } from '../../utils/interfaces';
 import { picture } from '../../styles/swipe';

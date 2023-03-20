@@ -1,3 +1,4 @@
+/** @format */
 import { FlatList, View } from "react-native"
 import { messageContainer, messageItem } from "../../styles/messages"
 import { MessageInterface } from "../../utils/interfaces"

@@ -1,4 +1,5 @@
-let initialState : any = {
+/** @format */
+let initialState: any = {
     app: {
         page: 'profile',
         subPage1: 'profile',//settings

@@ -1,3 +1,4 @@
+/** @format */
 import { TouchableOpacity, Text, View } from "react-native"
 import { buttonBackgroundHelper, buttonReport, buttonText, buttonTextSmall } from "../../styles/swipe"
 import { Kiss, Marry, Avoid, Report, Info, Picture } from "../Elements/Icons"

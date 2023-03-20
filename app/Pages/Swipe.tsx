@@ -1,3 +1,4 @@
+/** @format */
 import { useSelector } from 'react-redux';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Card } from './Swipe-Components/Card';

@@ -1,4 +1,5 @@
-function CHANGE_PAGE_SWIPE_ACTION(state:any, action:any) {
+/** @format */
+function CHANGE_PAGE_SWIPE_ACTION(state: any, action: any) {
     
     if (state.app.page === 'swipe') {
         if (state.app.subPage2 === 'image') {return { ...state, app: { ...state.app, subPage2: 'bio'}}}

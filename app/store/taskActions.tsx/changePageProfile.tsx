@@ -1,3 +1,4 @@
+/** @format */
 function CHANGE_PAGE_PROFILE_ACTION(state: any, action: any) {
     
     if (state.app.page === 'profile') {

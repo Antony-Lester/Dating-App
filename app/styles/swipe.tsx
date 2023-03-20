@@ -1,3 +1,4 @@
+/** @format */
 import { ImageStyle, TextStyle, ViewStyle } from "react-native";
 
 import { setTheme } from "./theme";

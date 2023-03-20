@@ -1,3 +1,4 @@
+/** @format */
 import { View } from "react-native"
 import { newConnectionsSeparatorComponent } from "../../styles/messages"
 

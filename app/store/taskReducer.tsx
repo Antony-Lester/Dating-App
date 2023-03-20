@@ -1,4 +1,5 @@
-import { CHANGE_PAGE_PROFILE, CHANGE_PAGE_SWIPE, CHANGE_PAGE_MESSAGES, LOG_KISS, LOG_MARRY, LOG_AVOID} from "./taskTypes";
+/** @format */
+import { CHANGE_PAGE_PROFILE, CHANGE_PAGE_SWIPE, CHANGE_PAGE_MESSAGES, LOG_KISS, LOG_MARRY, LOG_AVOID } from "./taskTypes";
 
 import initialState from "./initalState";
 

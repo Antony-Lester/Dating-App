@@ -1,3 +1,4 @@
+/** @format */
 import { Animated } from 'react-native';
 import store from '../store/store';
 import { LOG_KISS, LOG_MARRY, LOG_AVOID } from '../store/taskTypes';

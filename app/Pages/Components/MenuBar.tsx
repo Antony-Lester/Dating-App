@@ -1,3 +1,4 @@
+/** @format */
 //@ts-nocheck
 import { View, Text, TouchableOpacity, useWindowDimensions} from "react-native"
 import { createNavigationContainerRef } from '@react-navigation/native';

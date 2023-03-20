@@ -1,3 +1,4 @@
+/** @format */
 import { View } from 'react-native';
 
 import { buttonBar } from '../../styles/swipe';

@@ -1,3 +1,4 @@
+/** @format */
 import { Appearance } from "react-native";
 import { android } from "./themes/android";
 
