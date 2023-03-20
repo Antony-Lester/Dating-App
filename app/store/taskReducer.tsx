@@ -1,5 +1,5 @@
 /** @format */
-import { CHANGE_PAGE_PROFILE, CHANGE_PAGE_SWIPE, CHANGE_PAGE_MESSAGES, LOG_KISS, LOG_MARRY, LOG_AVOID } from "./taskTypes";
+import { CHANGE_PAGE_PROFILE, CHANGE_PAGE_SWIPE, CHANGE_PAGE_MESSAGES, LOG_KISS, LOG_MARRY, LOG_AVOID, CHANGE_PAGE_MESSAGE } from "./taskTypes";
 
 import initialState from "./initalState";
 
@@ -10,6 +10,7 @@ import CHANGE_PAGE_MESSAGES_ACTION from "./taskActions.tsx/changePageMessages";
 import LOG_KISS_ACTION from "./taskActions.tsx/logKiss";
 import LOG_MARRY_ACTION from "./taskActions.tsx/logMarry";
 import LOG_AVOID_ACTION from "./taskActions.tsx/logAvoid";
+import CHANGE_PAGE_MESSAGE_ACTION from "./taskActions.tsx/changePageMessage";
 
 
 const taskReducer = (state = initialState, action : any) => {
@@ -18,6 +19,7 @@ const taskReducer = (state = initialState, action : any) => {
         case CHANGE_PAGE_PROFILE: return CHANGE_PAGE_PROFILE_ACTION(state, action);
         case CHANGE_PAGE_SWIPE: return CHANGE_PAGE_SWIPE_ACTION(state, action);
         case CHANGE_PAGE_MESSAGES: return CHANGE_PAGE_MESSAGES_ACTION(state, action);
+        case CHANGE_PAGE_MESSAGE: return CHANGE_PAGE_MESSAGE_ACTION(state, action);
         //swipe
         case LOG_KISS: return LOG_KISS_ACTION(state, action);
         case LOG_MARRY: return LOG_MARRY_ACTION(state, action);

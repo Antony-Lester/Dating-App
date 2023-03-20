@@ -7,13 +7,18 @@ import { capitalizeFirstLetter, defaultBlurhash, timeWaiting } from "../../utils
 import { MessageKiss, MessageMarry } from "../Elements/Icons";
 import { messageItem, messagePicture, messageForcedName, messageForcedText, messageForcedWait, messageName, messageForcedPicture } from '../../styles/messages';
 import { TimeLineInterface } from '../../utils/interfaces';
+import store from '../../store/store';
+import { CHANGE_PAGE_MESSAGE } from '../../store/taskTypes';
 
 export const MessagesItem = ({ message }: any) => {
     const lastMessage = message.item.force ? message.item.timeline.filter((message : TimeLineInterface) => !message.sender)[0]?.message : undefined
     
     if (isExpoGo) {
         if (message.item.force) {
-            return (<TouchableOpacity style={messageItem} onPress={() => {console.log('message',message.item.name, 'clicked') }}>
+            return (<TouchableOpacity style={messageItem} onPress={() => {
+                store.dispatch({ type: CHANGE_PAGE_MESSAGE, payload: { page: 'message' } })
+                console.log('message', message.item.name, 'clicked')
+            }}>
                 <Image source={{ uri: message.item.imageUrl }}
                     resizeMode="contain"
                     style={messageForcedPicture} />
@@ -24,7 +29,10 @@ export const MessagesItem = ({ message }: any) => {
             </TouchableOpacity>)
         }
         else {
-            return (<TouchableOpacity style={messageItem} onPress={() => {console.log('message',message.item.name, 'clicked') }}>
+            return (<TouchableOpacity style={messageItem} onPress={() => {
+                store.dispatch({ type: CHANGE_PAGE_MESSAGE, payload: { page: 'message' } })
+                console.log('message', message.item.name, 'clicked')
+            }}>
             <Image source={{ uri: message.item.imageUrl }}
                 resizeMode="contain"
                 style={messagePicture} />

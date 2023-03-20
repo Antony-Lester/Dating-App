@@ -6,15 +6,23 @@ const Image = isExpoGo ? require('react-native').Image : require('expo-image').I
 import { TouchableHighlight, TouchableNativeFeedback, TouchableOpacity, View } from "react-native";
 import { defaultBlurhash } from "../../utils/general";
 import { ConnectionKiss, ConnectionMarry } from "../Elements/Icons";
+import { CHANGE_PAGE_MESSAGE } from "../../store/taskTypes";
+import store from "../../store/store";
 
 export const NewConnectionsComponent = ({ candidate }: any) => {
     if (isExpoGo) {
-        return (<TouchableOpacity onPress={() => {console.log('new',candidate.item.name, 'clicked') }}>
+        return (<TouchableOpacity onPress={() => {
+            store.dispatch({ type: CHANGE_PAGE_MESSAGE, payload: { page: 'message' } })
+            console.log('new', candidate.item.name, 'clicked')
+        }}>
             <Image source={{ uri: candidate.item.imageUrl }} style={newConnectionsItem} />
             {candidate.item.status === 'kiss' ? <ConnectionKiss/> : <ConnectionMarry/>}
             </TouchableOpacity>)}
     else {
-        return (<TouchableOpacity onPress={() => { console.log('new', candidate.item.name, 'clicked') }}>
+        return (<TouchableOpacity onPress={() => {
+            store.dispatch({ type: CHANGE_PAGE_MESSAGE, payload: { page: 'message' } })
+            console.log('new', candidate.item.name, 'clicked')
+        }}>
             <Image style={newConnectionsItem}
                 source={candidate.item.imageURI}
                 placeholder={candidate.item.imageBlurHash?candidate.item.imageBlurHash:defaultBlurhash}

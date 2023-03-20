@@ -21,9 +21,3 @@ export const MessagesComponent = ({ messages }
             ListFooterComponent={<EndsComponent/>}
         />)
     }
-/*
-ListHeaderComponent={<NewConnectionsEndsComponent/>}
-            ItemSeparatorComponent={() => <NewConnectionsSeparatorComponent/>}
-            ListFooterComponent={<NewConnectionsEndsComponent/>}
-
-*/
