@@ -12,7 +12,7 @@ import store from "../../store/store";
 export const NewConnectionsComponent = ({ candidate }: any) => {
     if (isExpoGo) {
         return (<TouchableOpacity onPress={() => {
-            store.dispatch({ type: CHANGE_PAGE_MESSAGE, payload: { page: 'message' } })
+            store.dispatch({ type: CHANGE_PAGE_MESSAGE, payload: { ...candidate.item } })
             console.log('new', candidate.item.name, 'clicked')
         }}>
             <Image source={{ uri: candidate.item.imageUrl }} style={newConnectionsItem} />
@@ -20,7 +20,7 @@ export const NewConnectionsComponent = ({ candidate }: any) => {
             </TouchableOpacity>)}
     else {
         return (<TouchableOpacity onPress={() => {
-            store.dispatch({ type: CHANGE_PAGE_MESSAGE, payload: { page: 'message' } })
+            store.dispatch({ type: CHANGE_PAGE_MESSAGE, payload: { ...candidate.item } })
             console.log('new', candidate.item.name, 'clicked')
         }}>
             <Image style={newConnectionsItem}

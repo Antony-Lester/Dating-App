@@ -16,7 +16,7 @@ export const MessagesItem = ({ message }: any) => {
     if (isExpoGo) {
         if (message.item.force) {
             return (<TouchableOpacity style={messageItem} onPress={() => {
-                store.dispatch({ type: CHANGE_PAGE_MESSAGE, payload: { page: 'message' } })
+                store.dispatch({ type: CHANGE_PAGE_MESSAGE, payload: { ...message.item } })
                 console.log('message', message.item.name, 'clicked')
             }}>
                 <Image source={{ uri: message.item.imageUrl }}
@@ -30,7 +30,7 @@ export const MessagesItem = ({ message }: any) => {
         }
         else {
             return (<TouchableOpacity style={messageItem} onPress={() => {
-                store.dispatch({ type: CHANGE_PAGE_MESSAGE, payload: { page: 'message' } })
+                store.dispatch({ type: CHANGE_PAGE_MESSAGE, payload: { ...message.item } })
                 console.log('message', message.item.name, 'clicked')
             }}>
             <Image source={{ uri: message.item.imageUrl }}

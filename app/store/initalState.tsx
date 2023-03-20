@@ -1,13 +1,15 @@
 /** @format */
 let initialState: any = {
     app: {
+        data: {},
         page: 'profile',
-        subPage1: 'profile',//settings
-        subPage2: 'image',//info
         permissions: {
             swipe: true, //should be set to false for deploy
             message: true, //should be set to false for deploy
-        }
+        },
+        subPage1: 'profile',//settings
+        subPage2: 'image',//info
+        
     },
     messages: {
         newConnections: [], 

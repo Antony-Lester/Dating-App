@@ -24,7 +24,7 @@ export const MenuBar = () => {
     return(
         <View style={menuBar}>
 
-            <TouchableOpacity style={page === 'profile' ? menuItemFocused : menuItem}
+            <TouchableOpacity style={page === 'profile' ? menuItemFocused : page === 'message' ? menuItemDisabled : menuItem}
                 onPress={() => store.dispatch({ type: CHANGE_PAGE_PROFILE, payload: { page: 'profile' } })}>
                 {subPage1 !== 'profile' ? <Settings focus={page}/> : <Profile focus={page}/> }
                 
@@ -32,7 +32,7 @@ export const MenuBar = () => {
                 {page === 'profile' ? <Text style={menuTextFocused(fontScale)}>{capitalizeFirstLetter(subPage1)}</Text> : <></>}
             </TouchableOpacity>
 
-            <TouchableOpacity style={page == 'swipe' ? menuItemFocused : permissions.swipe ? menuItem : menuItemDisabled}
+            <TouchableOpacity style={page == 'swipe' ? menuItemFocused : page !== 'message' && permissions.swipe ? menuItem : menuItemDisabled}
                 disabled={!permissions.swipe}
                 onPress={() => store.dispatch({type: CHANGE_PAGE_SWIPE})}>
                 {page !== 'swipe' ? <Swipe focus={page}/> :subPage2 === 'image'? <Info focus={page}/> : <Picture focus={page}/>}
