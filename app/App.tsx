@@ -19,7 +19,7 @@ export default function App() {
   //TODO also call when api call is finished to remove splash screen
   
   //..redux testing...
-  store.subscribe(() => console.log('store changed!', JSON.stringify(store.getState(), null, 2)));
+  //store.subscribe(() => console.log('store changed!', JSON.stringify(store.getState(), null, 2)));
   
   const Page = createNativeStackNavigator();
   // @ts-expect-error

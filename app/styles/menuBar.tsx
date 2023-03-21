@@ -25,7 +25,7 @@ export const menuItem: ViewStyle = {
     borderTopStartRadius: 80,
     borderColor: setTheme.outline,
     borderWidth: 5,
-    borderBottomWidth: 0
+    borderBottomWidth: 1
 }
 export const menuItemFocused: ViewStyle = {
     position: 'relative',
@@ -34,11 +34,11 @@ export const menuItemFocused: ViewStyle = {
     alignItems: 'center',
     justifyContent: 'space-around',
     backgroundColor: setTheme.surfaceVariant,
-    borderTopEndRadius: 80,
-    borderTopStartRadius: 80,
+    borderTopEndRadius: 60,
+    borderTopStartRadius: 60,
     borderColor: setTheme.onSurfaceVariant,
     borderWidth: 9,
-    borderBottomWidth: 0
+    borderBottomWidth: 1
     
 }
 export const menuItemDisabled: ViewStyle = {
@@ -56,7 +56,7 @@ export const menuItemDisabled: ViewStyle = {
     borderColor: setTheme.surfaceVariant,
     borderWidth: 3,
     opacity: 0.3,
-    borderBottomWidth: 0
+    borderBottomWidth: 1
 }
 export const menuText = (fontScale: number) => ({
     color: setTheme.onPrimaryContainer,
