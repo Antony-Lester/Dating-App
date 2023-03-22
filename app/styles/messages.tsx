@@ -81,7 +81,7 @@ export const messageIcon: TextStyle = {
 };
 
 //forced
-export const messageForcedPicture: ViewStyle = {
+export const messageForcedPicture: ImageStyle = {
 	height: '100%',
 	left: windowWidth * 0.015,
 	aspectRatio: 1,
@@ -127,7 +127,7 @@ export const messageForcedWait: TextStyle = {
 	color: setTheme.background,
 };
 //not-forced
-export const messagePicture: ViewStyle = {
+export const messagePicture: ImageStyle = {
 	height: '100%',
 	left: windowWidth * 0.015,
 	aspectRatio: 1,
