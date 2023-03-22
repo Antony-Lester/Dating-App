@@ -25,7 +25,7 @@ export const MenuBar = () => {
         <View style={menuBar}>
 
             <TouchableOpacity style={page === 'profile' ? menuItemFocused : page === 'message' ? menuItemDisabled : menuItem}
-                onPress={() => store.dispatch({ type: CHANGE_PAGE_PROFILE, payload: { page: 'profile' } })}>
+                onPress={() => store.dispatch({ type: CHANGE_PAGE_PROFILE})}>
                 {subPage1 !== 'profile' ? <Settings focus={page}/> : <Profile focus={page}/> }
                 
                 

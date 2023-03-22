@@ -4,9 +4,9 @@ let initialState: any = {
         data: {},
         page: 'profile',
         permissions: {
-            swipe: true, //should be set to false for deploy
-            message: true, //should be set to false for deploy
-            profile: true, //should be set to true for deploy
+            swipe: false, //should be set to false for deploy (can swipe)
+            message: true, //should be set to false for deploy (can message)
+            profile: true, //should be set to false for deploy (profile is complete)
         },
         subPage1: 'profile',//settings
         subPage2: 'image',//info

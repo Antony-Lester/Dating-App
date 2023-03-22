@@ -14,13 +14,15 @@ import { Message } from './Pages/Message';
 
 
 export default function App() {
+  //++TESTING++
+  store.subscribe(() => console.log('store changed!', JSON.stringify(store.getState(), null, 2)));
+
+  //++API CALL++
   //SplashScreen.preventAutoHideAsync();
   //setTimeout(SplashScreen.hideAsync, 1000);
   //TODO also call when api call is finished to remove splash screen
   
-  //..redux testing...
-  //store.subscribe(() => console.log('store changed!', JSON.stringify(store.getState(), null, 2)));
-  
+  //++NAVIGATOR++
   const Page = createNativeStackNavigator();
   // @ts-expect-error
   store.subscribe(() => navigationRef.navigate(store.getState().app.page))

@@ -2,6 +2,7 @@
 
 import { Dimensions, TextStyle, ViewStyle, StatusBar } from 'react-native';
 import { setTheme } from './theme';
+import { ImageStyle } from 'expo-image';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const separator = windowWidth / 25;
@@ -19,13 +20,13 @@ export const newConnectionsContainer: ViewStyle = {
 	flexGrow: 0,
 	minHeight: windowWidth * 0.66,
 };
-export const newConnectionsItem: ViewStyle = {
+export const newConnectionsItem: ImageStyle = {
 	width: windowWidth / 2.4,
 	aspectRatio: 0.66,
 	borderWidth: 5,
 	borderColor: setTheme.primary,
 	borderRadius: 50,
-};
+};		
 export const startComponent: ViewStyle = {
 	padding: separator/2,
 };
