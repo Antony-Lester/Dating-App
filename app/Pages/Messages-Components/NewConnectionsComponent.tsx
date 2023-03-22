@@ -16,7 +16,7 @@ export const NewConnectionsComponent = ({ candidate }: any) => {
             source={candidate.item.imageUrl}
             placeholder={candidate.item.imageBlurHash?candidate.item.imageBlurHash:defaultBlurhash}
             contentFit="cover"
-            transition={4000}/>
+            transition={5000}/>
         {candidate.item.status === 'kiss' ? <ConnectionKiss/> : <ConnectionMarry/>}
         </TouchableOpacity>)
 }

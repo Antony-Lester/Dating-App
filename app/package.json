@@ -4,11 +4,12 @@
   "scripts": {
     "start-apk": "expo start --dev-client",
     "start-go": "expo start",
-    "start-local": "expo start --localhost --android",
+    "start-local": "npx expo-doctor || expo start --localhost --android",
     "apk": "eas build --platform android --profile preview",
     "apkrun": "eas build:run --platform android",
     "build-local": "npx expo run:android",
-    "build-remote": "eas build -p android --profile preview"
+    "build-remote": "eas build -p android --profile preview",
+    "check": "npx expo-doctor"
   },
   "dependencies": {
     "@react-navigation/native": "^6.1.1",
@@ -17,14 +18,14 @@
     "expo": "^48.0.8",
     "expo-constants": "~14.2.1",
     "expo-dev-client": "~2.1.5",
-    "expo-image": "^1.0.0",
+    "expo-image": "~1.0.0",
     "expo-splash-screen": "~0.18.1",
     "expo-status-bar": "~1.4.2",
     "expo-system-ui": "~2.2.1",
     "json5": ">=1.0.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-native": "0.71.3",
+    "react-native": "0.71.4",
     "react-native-gesture-handler": "~2.9.0",
     "react-native-reanimated": "~2.14.4",
     "react-native-safe-area-context": "4.5.0",
