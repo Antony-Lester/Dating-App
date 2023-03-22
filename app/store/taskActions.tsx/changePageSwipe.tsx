@@ -1,12 +1,19 @@
 /** @format */
 function CHANGE_PAGE_SWIPE_ACTION(state: any, action: any) {
-    
-    if (state.app.page === 'swipe') {
-        if (state.app.subPage2 === 'image') {return { ...state, app: { ...state.app, subPage2: 'bio'}}}
-        else {return { ...state, app: { ...state.app, subPage2: 'image'}}}
-    }
-    if (state.app.page === 'message') { return {...state} }
-    return { ...state, app: { ...state.app, page: state.messages.newConnections.length === 0 && state.messages.new.length === 0 ? 'swipe' : 'messages', permissions: {...state.app.permissions, swipe: state.messages.newConnections.length === 0 &&
-    state.messages.newMessages.length === 0} }} }
+	//button toggle
+	if (state.app.page === 'swipe') {
+		if (state.app.subPage2 === 'image') {
+			return { ...state, app: { ...state.app, subPage2: 'bio' } };
+		} else {
+			return { ...state, app: { ...state.app, subPage2: 'image' } };
+		}
+	}
+	//other pages
+	else if (state.app.permissions.swipe && !state.app.permissions.message) {
+		return { ...state, app: { ...state.app, page: 'swipe' } };
+	} else {
+		return { ...state };
+	}
+}
 
-export default CHANGE_PAGE_SWIPE_ACTION
+export default CHANGE_PAGE_SWIPE_ACTION;
