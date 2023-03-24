@@ -1,15 +1,17 @@
-/** @format */
+
 //@ts-nocheck
-import { View, Text, TouchableOpacity, useWindowDimensions} from "react-native"
+import {Keyboard, View, Text, TouchableOpacity, useWindowDimensions } from "react-native"
+import React, {useState, useEffect} from 'react';
 import { createNavigationContainerRef } from '@react-navigation/native';
 import { useSelector } from 'react-redux';
 
 import { menuBar, menuItem, menuItemDisabled, menuItemFocused, menuText, menuTextDisabled, menuTextFocused } from "../../styles/menuBar"
-import { Chat, Info, Profile, Picture, Swipe, Settings} from "../Elements/Icons"
+import { Chat, Info, Profile, Picture, Swipe, Settings, Remove, Send} from "../Elements/Icons"
 
 import store from "../../store/store";
-import { CHANGE_PAGE_MESSAGES, CHANGE_PAGE_PROFILE, CHANGE_PAGE_SWIPE } from "../../store/taskTypes";
+import { MENU_BUTTON_3, MENU_BUTTON_1, MENU_BUTTON_2 } from "../../store/taskTypes";
 import { capitalizeFirstLetter } from '../../utils/general'
+
 
 export const navigationRef = createNavigationContainerRef()
 
@@ -20,30 +22,60 @@ export const MenuBar = () => {
     let subPage2 = useSelector(state => state.app.subPage2)
 
     const { fontScale } = useWindowDimensions()
-    
+
+    const [keyboardStatus, setKeyboardStatus] = useState(false);
+
+    useEffect(() => {
+        const showSubscription = Keyboard.addListener('keyboardDidShow', () => {
+        setKeyboardStatus(true);
+        });
+        const hideSubscription = Keyboard.addListener('keyboardDidHide', () => {
+        setKeyboardStatus(false);
+        });
+
+        return () => {
+        showSubscription.remove();
+        hideSubscription.remove();
+        };
+    }, []);
+
+
     return(
         <View style={menuBar}>
+            
+            <TouchableOpacity
+                style={page === 'profile' || page === 'message' ? menuItemFocused : page === 'messages' ? menuItemDisabled : menuItem}
+                onPress={() => store.dispatch({ type: MENU_BUTTON_1})}>
+                
+                {subPage1 === 'profile' ?
+                    <Profile focus={page}/> :
+                    page === 'message' ?
+                    <Remove focus={keyboardStatus}/> :
+                    <Settings focus={page} />}
+                
+                {!keyboardStatus ? page === 'profile' ? <Text style={menuTextFocused(fontScale)}>{capitalizeFirstLetter(subPage1)}</Text> : page === 'message' ? <Text style={menuTextFocused(fontScale)}>Avoid</Text> :<></>: <></>}
 
-            <TouchableOpacity style={page === 'profile' ? menuItemFocused : page === 'message' ? menuItemDisabled : menuItem}
-                onPress={() => store.dispatch({ type: CHANGE_PAGE_PROFILE})}>
-                {subPage1 !== 'profile' ? <Settings focus={page}/> : <Profile focus={page}/> }
-                
-                
-                {page === 'profile' ? <Text style={menuTextFocused(fontScale)}>{capitalizeFirstLetter(subPage1)}</Text> : <></>}
             </TouchableOpacity>
 
-            <TouchableOpacity style={page == 'swipe' ? menuItemFocused : page !== 'message' && permissions.swipe ? menuItem : menuItemDisabled}
-                disabled={!permissions.swipe}
-                onPress={() => store.dispatch({type: CHANGE_PAGE_SWIPE})}>
-                {page !== 'swipe' ? <Swipe focus={page}/> :subPage2 === 'image'? <Info focus={page}/> : <Picture focus={page}/>}
-                {page == 'swipe' ? <Text style={menuTextFocused(fontScale)}>{page !== 'swipe' ? 'swipe':subPage2 === 'image'? 'Info' : 'Face'}</Text> : <></>}
+            <TouchableOpacity
+                style={page == 'swipe' || page === 'message' ? menuItemFocused : subPage1 === 'message' || permissions.swipe ? menuItem : menuItemDisabled}
+                onPress={() => store.dispatch({ type: MENU_BUTTON_2 })}>
+                
+                {page !== 'swipe' ? subPage1 === 'message' ?
+                    <Send focus={keyboardStatus} /> : <Swipe focus={page} />
+                    : subPage2 === 'image' ? <Info focus={page} /> : <Picture focus={page} />}
+                
+                {!keyboardStatus ? page === 'swipe' || page === 'message' ? <Text style={menuTextFocused(fontScale)}>{page !== 'swipe' ? page === 'message'? 'Send' : 'swipe' : subPage2 === 'image' ? 'Info' : 'Face'}</Text> : <></> : <></>}
+
             </TouchableOpacity>
 
-            <TouchableOpacity style={page == 'messages' ? menuItemFocused : permissions.message ? menuItem : menuItemDisabled}
-                disabled={!permissions.message}
-                onPress={() => store.dispatch({type: CHANGE_PAGE_MESSAGES})}>
-                <Chat focus={page} />
-                {page == 'messages' ? <Text style={menuTextFocused(fontScale)}>Chat</Text> : <></> }
+            <TouchableOpacity style={page === 'messages' || page === 'message' ? menuItemFocused : permissions.message ? menuItem : menuItemDisabled}
+                onPress={() => store.dispatch({type: MENU_BUTTON_3})}>
+                
+                <Chat focus={page === 'messages' || page === 'message'? keyboardStatus: true} />
+
+                {!keyboardStatus ? page === 'messages' || page === 'message' ? <Text style={menuTextFocused(fontScale)}>Chat</Text> : <></> : <></>}
+                
             </TouchableOpacity>
         </View>)
 }

@@ -10,7 +10,7 @@ import { StartComponent } from "./StartComponent"
 export const NewConnections = ({ newConnections }
     : { newConnections: Array<MessageInterface> }) => {
     const length = newConnections.length
-    return (<><Text style={newConnectionsTitle}>{length} New Connections</Text>
+    return (<><Text style={newConnectionsTitle}>{`${length} New Connection${length > 1 ? 's' : ''}`}</Text>
         <FlatList
             style={newConnectionsContainer}
             data={newConnections}

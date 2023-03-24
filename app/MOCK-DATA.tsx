@@ -6,19 +6,18 @@ export interface UserInterface {
     email?: string
     number?: number
     category?: string
-    image?: string
-    imageURI?: string
+    imageUrl?: string
     imageBlurHash?: string
     bio?: string
 }
 export interface TimeLineInterface {
-    time: any,
+    time: string,
     sender: Boolean,
     message: string,
 }
 export interface MessageInterface {
     uid: string,
-    image: string,
+    bio: string,
     imageUrl: string,
     imageBlurHash: string,
     name: string,
@@ -34,7 +33,6 @@ export interface MessagesInterface {
 export interface CandidatesInterface { 
     uid: string
     name: string
-    image: string
     imageUrl: string
     imageBlurHash: string
     bio: string
@@ -50,84 +48,137 @@ export interface SwipeInterface {
     candidates: Array<CandidatesInterface>,
     results: ResultsInterface
 }
+
+export interface SendMessageInterface { 
+    uid: string,
+    toUid: string,
+    time: string,
+    message: string,
+}
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+const sendMessage : SendMessageInterface = {
+    uid: '69',
+    toUid: '79',
+    time: "2022-06-16T05:29:27.236Z",
+    message: 'New Message Sent'
+}
+
+
+
+
+
+
+
+
+
+
 function getRandomDate() {
     const maxDate = Date.now();
     const timestamp = Math.floor(Math.random() * maxDate);
     return new Date(timestamp);
 }
 
-const timeLineExample : Array<TimeLineInterface> = [
+const timeLineExampleSender : Array<TimeLineInterface> = [
     {
-        time: getRandomDate(),
+        time: "1976-11-25T01:00:15.375Z",
         sender:true,
-        message:'Hello Darling',
+        message:'5 oldest message',
     },
     {
-        time: getRandomDate(),
+        time: "1991-06-12T14:40:40.225Z",
         sender:false,
-        message:'Hi sweetie',
+        message:'4 message',
     },
     {
-        time: getRandomDate(),
+        time: "2014-08-02T00:22:28.004Z",
         sender:true,
-        message:'Made waited pleasant taste.',
+        message:'3 message',
     },
     {
-        time: getRandomDate(),
+        time: "2015-07-29T21:52:39.115Z",
         sender:false,
-        message:'Hard talked shameless visitor thrown. Subject herself breeding engage seeing next.',
+        message:'2 message',
     },
     {
-        time: getRandomDate(),
+        time: "2022-06-16T05:29:27.236Z",
         sender:true,
-        message:'Feeling after quitting took come mistress admiration inquiry child law nor oh part parish lasted given little. Defer home length inquietude perpetual necessary plan its effects.',
+        message:'Hey Sweetie 🙂',
     }
 ]
+
+const timeLineExampleNotSender : Array<TimeLineInterface> = [
+    {
+        time: "1976-11-25T01:00:15.375Z",
+        sender:false,
+        message:'5 oldest message',
+    },
+    {
+        time: "1991-06-12T14:40:40.225Z",
+        sender:true,
+        message:'4 message',
+    },
+    {
+        time: "2014-08-02T00:22:28.004Z",
+        sender:false,
+        message:'3 message',
+    },
+    {
+        time: "2015-07-29T21:52:39.115Z",
+        sender:true,
+        message:'2 message',
+    },
+    {
+        time: "2022-06-16T05:29:27.236Z",
+        sender:false,
+        message:'Hey Sweetie 🙂',
+    }
+]
+//------------------------------------------------------------------------------
 export let message1: MessageInterface = {
     uid: '10',
     name: 'Saddam',
-    image: '?????',
+    bio: 'bio dsxfgtszdrtgdrg drgdrgdrgdrgdrgdr gljkl.k',
     imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/9/9a/Saddam_Hussein_in_1998.png',
     imageBlurHash: 'eIE_?bx]0fNx^*}=tRyDNaVs5SRj?GRjNHPCM{rWs.t7R*R*-ps.M{',
     status: 'kiss',
-    force: true,
-    timeline: timeLineExample
+    force: false,
+    timeline: timeLineExampleSender
 }
 export let message2: MessageInterface = {
     uid: '20',
     name: 'andrew',
-    image: '?????',
+    bio: 'bio dsxfgtszdrtgdrg drgdrgdrgdrgdrgdr gljkl.k',
     imageUrl: 'https://media.vanityfair.com/photos/624f199078feebfc24e831d9/master/pass/prince-andrew-04-07-2022.jpg',
     imageBlurHash: 'eXGIy6fk5SE1~V-:M{kqWBr=E1RP%2RjS$o}ofoejZWWM{j[j@s:M{',
     status: 'marry',
     force: true,
-    timeline: timeLineExample
+    timeline: timeLineExampleNotSender
 }
 export let message3: MessageInterface = {
     uid: '30',
     name: 'adolf',
-    image: '?????',
+    bio: 'bio dsxfgtszdrtgdrg drgdrgdrgdrgdrgdr gljkl.k',
     imageUrl: 'https://www.themoviedb.org/t/p/original/n6f81IUSes1a8jTzUIF7rJ5zZnP.jpg',
     imageBlurHash: 'eFB|KZ9F00~qofofayxuofRj00xu-;D%xuD%xuxuM{ayWBWBxuofM{',
     status: 'kiss',
     force: false,
-    timeline: timeLineExample
+    timeline: timeLineExampleSender
 }
 export let message4: MessageInterface = {
     uid: '40',
     name: 'Osama',
-    image: '?????',
+    bio: 'bio dsxfgtszdrtgdrg drgdrgdrgdrgdrgdr gljkl.k',
     imageUrl: 'https://cdn.britannica.com/93/153593-050-15D2B42F/Osama-bin-Laden.jpg',
     imageBlurHash: 'ePMG*F%M?XM{D%miWr${Iot8%LM}9FWBxu_NWEIWV@j[E1fis;oJRj',
     status: 'marry',
     force: false,
     timeline: []
 }
+//------------------------------------------------------------------------------
 const candidate1: CandidatesInterface = {
     uid: '10',
     name: 'Saddam',
-    image: '?????',
     imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/9/9a/Saddam_Hussein_in_1998.png',
     imageBlurHash: 'eIE_?bx]0fNx^*}=tRyDNaVs5SRj?GRjNHPCM{rWs.t7R*R*-ps.M{',
     bio: `Measured fer yer chains barkadeer Plate Fleet pink holystone lugger take a caulk quarterdeck Sink me fathom. Killick interloper wherry flogging run a rig plunder black spot furl jib nipper. Ballast plunder deadlights overhaul Blimey gunwalls hempen halter carouser gun bucko.`
@@ -135,7 +186,6 @@ const candidate1: CandidatesInterface = {
 const candidate2: CandidatesInterface = {
     uid: '20',
     name: 'andrew',
-    image: '?????',
     imageUrl: 'https://media.vanityfair.com/photos/624f199078feebfc24e831d9/master/pass/prince-andrew-04-07-2022.jpg',
     imageBlurHash: 'eXGIy6fk5SE1~V-:M{kqWBr=E1RP%2RjS$o}ofoejZWWM{j[j@s:M{',
     bio: `Sheet Sea Legs scuttle Shiver me timbers ballast shrouds Buccaneer starboard execution dock brigantine. Gun wherry scourge of the seven seas topmast hornswaggle gangplank parley ye hail-shot booty. Privateer gabion squiffy Pieces of Eight gibbet dance the hempen jig barque chandler yard scuppers.`
@@ -143,7 +193,6 @@ const candidate2: CandidatesInterface = {
 const candidate3: CandidatesInterface = {
     uid: '30',
     name: 'adolf',
-    image: '?????',
     imageUrl: 'https://www.themoviedb.org/t/p/original/n6f81IUSes1a8jTzUIF7rJ5zZnP.jpg',
     imageBlurHash: 'eFB|KZ9F00~qofofayxuofRj00xu-;D%xuD%xuxuM{ayWBWBxuofM{',
     bio: `Capstan rutters barque line lugsail swing the lead nipperkin grog blossom scourge of the seven seas Chain Shot. Haul wind plunder long clothes rope's end Corsair fore chandler no prey, no pay draught tackle. Jack Tar belay lugger squiffy booty jib mutiny cackle fruit hardtack loaded to the gunwalls.`
@@ -151,7 +200,6 @@ const candidate3: CandidatesInterface = {
 const candidate4: CandidatesInterface = {
     uid: '40',
     name: 'Osama',
-    image: '?????',
     imageUrl: 'https://cdn.britannica.com/93/153593-050-15D2B42F/Osama-bin-Laden.jpg',
     imageBlurHash: 'ePMG*F%M?XM{D%miWr${Iot8%LM}9FWBxu_NWEIWV@j[E1fis;oJRj',
     bio: `Fluke hulk Davy Jones' Locker aft quarter grog blossom starboard league wherry shrouds. Topsail Yellow Jack driver crimp wench main sheet fire in the hole fire ship spanker broadside. Nipper gunwalls bilge rat red ensign yawl line prow to go on account tackle hornswaggle.`
@@ -167,8 +215,7 @@ export let userFull: UserInterface = {
     email: 'me@antonylester.com',
     number: 447735950051,
     category: 'ms',
-    image: '?????',
-    imageURI: 'https://t4.ftcdn.net/jpg/00/97/58/97/360_F_97589769_t45CqXyzjz0KXwoBZT9PRaWGHRk5hQqQ.jpg',
+    imageUrl: 'https://t4.ftcdn.net/jpg/00/97/58/97/360_F_97589769_t45CqXyzjz0KXwoBZT9PRaWGHRk5hQqQ.jpg',
     imageBlurHash: 'LEHLh[WB2yk8pyoJadR*.7kCMdn',
     bio: `Booty port Corsair fore Barbary Coast parley matey rigging six pounders Pirate Round. Ho bilge bilged on her anchor transom case shot hempen halter carouser gangplank squiffy Yellow Jack. Jib pirate Nelsons folly schooner skysail Corsair code of conduct list mutiny heave down.`
 }
@@ -178,9 +225,9 @@ export let messagesEmpty: MessagesInterface = {
     messages: []
 }
 export let messages: MessagesInterface = { 
-    newConnections: [message1,message2, message3, message4], 
-    newMessages: [message1, message2],
-    messages: [ message3, message4]
+    newConnections: [message4], 
+    newMessages: [message2],
+    messages: [message1, message3]
 }
 export let swipeDone: SwipeInterface = { 
     candidates: [],

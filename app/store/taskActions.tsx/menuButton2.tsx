@@ -1,5 +1,5 @@
 /** @format */
-function CHANGE_PAGE_SWIPE_ACTION(state: any, action: any) {
+function MENU_BUTTON_2_ACTION(state: any, action: any) {
 	//button toggle
 	if (state.app.page === 'swipe') {
 		if (state.app.subPage2 === 'image') {
@@ -16,4 +16,4 @@ function CHANGE_PAGE_SWIPE_ACTION(state: any, action: any) {
 	}
 }
 
-export default CHANGE_PAGE_SWIPE_ACTION;
+export default MENU_BUTTON_2_ACTION;

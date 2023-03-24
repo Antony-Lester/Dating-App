@@ -11,11 +11,14 @@ import { Messages } from './Pages/Messages';
 import { MenuBar } from './Pages/Components/MenuBar';
 import { navigationRef } from './Pages/Components/MenuBar';
 import { Message } from './Pages/Message';
+import { useState } from 'react';
+import { Splash } from './Pages/Components/Splash';
 
 
 export default function App() {
+  const [isReady, setIsReady] = useState(false)
   //++TESTING++
-  store.subscribe(() => console.log('store changed!', JSON.stringify(store.getState(), null, 2)));
+  //store.subscribe(() => console.log('store changed!', JSON.stringify(store.getState(), null, 2)));
 
   //++API CALL++
   //SplashScreen.preventAutoHideAsync();
@@ -24,13 +27,17 @@ export default function App() {
   
   //++NAVIGATOR++
   const Page = createNativeStackNavigator();
-  // @ts-expect-error
-  store.subscribe(() => navigationRef.navigate(store.getState().app.page))
-  //navigationRef.isReady()
-  
-  return (
-    <Provider store={store}>
-      <NavigationContainer ref={navigationRef}>
+  function navigationFunction(path: string) {
+    //@ts-expect-error
+    if(!isReady) {window.setTimeout(navigationFunction, 100)} else {navigationRef.navigate(path)}
+  }
+  store.subscribe(() => navigationFunction(store.getState().app.page))
+
+  return (<Provider store={store}>
+      <NavigationContainer
+        ref={navigationRef}
+        fallback={<Splash />}
+      onReady={() => { setIsReady(true) }}>
         <Page.Navigator screenOptions={{ headerShown: false }}>
           <Page.Screen name='profile' component={Profile} />
           <Page.Screen name='swipe' component={Swipe} />
@@ -38,6 +45,6 @@ export default function App() {
           <Page.Screen name='message' component={Message} />
         </Page.Navigator>
         <MenuBar />
-      </NavigationContainer>
-    </Provider>);
+      </NavigationContainer> 
+    </Provider>)
 }

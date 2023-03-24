@@ -71,7 +71,7 @@ export const messageItem: ViewStyle = {
 	flexWrap: 'nowrap',
 	flexGrow: 0,
 };
-export const messageIcon: TextStyle = {
+export const messagesIcon: TextStyle = {
 	position: 'absolute',
 	left: windowWidth * 0.175,
 	bottom: windowWidth * 0.065,

@@ -9,19 +9,18 @@ export interface UserInterface {
     email?: string
     number?: number
     category?: string
-    image?: string
     imageURI?: string
     imageBlurHash?: string
     bio?: string
 }
 export interface TimeLineInterface {
-    time: any,
+    time: string,
     sender: Boolean,
     message: string,
 }
 export interface MessageInterface {
     uid: number,
-    image: string,
+    bio: string,
     imageUrl: string,
     imageBlurHash: string,
     name: string,
@@ -37,7 +36,6 @@ export interface MessagesInterface {
 export interface CandidatesInterface { 
     uid: string
     name: string
-    image: string
     imageURI: string
     imageBlurHash: string
     bio: string
@@ -110,4 +108,11 @@ export interface Colours {
 export interface Theme {
     light: Colours,
     dark: Colours
+}
+
+export interface SendMessageInterface { 
+    uid: string,
+    toUid: string,
+    time: string,
+    message: string,
 }

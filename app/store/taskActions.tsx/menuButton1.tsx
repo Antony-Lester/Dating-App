@@ -1,5 +1,5 @@
 /** @format */
-function CHANGE_PAGE_PROFILE_ACTION(state: any, action: any) {
+function MENU_BUTTON_1_ACTION(state: any, action: any) {
     //button toggle
     if (state.app.page === 'profile') {
         if (state.app.subPage1 !== 'settings') {return { ...state, app: { ...state.app, subPage1: 'settings' } }}
@@ -12,4 +12,4 @@ function CHANGE_PAGE_PROFILE_ACTION(state: any, action: any) {
     else { return {...state} }
 }
 
-export default CHANGE_PAGE_PROFILE_ACTION
+export default MENU_BUTTON_1_ACTION
