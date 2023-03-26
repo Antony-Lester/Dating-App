@@ -63,7 +63,11 @@ const sendMessage : SendMessageInterface = {
     time: "2022-06-16T05:29:27.236Z",
     message: 'New Message Sent'
 }
-
+export interface RemoveInterface { 
+    uid: string,
+    toUid: string,
+    time: string,
+}
 
 
 
@@ -78,6 +82,7 @@ function getRandomDate() {
     const timestamp = Math.floor(Math.random() * maxDate);
     return new Date(timestamp);
 }
+const timeLineExampleEmpty : Array<TimeLineInterface> = []
 
 const timeLineExampleSender : Array<TimeLineInterface> = [
     {
@@ -172,8 +177,8 @@ export let message4: MessageInterface = {
     imageUrl: 'https://cdn.britannica.com/93/153593-050-15D2B42F/Osama-bin-Laden.jpg',
     imageBlurHash: 'ePMG*F%M?XM{D%miWr${Iot8%LM}9FWBxu_NWEIWV@j[E1fis;oJRj',
     status: 'marry',
-    force: false,
-    timeline: []
+    force: true,
+    timeline: timeLineExampleEmpty
 }
 //------------------------------------------------------------------------------
 const candidate1: CandidatesInterface = {

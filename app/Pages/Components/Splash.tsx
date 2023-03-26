@@ -1,15 +1,17 @@
-import { View, Image} from "react-native"
-import { page, splash } from "../../styles/pages"
-import { useAssets } from 'expo-asset';
+import { View } from "react-native"
+import { page } from "../../styles/pages"
+import { Image } from "expo-image"
+import { useAssets } from "expo-asset";
 
+export default () => {
 
-export const Splash = () => {
-    const [assets, error] = useAssets([require('../../assets/splash.png')]);
+    const [assets] = useAssets([require('../../assets/splash.png')]);
+
     return (<View style={page}>
-        {assets ?
-            <Image style={splash}
-                source={assets[0]}
+        {assets ? <Image
+            source={{ uri: assets[0].uri }}
             placeholder={`|J9ioRj[0dWB}]of9saexbNwa|w^jtS4a|sojtay+Zf6GHfl#7aeT1kCi^rqayT0j[nhayX8j[jaF|a}+ujZKPbHwHjZf,xvj[M_ayxuj[RjayoeEKay-Vj[NFayogbHr?WAfPkDfkaxayf7j[kCaffQf*jsjZbHW.jZo2`}
-            contentFit="cover" transition={3000} /> : <></>}
+            contentFit="cover" transition={3000}
+        /> : null}
     </View>)
 }

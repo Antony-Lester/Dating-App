@@ -1,7 +1,8 @@
 /** @format */
 let initialState: any = {
     app: {
-        data: {},
+        data: {}, //temp holder
+        input: {}, //input holder
         page: 'profile',
         permissions: {
             swipe: false, //should be set to false for deploy (can swipe)
@@ -15,7 +16,9 @@ let initialState: any = {
     messages: {
         newConnections: [], 
         newMessages: [],
-        messages: []
+        messages: [],
+        send: [],
+        remove: [],
     },
     swipe: { 
         candidates: [],

@@ -1,5 +1,5 @@
 /** @format */
-import { MENU_BUTTON_1, MENU_BUTTON_2, MENU_BUTTON_3, LOG_KISS, LOG_MARRY, LOG_AVOID, CHANGE_PAGE_MESSAGE, SET_PERMISSION_PROFILE, SET_PERMISSION_SWIPE, SET_PERMISSION_MESSAGE, REVOKE_PERMISSION_PROFILE, REVOKE_PERMISSION_SWIPE, REVOKE_PERMISSION_MESSAGE, LOG_MESSAGE } from "./taskTypes";
+import { MENU_BUTTON_1, MENU_BUTTON_2, MENU_BUTTON_3, LOG_KISS, LOG_MARRY, LOG_AVOID, CHANGE_PAGE_MESSAGE, SET_PERMISSION_PROFILE, SET_PERMISSION_SWIPE, SET_PERMISSION_MESSAGE, REVOKE_PERMISSION_PROFILE, REVOKE_PERMISSION_SWIPE, REVOKE_PERMISSION_MESSAGE, LOG_MESSAGE, LOG_SEND_MESSAGE, LOG_REMOVE } from "./taskTypes";
 
 import initialState from "./initalState";
 
@@ -18,6 +18,8 @@ import REVOKE_PERMISSION_PROFILE_ACTION from "./taskActions.tsx/revokePermission
 import REVOKE_PERMISSION_SWIPE_ACTION from "./taskActions.tsx/revokePermissionSwipe";
 import REVOKE_PERMISSION_MESSAGE_ACTION from "./taskActions.tsx/revokePermissionMessage";
 import LOG_MESSAGE_ACTION from "./taskActions.tsx/logMessage";
+import LOG_SEND_MESSAGE_ACTION from "./taskActions.tsx/logSendMessage";
+import LOG_REMOVE_ACTION from "./taskActions.tsx/logRemove";
 
 
 const taskReducer = (state = initialState, action : any) => {
@@ -42,8 +44,9 @@ const taskReducer = (state = initialState, action : any) => {
         case LOG_MARRY: return LOG_MARRY_ACTION(state, action);
         case LOG_AVOID: return LOG_AVOID_ACTION(state, action);
         //message
-        case LOG_MESSAGE: return LOG_MESSAGE_ACTION(state, action);
-                
+        case LOG_MESSAGE: return LOG_MESSAGE_ACTION(state, action);//record input
+        case LOG_SEND_MESSAGE: return LOG_SEND_MESSAGE_ACTION(state);//log input to message.send 
+        case LOG_REMOVE: return LOG_REMOVE_ACTION(state);//log to message.remove
     default: return state;}
 }
     

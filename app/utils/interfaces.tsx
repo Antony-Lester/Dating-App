@@ -116,3 +116,9 @@ export interface SendMessageInterface {
     time: string,
     message: string,
 }
+
+export interface RemoveInterface { 
+    uid: string,
+    toUid: string,
+    time: string,
+}

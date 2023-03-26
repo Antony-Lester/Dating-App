@@ -1,23 +1,20 @@
 /** @format */
 import { Text, View } from 'react-native';
-
-import { page } from '../styles/pages';
 import { useSelector } from 'react-redux';
+import { page } from '../styles/pages';
 import { NewConnections } from './Messages-Components/NewConnections';
-import { endsComponent, newMessagesTitle } from '../styles/messages';
 import { MessagesComponent } from './Messages-Components/MessagesComponent';
 import { MessageInterface } from '../utils/interfaces';
+import { endsComponent, newMessagesTitle } from '../styles/messages';
 
-export const Messages = () => {
-    
+export default () => {
     const newConnections = useSelector((state : any) => state.messages.newConnections)
     const newMessages = useSelector((state: any) => state.messages.newMessages)
     const messages = useSelector((state: any) => state.messages.messages)
     const messageCount: number = newMessages.length + messages.length
-    
     const sortedMessages: Array<MessageInterface> = [
-        ...newMessages.sort((a : MessageInterface, b : MessageInterface) => a.status < b.status),
-        ...messages.sort((a: MessageInterface, b: MessageInterface) => a.status < b.status)]
+        ...newMessages?.sort((a : MessageInterface, b : MessageInterface) => a.status < b.status),
+        ...messages?.sort((a: MessageInterface, b: MessageInterface) => a.status < b.status)]
     
     return (<View style={page}>
         {newConnections.length ? <NewConnections newConnections={newConnections} /> : <View style={endsComponent}></View>}

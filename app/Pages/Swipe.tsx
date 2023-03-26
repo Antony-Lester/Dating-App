@@ -5,7 +5,7 @@ import { Card } from './Swipe-Components/Card';
 import { page } from '../styles/pages';
 import { CandidatesInterface } from '../utils/interfaces';
 
-export const Swipe = () => {
+export default () => {
     
     let candidates = useSelector((state : any) => state.swipe.candidates)
     

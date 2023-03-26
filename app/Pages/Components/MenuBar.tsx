@@ -6,21 +6,27 @@ import { createNavigationContainerRef } from '@react-navigation/native';
 import { useSelector } from 'react-redux';
 
 import { menuBar, menuItem, menuItemDisabled, menuItemFocused, menuText, menuTextDisabled, menuTextFocused } from "../../styles/menuBar"
-import { Chat, Info, Profile, Picture, Swipe, Settings, Remove, Send} from "../Elements/Icons"
 
 import store from "../../store/store";
-import { MENU_BUTTON_3, MENU_BUTTON_1, MENU_BUTTON_2 } from "../../store/taskTypes";
+import { MENU_BUTTON_3, MENU_BUTTON_1, MENU_BUTTON_2, LOG_SEND_MESSAGE } from "../../store/taskTypes";
+import { Chat, Info, Profile, Picture, Swipe, Settings, Remove, Send} from "../Elements/Icons"
 import { capitalizeFirstLetter } from '../../utils/general'
+import { removeCheck } from "../../utils/alerts";
 
 
-export const navigationRef = createNavigationContainerRef()
 
-export const MenuBar = () => { 
-    let page = useSelector(state => state.app.page)
-    let permissions = useSelector(state => state.app.permissions)
-    let subPage1 = useSelector(state => state.app.subPage1)
-    let subPage2 = useSelector(state => state.app.subPage2)
 
+
+
+
+export default () => { 
+    let page = useSelector(state => state.app.page);
+    let permissions = useSelector(state => state.app.permissions);
+    let subPage1 = useSelector(state => state.app.subPage1);
+    let subPage2 = useSelector(state => state.app.subPage2);
+    let forceMessages = useSelector((state: any) => state.messages.newConnections.length)
+        + useSelector((state: any) => state.messages.newMessages.length);
+    let candidateName = useSelector((state: any) => state.app?.data)
     const { fontScale } = useWindowDimensions()
 
     const [keyboardStatus, setKeyboardStatus] = useState(false);
@@ -44,8 +50,8 @@ export const MenuBar = () => {
         <View style={menuBar}>
             
             <TouchableOpacity
-                style={page === 'profile' || page === 'message' ? menuItemFocused : page === 'messages' ? menuItemDisabled : menuItem}
-                onPress={() => store.dispatch({ type: MENU_BUTTON_1})}>
+                style={page === 'profile' || page === 'message' ? menuItemFocused : forceMessages ? menuItemDisabled : menuItem}
+                onPress={() => page === 'message' ? removeCheck(candidateName) : store.dispatch({ type: MENU_BUTTON_1})}>
                 
                 {subPage1 === 'profile' ?
                     <Profile focus={page}/> :
@@ -58,10 +64,10 @@ export const MenuBar = () => {
             </TouchableOpacity>
 
             <TouchableOpacity
-                style={page == 'swipe' || page === 'message' ? menuItemFocused : subPage1 === 'message' || permissions.swipe ? menuItem : menuItemDisabled}
-                onPress={() => store.dispatch({ type: MENU_BUTTON_2 })}>
+                style={page == 'swipe' || page === 'message' ? menuItemFocused : forceMessages ? menuItemDisabled : menuItem }
+                onPress={() => page === 'message' ? store.dispatch({ type: LOG_SEND_MESSAGE }) : store.dispatch({ type: MENU_BUTTON_2 })}>
                 
-                {page !== 'swipe' ? subPage1 === 'message' ?
+                {page !== 'swipe' ? page === 'message' ?
                     <Send focus={keyboardStatus} /> : <Swipe focus={page} />
                     : subPage2 === 'image' ? <Info focus={page} /> : <Picture focus={page} />}
                 

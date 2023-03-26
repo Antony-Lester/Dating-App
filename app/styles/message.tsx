@@ -3,7 +3,7 @@
 import { Dimensions, TextStyle, ViewStyle, StatusBar, StyleProp } from 'react-native';
 import { setTheme } from './theme';
 import { ImageStyle } from 'expo-image';
-import { color } from 'react-native-reanimated';
+
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const separator = windowWidth / 25;
@@ -11,14 +11,17 @@ const separator = windowWidth / 25;
 //structure
 export const header: ViewStyle = {
 	position: 'absolute',
-	top: '5%',
+	//top: '5%',
+	top: '0%',
 	height: '10%',
 	width: '100%',
 };
 export const body: ViewStyle = {
 	position: 'absolute',
-	top: '15%',
-	height: '73%',
+	//top: '15%',
+	top: '10%',
+	//height: '73%',
+	height: '78%',
 	width: '100%',
 };
 export const chat: TextStyle = {
@@ -94,7 +97,7 @@ export const input: TextStyle = {
 	fontSize: 16,
 	fontWeight: '700',
 	fontStyle: 'italic',
-	textAlign: 'right',
+	textAlign: 'center',
 	justifyContent: 'flex-end',
 	padding: separator/2,
 	margin: separator/4,
@@ -121,14 +124,23 @@ export const messageIcon: TextStyle = {
 	paddingTop: separator/2,
 	paddingRight: separator,
 }
+//bio
 export const bio: TextStyle = {
-	backgroundColor: 'pink',
-	color: 'green',
 	flex: 1,
 	flexGrow: 50,
-	height: '60%'
+	marginTop: separator,
+	alignContent: 'center',
+	alignItems: 'center',
+	justifyContent: 'center',
 }
-
+export const bioText: TextStyle = {
+	...senderBase,
+	textAlign: 'center',
+	borderWidth: 4,
+	borderColor: setTheme.primary,
+	backgroundColor: setTheme.primary,
+	color: setTheme.background
+}
 //-----------
 export const forcedWait: TextStyle = {
 	position: 'absolute',

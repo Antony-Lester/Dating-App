@@ -20,4 +20,6 @@ export const LOG_MARRY = 'LOG_MARRY'
 export const LOG_AVOID = 'LOG_AVOID'
 
 //message
-export const LOG_MESSAGE = 'LOG_MESSAGE'
+export const LOG_MESSAGE = 'LOG_MESSAGE' //input text
+export const LOG_SEND_MESSAGE = 'LOG_SEND_MESSAGE' //send button
+export const LOG_REMOVE = 'LOG_REMOVE' //unmatch

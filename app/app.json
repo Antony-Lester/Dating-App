@@ -8,8 +8,7 @@
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#1C1B1F"
+      "resizeMode": "contain"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -35,6 +34,7 @@
       "eas": {
         "projectId": "889576e0-1fb3-48c7-b5fe-06c442ed2e22"
       }
-    }
+    },
+    "jsEngine": "hermes"
   }
 }
