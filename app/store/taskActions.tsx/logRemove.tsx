@@ -10,10 +10,11 @@ function LOG_REMOVE_ACTION(state: any) {
     const newMessages = state.messages.newMessages ? [...state.messages.newMessages.filter(uidCheck)] : []
     const messages = state.messages.messages ? [...state.messages.messages.filter(uidCheck)] : []
     const send = state.messages.send ? [...state.messages.send.filter(sendUidCheck)] : []
-    const remove = state.messages.remove? [...state.messages.remove, data] : [data]
+    const remove = state.messages.remove ? [...state.messages.remove, data] : [data]
+    const count = newConnections.length + newMessages.length + messages.length
     return {
         ...state,
-        app: { ...state.app, page: 'messages', data: {}, input: {} },
+        app: { ...state.app, page: count ? 'messages' : 'swipe' , data: {}, input: {} },
         messages: {
             ...state.messages,
             newConnections,
