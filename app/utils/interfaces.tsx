@@ -9,7 +9,7 @@ export interface UserInterface {
     email?: string
     number?: number
     category?: string
-    imageURI?: string
+    imageUrl?: string
     imageBlurHash?: string
     bio?: string
 }

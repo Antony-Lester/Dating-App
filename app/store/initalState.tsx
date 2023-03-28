@@ -6,7 +6,7 @@ let initialState: any = {
         page: 'profile',
         permissions: {
             swipe: false, //should be set to false for deploy (can swipe)
-            message: true, //should be set to false for deploy (can message)
+            message: false, //should be set to false for deploy (can message)
             profile: true, //should be set to false for deploy (profile is complete)
         },
         subPage1: 'profile',//settings
@@ -39,12 +39,12 @@ import { userEmpty, userUid, userFull, messagesEmpty, messages, swipe, swipeDone
 initialState.user = userFull
 
 //with Swipes
-initialState.swipe = swipe
+//initialState.swipe = swipe
 //without Swipes
 //initialState.swipe = swipeDone
 
 //with Messages
-initialState.messages = messages
+//initialState.messages = messages
 //without Messages
 //initialState.messages = messagesEmpty
 

@@ -1,8 +1,14 @@
 /** @format */
-import { Text, View } from 'react-native';
+import { useSelector } from 'react-redux';
+import Settings from './Profile-Components/Settings';
+import Picture from './Profile-Components/Picture';
+import Bio from './Profile-Components/Bio';
 
-import { page } from '../styles/pages';
-
-export default () => <View style={page}>
-    
-</View>
+export default () => {
+    const main = useSelector((state : any) => state.app.subPage1)// 'profile','settings'
+    const sub = useSelector((state: any) => state.app.subPage2)// 'image', 'info'
+    if (main === 'settings') {return(<Settings/>)}
+    else { //Profile
+        if (sub === 'image') {return(<Picture/>)} else {return(<Bio/>)}
+    }
+} 

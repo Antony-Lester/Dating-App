@@ -64,14 +64,18 @@ export default () => {
             </TouchableOpacity>
 
             <TouchableOpacity
-                style={page == 'swipe' || page === 'message' ? menuItemFocused : forceMessages ? menuItemDisabled : menuItem }
+                style={page == 'swipe' || page === 'message' || page === 'profile' && subPage1 === 'profile' ? menuItemFocused : forceMessages ? menuItemDisabled : menuItem }
                 onPress={() => page === 'message' ? store.dispatch({ type: LOG_SEND_MESSAGE }) : store.dispatch({ type: MENU_BUTTON_2 })}>
                 
-                {page !== 'swipe' ? page === 'message' ?
+                {page !== 'swipe' && subPage1 !== 'profile' ? page === 'message' ?
                     <Send focus={keyboardStatus} /> : <Swipe focus={page} />
                     : subPage2 === 'image' ? <Info focus={page} /> : <Picture focus={page} />}
                 
-                {!keyboardStatus ? page === 'swipe' || page === 'message' ? <Text style={menuTextFocused(fontScale)}>{page !== 'swipe' ? page === 'message'? 'Send' : 'swipe' : subPage2 === 'image' ? 'Info' : 'Face'}</Text> : <></> : <></>}
+                {!keyboardStatus ? page === 'swipe' || page === 'message' || subPage1 === 'profile' ?
+                    <Text style={menuTextFocused(fontScale)}>{
+                        page === 'swipe' || page === 'profile' ? subPage2 === 'image' ? 'Info' : 'Face':
+                            page === 'message' ? 'Send' : 'swipe'   
+                    }</Text> : <></> : <></>}
 
             </TouchableOpacity>
 
