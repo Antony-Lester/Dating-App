@@ -10,7 +10,6 @@ import {
 import { helper, helperKiss, helperMarry, helperAvoid } from "../../styles/swipe";
 import { newConnectionsIcon, messagesIcon, connectionIconKiss, connectionIconMarry } from "../../styles/messages";
 import { messageIcon } from "../../styles/message";
-import { cameraIcon } from "../Profile-Components/Picture";
 
 //--menu--
 //button-1
@@ -86,6 +85,7 @@ export const MessageForcedMarry = '💎'
 export const MessageKiss = () => <Text style={{ ...messageIcon, ...{ transform: [{ rotate: '65deg' }] }}}>💋</Text>
 export const MessageMarry = () => <Text style={{ ...messageIcon }}>💎</Text>
 //profile
-export const Camera = () => <Text style={{
-    alignSelf: 'center', textAlign: 'center', justifyContent: 'space-around',
-    fontSize: 38}}>📷</Text>
+export const CameraIcon = () => {
+    const { fontScale } = useWindowDimensions()
+    return <Text style={{fontSize: 22}}>📷</Text>
+}

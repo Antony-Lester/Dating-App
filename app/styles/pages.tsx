@@ -3,11 +3,11 @@ import { ViewStyle } from "react-native";
 
 import { setTheme } from "./theme";
 import { ImageStyle } from "expo-image";
+import Constants from "expo-constants";
 
 export const page: ViewStyle = {
-    position: "absolute",
-    height: '100%',
-    width: '100%',
+    flex:1,
+    marginTop: Constants.statusBarHeight,
     backgroundColor: setTheme.background
 }
 

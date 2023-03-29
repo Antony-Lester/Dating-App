@@ -8,10 +8,14 @@ let initialState: any = {
             swipe: false, //should be set to false for deploy (can swipe)
             message: false, //should be set to false for deploy (can message)
             profile: true, //should be set to false for deploy (profile is complete)
+            camera: false, //should be set to false
         },
         subPage1: 'profile',//settings
         subPage2: 'image',//info
-        
+        camera: {
+            type: 'front',
+            flash: 'off'
+        }
     },
     messages: {
         newConnections: [], 
