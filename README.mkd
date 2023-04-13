@@ -19,7 +19,7 @@ Connect users based on there long & short term romantic intentions, Inclusive of
 
 #### #### Project Progress Preview
 
-[expo react native swipe animation - YouTube](https://youtu.be/yK0X_rYv0Jo)
+[swipe animation - YouTube](https://youtu.be/yK0X_rYv0Jo)
 
 ![swipe screen](swipe-screenshot.png)
 
