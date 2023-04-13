@@ -45,47 +45,48 @@ export default () => {
         };
     }, []);
 
-
-    return(
-        <View style={menuBar}>
+    if (page !== 'camera') {
+        return (
+            <View style={menuBar}>
             
-            <TouchableOpacity
-                style={page === 'profile' || page === 'message' ? menuItemFocused : forceMessages ? menuItemDisabled : menuItem}
-                onPress={() => page === 'message' ? removeCheck(candidateName) : store.dispatch({ type: MENU_BUTTON_1})}>
+                <TouchableOpacity
+                    style={page === 'profile' || page === 'message' ? menuItemFocused : forceMessages ? menuItemDisabled : menuItem}
+                    onPress={() => page === 'message' ? removeCheck(candidateName) : store.dispatch({ type: MENU_BUTTON_1 })}>
                 
-                {subPage1 === 'profile' ?
-                    <Profile focus={page}/> :
-                    page === 'message' ?
-                    <Remove focus={keyboardStatus}/> :
-                    <Settings focus={page} />}
+                    {subPage1 === 'profile' ?
+                        <Profile focus={page} /> :
+                        page === 'message' ?
+                            <Remove focus={keyboardStatus} /> :
+                            <Settings focus={page} />}
                 
-                {!keyboardStatus ? page === 'profile' ? <Text style={menuTextFocused(fontScale)}>{capitalizeFirstLetter(subPage1)}</Text> : page === 'message' ? <Text style={menuTextFocused(fontScale)}>Avoid</Text> :<></>: <></>}
+                    {!keyboardStatus ? page === 'profile' ? <Text style={menuTextFocused(fontScale)}>{capitalizeFirstLetter(subPage1)}</Text> : page === 'message' ? <Text style={menuTextFocused(fontScale)}>Avoid</Text> : <></> : <></>}
 
-            </TouchableOpacity>
+                </TouchableOpacity>
 
-            <TouchableOpacity
-                style={page == 'swipe' || page === 'message' || page === 'profile' && subPage1 === 'profile' ? menuItemFocused : forceMessages ? menuItemDisabled : menuItem }
-                onPress={() => page === 'message' ? store.dispatch({ type: LOG_SEND_MESSAGE }) : store.dispatch({ type: MENU_BUTTON_2 })}>
+                <TouchableOpacity
+                    style={page == 'swipe' || page === 'message' || page === 'profile' && subPage1 === 'profile' ? menuItemFocused : forceMessages ? menuItemDisabled : menuItem}
+                    onPress={() => page === 'message' ? store.dispatch({ type: LOG_SEND_MESSAGE }) : store.dispatch({ type: MENU_BUTTON_2 })}>
                 
-                {page !== 'swipe' && subPage1 !== 'profile' ? page === 'message' ?
-                    <Send focus={keyboardStatus} /> : <Swipe focus={page} />
-                    : subPage2 === 'image' ? <Info focus={page} /> : <Picture focus={page} />}
+                    {page !== 'swipe' && subPage1 !== 'profile' ? page === 'message' ?
+                        <Send focus={keyboardStatus} /> : <Swipe focus={page} />
+                        : subPage2 === 'image' ? <Info focus={page} /> : <Picture focus={page} />}
                 
-                {!keyboardStatus ? page === 'swipe' || page === 'message' || subPage1 === 'profile' ?
-                    <Text style={menuTextFocused(fontScale)}>{
-                        page === 'swipe' || page === 'profile' ? subPage2 === 'image' ? 'Info' : 'Face':
-                            page === 'message' ? 'Send' : 'swipe'   
-                    }</Text> : <></> : <></>}
+                    {!keyboardStatus ? page === 'swipe' || page === 'message' || subPage1 === 'profile' ?
+                        <Text style={menuTextFocused(fontScale)}>{
+                            page === 'swipe' || page === 'profile' ? subPage2 === 'image' ? 'Info' : 'Face' :
+                                page === 'message' ? 'Send' : 'swipe'
+                        }</Text> : <></> : <></>}
 
-            </TouchableOpacity>
+                </TouchableOpacity>
 
-            <TouchableOpacity style={page === 'messages' || page === 'message' ? menuItemFocused : permissions.message ? menuItem : menuItemDisabled}
-                onPress={() => store.dispatch({type: MENU_BUTTON_3})}>
+                <TouchableOpacity style={page === 'messages' || page === 'message' ? menuItemFocused : permissions.message ? menuItem : menuItemDisabled}
+                    onPress={() => store.dispatch({ type: MENU_BUTTON_3 })}>
                 
-                <Chat focus={page === 'messages' || page === 'message'? keyboardStatus: true} />
+                    <Chat focus={page === 'messages' || page === 'message' ? keyboardStatus : true} />
 
-                {!keyboardStatus ? page === 'messages' || page === 'message' ? <Text style={menuTextFocused(fontScale)}>Chat</Text> : <></> : <></>}
+                    {!keyboardStatus ? page === 'messages' || page === 'message' ? <Text style={menuTextFocused(fontScale)}>Chat</Text> : <></> : <></>}
                 
-            </TouchableOpacity>
-        </View>)
+                </TouchableOpacity>
+            </View>)
+    } else {return(<></>)}
 }

@@ -122,3 +122,10 @@ export interface RemoveInterface {
     toUid: string,
     time: string,
 }
+
+export interface FileInterface {
+    size: number,
+    base64: string,
+    modificationTime: number,
+    uri: string
+}

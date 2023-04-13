@@ -62,7 +62,7 @@ export default () => {
                     selectionColor={setTheme.secondary}
                     placeholderTextColor={setTheme.secondary}
                     textAlign={'right'}
-                    textBreakStrategy={'simple'}
+                    textBreakStrategy={'highQuality'}
                     onChange={({ nativeEvent: { text } }) => {
                         store.dispatch({ type: LOG_MESSAGE, payload: { text } })
                     }}
@@ -108,7 +108,7 @@ export default () => {
                     selectionColor={setTheme.onSecondaryContainer}
                     placeholderTextColor={setTheme.secondary}
                     textAlign={'right'}
-                    textBreakStrategy={'simple'}
+                    textBreakStrategy={'highQuality'}
                     onChange={({ nativeEvent: { text } }) => {
                         store.dispatch({ type: LOG_MESSAGE, payload: { ...message, text: message.text ? message.text + text : text } })
                     }}

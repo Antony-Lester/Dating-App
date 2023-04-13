@@ -15,7 +15,8 @@ let initialState: any = {
         camera: {
             type: 'front',
             flash: 'off'
-        }
+        },
+        save: false
     },
     messages: {
         newConnections: [], 

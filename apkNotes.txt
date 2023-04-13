@@ -1,0 +1,21 @@
+environment:
+    $ npm i -g eas-cli
+    create account on expo.dev
+    $ eas login
+    $ eas whoami
+config:
+    $ eas build:configure
+    -All
+    (created eas.json)
+
+build android: 
+    *preview config comes from eas.json
+    $ eas build -p android --profile preview
+
+submit:
+    $ eas submit
+
+debugging:
+    Generate the native code for your project with: npx expo prebuild -p android
+    Open the project in Android Studio: open -a /Applications/Android\ Studio.app ./android
+    Build the app from Android Studio and connect the debugger

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { NavigationContainer, createNavigationContainerRef } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Provider } from 'react-redux'
+import { Provider, useSelector } from 'react-redux'
 
 import store from './store/store';
 
@@ -12,6 +12,7 @@ import Message from './Pages/Message';
 
 import MenuBar from './Pages/Components/MenuBar';
 import Splash from './Pages/Components/Splash';
+import Camera from './Pages/Profile-Components/Camera';
 
 
 export default function App() {
@@ -24,7 +25,6 @@ export default function App() {
   const [isReady, setIsReady] = useState(false);
   
   store.subscribe(() => navigationFunction(store.getState().app.page))
-  
   function navigationFunction(path: string) {
     //@ts-expect-error
     if (!isReady) {window.setTimeout(navigationFunction, 100)} else {navigationRef.navigate(path)}}
@@ -41,10 +41,11 @@ export default function App() {
                 animationTypeForReplace: 'pop',
                 headerShown: false
               }}>
-              <Page.Screen name='profile' component={Profile} />
-              <Page.Screen name='swipe' component={Swipe} />
-              <Page.Screen name='messages' component={Messages} />
+              <Page.Screen name='profile' component={Profile}/>
+              <Page.Screen name='swipe' component={Swipe}/>
+              <Page.Screen name='messages' component={Messages}/>
               <Page.Screen name='message' component={Message} />
+              <Page.Screen name='camera' component={Camera}/>
             </Page.Navigator>
           <MenuBar />
         </NavigationContainer>
