@@ -5,8 +5,8 @@ let initialState: any = {
         input: {}, //input holder
         page: 'profile',
         permissions: {
-            swipe: false, //should be set to false for deploy (can swipe)
-            message: false, //should be set to false for deploy (can message)
+            swipe: true, //should be set to false for deploy (can swipe)
+            message: true, //should be set to false for deploy (can message)
             profile: true, //should be set to false for deploy (profile is complete)
             camera: false, //should be set to false
         },
@@ -46,10 +46,10 @@ initialState.user = userFull
 //with Swipes
 //initialState.swipe = swipe
 //without Swipes
-//initialState.swipe = swipeDone
+initialState.swipe = swipeDone
 
 //with Messages
-//initialState.messages = messages
+initialState.messages = messages
 //without Messages
 //initialState.messages = messagesEmpty
 

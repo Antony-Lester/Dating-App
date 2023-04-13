@@ -22,6 +22,8 @@ Connect users based on there long & short term romantic intentions, Inclusive of
 [expo react native swipe animation - YouTube](https://youtu.be/yK0X_rYv0Jo)
 
 ![swipe screen](swipe-screenshot.png)
+![messages screen](messages-screenshot.png)
+![swipe screen](message-screenshot.png)
 
 ### Core Minimum Viable Product Features V1.0
 
