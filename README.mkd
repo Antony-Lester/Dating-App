@@ -7,7 +7,7 @@ Connect users based on there long & short term romantic intentions, Inclusive of
 
 ##### User is presented with other user's based on the users location & preferences
 
-    They Can only swipe if there's no new connections or messages awaiting reply and     can't see users that are 'avoid' or 'report'. swipe left to 'avoid', swipe up to 'marry',     swipe right to 'kiss', swipe down to 'report.'
+    They Can only swipe if there's no new connections or messages awaiting reply and can't see users that are 'avoid' or 'report'. swipe left to 'avoid', swipe up to 'marry', swipe right to 'kiss', 
 
 ###### Can message users that mutually match 'marry' and/or 'kiss'
 
@@ -37,17 +37,10 @@ Connect users based on there long & short term romantic intentions, Inclusive of
 
 ###### MVP Data Collected
 
-        USER'S : uid, name, dateOfBirth, email, number, location, Gender/Orientation,                         bio,
+        USER'S : name, dateOfBirth, (email, number, google), course location, Gender/Orientation, bio,
 
         PICTURE : face,
 
-        MESSAGES : message(uid, content, timestamp)
+        MESSAGES : message(content, timestamp)
 
-        REPORTS : uid's (reporter & reported) content type, content, reason
-
-#### Project Tracking
-
-    <https://github.com/users/Antony-Lester/projects/1>
-
-
-Travel mode : displays approximately when user is in your area, when travel mode is active
+        REPORTS : user, content, reason
