@@ -1,6 +1,3 @@
-#### #### Project Progress Preview
-
-[expo react native swipe animation - YouTube](https://youtu.be/yK0X_rYv0Jo)
 
 #### Problem Statement
 
@@ -19,6 +16,12 @@ Connect users based on there long & short term romantic intentions, Inclusive of
 ###### After date can review the date user & location
 
 ![base plan](mvp-base-front.png)
+
+#### #### Project Progress Preview
+
+[expo react native swipe animation - YouTube](https://youtu.be/yK0X_rYv0Jo)
+
+![swipe screen](swipe-screenshot.png)
 
 ### Core Minimum Viable Product Features V1.0
 
