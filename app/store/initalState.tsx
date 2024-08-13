@@ -10,7 +10,7 @@ let initialState: any = {
             profile: true, //should be set to false for deploy (profile is complete)
             camera: false, //should be set to false
         },
-        subPage1: 'profile',//settings
+        subPage1: 'messages',//settings
         subPage2: 'image',//info
         camera: {
             type: 'front',
@@ -44,9 +44,9 @@ import { userEmpty, userUid, userFull, messagesEmpty, messages, swipe, swipeDone
 initialState.user = userFull
 
 //with Swipes
-//initialState.swipe = swipe
+initialState.swipe = swipe
 //without Swipes
-initialState.swipe = swipeDone
+//initialState.swipe = swipeDone
 
 //with Messages
 initialState.messages = messages
